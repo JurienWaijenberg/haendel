@@ -746,6 +746,7 @@ button.swiper-pagination-bullet {
 
 
 @media only screen and (min-width: 1200px) {
+
     .swiper-slide {
       background-color: rgb(88, 146, 55);
       flex: 1 1 30%; 
@@ -754,6 +755,9 @@ button.swiper-pagination-bullet {
       flex-direction: column;
       overflow: hidden;
 }
+
+
+
 
 .swiper-button-next,
 .swiper-button-prev,

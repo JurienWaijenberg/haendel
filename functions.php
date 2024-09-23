@@ -8,9 +8,13 @@ function bofesto_setup(){
     wp_enqueue_style( 'swiper', get_template_directory_uri() . '/styles/swiper.css');
     wp_enqueue_style( 'concerten', get_template_directory_uri() . '/styles/concerten.css');
     wp_enqueue_style( 'concert', get_template_directory_uri() . '/styles/concert.css');
+    wp_enqueue_style( 'swiper-review', get_template_directory_uri() . '/styles/swiper-review.css');
+    wp_enqueue_style( 'over-ons', get_template_directory_uri() . '/styles/overOns.css');
+    wp_enqueue_style( 'dirigenten', get_template_directory_uri() . '/styles/dirigenten.css');
     
     
     wp_enqueue_script( "swiper", get_template_directory_uri() . '/scripts/swiper.js', NULL, '3.5.1', true);
+    wp_enqueue_script( "swiper-review-bundle", get_template_directory_uri() . '/scripts/swiper-review.js', NULL, '3.5.1', true);
 
     // wp_enqueue_script("main", get_theme_file_uri('/js/main.js'), NULL, microtime(), true);
 

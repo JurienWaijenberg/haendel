@@ -1,0 +1,121 @@
+/* .eenXColumn.reverse{
+flex-direction: row-reverse;
+} */
+
+.eenXColumn ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.checklist li{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.checklist li i{
+    background-color: var(--Bruin);
+    color: white;
+    padding: 0.5rem 0.6rem;
+    height: fit-content;
+    font-size: 1.5rem;
+}
+
+.overOns h2{
+    color: var(--Bruin);
+}
+
+/* .eenXColumn.reverse h2{
+    margin-bottom: 1.5rem;
+} */
+
+.btn_border.btnDownload{
+    border-radius: 0;
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn_border.btnDownload span:first-of-type{
+    margin-right: auto;
+    text-decoration: underline;
+}
+
+.overzichtDirigenten{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.overzichtDirigenten ul {
+    display: flex;               
+    justify-content: space-between; 
+    padding: 0;                 
+    list-style-type: none;       
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .overzichtDirigenten li {
+    flex: 1;                     
+    margin: 0 10px;              
+  }
+  
+  .overzichtDirigenten img {
+    width: 100%;                 
+    height: 15rem; 
+    object-fit: cover;               
+  }
+
+
+
+  .overzichtDirigenten div{
+    display: flex;
+    gap: 6rem;
+  }
+
+  .overzichtDirigenten div p{
+    flex: 1 1;
+  }
+
+  @media only screen and (max-width: 850px) {
+    body{
+        background-color: yellow;
+    }
+
+    .overzichtDirigenten ul{
+        flex: 1 1;
+    }
+  }
+
+  /* .overOns .mySwiper{
+    background-color: blue;
+  } */
+
+  @media only screen and (min-width: 1400px) {
+    .sliderDirigenten {
+      background-color: rgb(96, 222, 24);
+      /* flex: 1 1 30%; 
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden; */
+}
+
+  }
+
+  .swiperDirigenten{
+    gap: 1.5rem;
+ }
+
+ .titelTekstImg{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+ }
+
+ /* .titelTekstImg img{
+    padding-top: 5rem;
+ } */

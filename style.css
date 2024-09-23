@@ -37,6 +37,7 @@ body{
     --Rood: rgba(159, 37, 58, 1);
     --Lichtgroen: rgba(228, 236, 194, 1);
     --transparant-lichtgroen: rgba(228, 236, 194, 0.4);
+    --Bruin: rgba(115, 90, 38, 1);
   }
 
   a{
@@ -50,7 +51,8 @@ body{
   h1, h2, h3, h4, h5, p, 
   label, input, button, 
   nav a, header li, .koopKaarten ul li,
-  .ConcertInfo dl{
+  .ConcertInfo dl, 
+  .uitvoerenden a div, a{
     font-family: 'Montserrat', sans-serif;
   }
 
@@ -88,7 +90,7 @@ body{
 
   } */
 
-  p, label, input, button,  .ConcertInfo dl{
+  p, label, input, button,  .ConcertInfo dl,   .uitvoerenden a div, a{
     font-size: 1.2rem;
     /* font-weight: 900; */
     line-height: 2.2rem;
@@ -552,13 +554,17 @@ input[type="checkbox"]{
 }
 
 
-.atf.bannerImg img{
+.atf.bannerImg > img{
   height: 10vh;
 }
 
 
 
-
+.introtekst{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
 
 
 

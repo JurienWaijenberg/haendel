@@ -4,6 +4,13 @@
   <h1>Welkom bij de NEDERLANDSE HÄNDELVERENIGING</h1>
 </section>
 
+
+
+
+
+
+
+
 <!-- Aankomende concerten slider-->
 <section class="aankomende_concerten max-width">
 
@@ -50,6 +57,7 @@
           </span>
         </a>
       </li>
+      
 
     </ul>
     <div class="swiper-button-next"></div>

@@ -1,0 +1,9 @@
+#moreText {
+
+    /* Display nothing for the element */
+    display: none;
+}
+
+#textButton{
+    border: none;
+}

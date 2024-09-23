@@ -4,7 +4,7 @@
     <h1>concerten</h1>
 </section>
 
-<section class="max-width">
+<section class="introtekst max-width">
     <p>Welkom op de Agenda van de Nederlandse Händelvereniging! Hier vindt u een overzicht van onze aankomende concerten
         en evenementen. Of u nu een fervent liefhebber bent van Händels muziek of gewoon nieuwsgierig bent naar onze
         optredens, u zult hier de laatste informatie vinden over waar en wanneer u ons kunt horen. Van schitterende
