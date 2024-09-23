@@ -1,3 +1,565 @@
 /* CSS */
 
+body{
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    scroll-behavior: smooth;
+  }
+  
+  .max-width {
+    max-width: 1280px;
+    margin: 5rem 0;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding-left: 2rem;
+    padding-right: 2rem; */
+  }
+
+  .bg_transparant_lichtgroen{
+    background-color: var(--transparant-lichtgroen);
+  }
+
+  .bg_lichtgroen{
+    background-color: var(--Lichtgroen);
+  }
+
+.space{
+    padding: 5rem 0;
+  }
+
+  :root {
+    --Zwart: rgba(26, 26, 26, 100);
+    --Groen: rgba(135, 150, 52, 1);
+    --Rood: rgba(159, 37, 58, 1);
+    --Lichtgroen: rgba(228, 236, 194, 1);
+    --transparant-lichtgroen: rgba(228, 236, 194, 0.4);
+  }
+
+  a{
+    text-decoration: none;
+  }
+  
+  /******************************************************************/
+/* Fonts /* /* Fonts /* /* Fonts /* /* Fonts /* /* Fonts /* /* Fonts /* 
+/******************************************************************/
+  
+  h1, h2, h3, h4, h5, p, 
+  label, input, button, 
+  nav a, header li, .koopKaarten ul li,
+  .ConcertInfo dl{
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1{
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 0.08rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  h2{
+    font-size: 2.5rem;
+    /* font-weight: 900; */
+    letter-spacing: 0.08rem;
+    text-transform: uppercase; 
+    color: var(--Rood);
+  }
+
+  h3,.koopKaarten ul li {
+    font-size: 1.4rem;
+    font-weight: 900;
+    letter-spacing: 0.08rem;
+  }
+
+  h4{
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+  }
+
+  /* h5{
+
+  } */
+
+  p, label, input, button,  .ConcertInfo dl{
+    font-size: 1.2rem;
+    /* font-weight: 900; */
+    line-height: 2.2rem;
+    margin: 0;
+  }
+
+/******************************************************************/
+/* Buttons /* /* Buttons /* /* Buttons /* /* Buttons /* /* Buttons /* 
+/******************************************************************/
+
+.btn_rood{
+    background-color: var(--Rood);
+    padding: 0.4rem 2rem;
+    width: fit-content;
+    color: white;
+    text-decoration: none;
+    border-radius: 0 50px 50px 0;
+    display: inline-block;
+}
+
+.btn_groen{
+  background-color: var(--Groen);
+  padding: 0.4rem 2rem;
+  width: fit-content;
+  color: white;
+  text-decoration: none;
+  border-radius: 0 50px 50px 0;
+  display: inline-block;
+  border: none;
+}
+
+.btn_border{
+  background-color: transparent;
+  padding: 0.4rem 2rem;
+  width: fit-content;
+  color: var(--Rood);
+  text-decoration: none;
+  border-radius: 50px 0 0 50px;
+  display: inline-block;
+  border: 0.2rem solid var(--Rood);
+}
+
+
+
+
+/******************************************************************/
+/* Header /* /* Header /* /* Header /* /* Header /* /* Header /* 
+/******************************************************************/
+header{
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Logo */
+header a img {
+    height: 4.5rem;
+}
+
+/* Navigatie */
+header nav{
+    display: flex;
+    gap: 2rem;
+}
+
+header nav a{
+  color: var(--Zwart);
+  text-transform: uppercase;
+  font-size: small;
+  letter-spacing: 0.08rem;
+}
+
+/* Profile + Taal */
+header ul{
+    display: flex;
+    list-style-type: none;
+    gap: 2rem;
+    padding: 0;
+}
+
+/******************************************************************/
+/* ATF-Home /* /* ATF-Home /* /* ATF-Home /* /* ATF-Home /* /* ATF-Home /* 
+/******************************************************************/
+
+.atf {
+    display: flex;
+    flex-direction: column;
+}
+
+.atf img {
+    width: 100vw;
+    height: 70vh;
+    object-fit: cover;
+}
+
+.atf h1 {
+    margin: 0; 
+    padding: 2rem 0;
+    text-align: center; 
+    background-color: var(--Groen);
+}
+
+/******************************************************************/
+/* aankomende_concerten /* /* aankomende_concerten /* /* aankomende_concerten /* 
+/******************************************************************/
+
+
+
+.aankomende_concerten h3{
+  text-transform: uppercase;
+}
+
+.swiper-wrapper,
+.concerthistorie ul{
+  padding: 0;
+}
+
+/* .aankomendeConcerten-wrapper, */
+.tweeXColumn ul,
+.concerthistorie ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    list-style: none;
+    gap: 3rem;
+}
+
+
+/* 
+.aankomendeConcerten-slide, */
+.tweeXColumn ul li,
+.concerthistorie ul li {
+    flex: 1 1 30%; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.swiper-slide img,
+.tweeXColumn ul li img {
+    height: 15rem;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.5s ease; /* Zorgt voor een vloeiende overgang */
+    margin-bottom: 1rem;
+}
+
+.swiper-slide a,
+.tweeXColumn ul li a,
+.concerthistorie ul li a{
+    transition: transform 0.5s ease; /* Voeg een overgang toe voor de schaalverandering */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--Zwart);
+    width: 100%;
+}
+
+.concerthistorie ul li a{
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.swiper-slide a > p,
+.tweeXColumn ul li a > p{
+    margin: 1rem 0;
+}
+
+
+.titelButton{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.aankomende_concerten{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+  
+.aankomende_concerten > a{
+  display: none;
+}
+
+
+
+
+/******************************************************************/
+/* 1xColumn /* /* 1xColumn /* /* 1xColumn /* /* 1xColumn /* /* 1xColumn /*
+/******************************************************************/
+
+
+.eenXColumn{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    flex: 1;
+    width: 100%;
+
+    section > p{
+        /* background-color: red; */
+        margin: 1.5rem 0;
+    }
+}
+
+.eenXColumn section{
+    width: 50%;
+}
+
+.eenXColumn img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/******************************************************************/
+/* Call to action Banner /*  /* Call to action Banner /*  /* Call to action Banner /*  
+/******************************************************************/
+
+.CTA{
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  flex: 1;
+  width: 100%;
+
+  section > p{
+    /* background-color: red; */
+    margin: 1.5rem 0;
+}
+}
+
+.CTA section{
+  width: 50%;
+}
+
+.CTA section > a{
+
+    margin-top: auto; /* Duwt de knop naar de onderkant van de sectie */
+
+}
+
+.nieuwsbrief{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nieuwsbrief h2,
+.nieuwsbrief h3{
+  width: 80%;
+}
+
+.CTA h2{
+  color: var(--Zwart);
+}
+
+.CTA form{
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 80%;
+}
+
+form input{
+  border: none;
+  border-bottom: 0.1rem solid var(--Zwart);
+  background-color: transparent;
+  margin-bottom: 1rem;
+  outline: none;
+}
+
+.nieuwsbrief form a{
+  text-decoration: underline;
+  color: var(--Zwart);
+}
+
+input[type="checkbox"]{
+  transform: scale(1.5); /* Verander de waarde om de grootte aan te passen */
+  margin-right: 0.5rem;
+  background-color: red;
+  margin-bottom: 3rem;
+}
+
+/******************************************************************/
+/* Footer /* /* Footer /* /* Footer /* /* Footer /* /* Footer /* 
+/******************************************************************/
+
+.footerTop{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: wrap;
+}
+
+/* .footerTop{
+  align-items: center;
+  gap: 3em;
+  grid-template-columns: auto auto auto;
+  width: -moz-fit-content;
+  width: fit-content;
+} */
+
+/* Navigatie */
+.footerTop ul{
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footerTop ul li p{
+  color: var(--Zwart);
+}
+
+/* Logo + socials */
+.footerTop section:last-of-type{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Logo */
+.footerTop section:last-of-type img{
+  width: 16rem;
+}
+
+/* socials */
+.footerTop section:last-of-type ul{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+/* socials ps*/
+.footerTop section:last-of-type ul li p{
+  font-size: 2rem;
+}
+
+/******************************************************************/
+/* FooterBottom /* /* FooterBottom /* /* FooterBottom /* /* FooterBottom /* 
+/******************************************************************/
+
+.footerBottom{
+  background-color: var(--Zwart);
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerBottom ul{
+  display: flex;
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  justify-content: space-between;
+}
+
+.footerBottom h5{
+  color: white;
+}
+
+.footerBottom ul li:nth-of-type(2){
+  display: flex;
+  align-items: center; /* Centreert de items verticaal binnen de ul */
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footerBottom ul li a {
+  display: inline-flex;
+  align-items: center; /* Centreert de tekst en de separator verticaal */
+}
+
+.footerBottom ul li a::after {
+  content: " | "; /* De separator die je wilt toevoegen */
+  color: white; /* Kleur van de separator */
+  margin-left: 1rem;
+}
+
+.footerBottom ul li a:last-child::after{
+  content: ""; /* Verwijder de separator na het laatste item */
+}
+
+@media only screen and (min-width: 168px) and (max-width: 768px) {
+  /* body{
+    background-color: red;
+  } */
+
+  header nav{
+    display: none;
+  }
+
+  .tweeXColumn ul{
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+
+}
+
+@media only screen and (min-width: 168px) and (max-width: 900px){
+  .eenXColumn {
+    flex-direction: column;
+}
+
+.eenXColumn section {
+    width: 100%; /* Zorg ervoor dat de secties 100% breedte nemen */
+}
+
+.eenXColumn img {
+    width: 100%; /* De afbeelding vult de volledige breedte */
+    height: auto; /* Houd de verhouding correct */
+}
+
+
+
+.CTA{
+  flex-direction: column;
+}
+
+.CTA section{
+  width: 100%;
+}
+
+.CTA section:nth-of-type(2){
+  display: none;
+}
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+
+  .titelButton a{
+    display: none;
+  }
+  
+  .aankomende_concerten > a{
+    display: block;
+  }
+
+
+}
+
+
+.atf.bannerImg img{
+  height: 10vh;
+}
+
+
+
+
+
+
+
 

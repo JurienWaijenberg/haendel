@@ -5,6 +5,13 @@
 function bofesto_setup(){
     wp_enqueue_style('style', get_stylesheet_uri(), NULL, microtime(), 'all');
 
+    wp_enqueue_style( 'swiper', get_template_directory_uri() . '/styles/swiper.css');
+    wp_enqueue_style( 'concerten', get_template_directory_uri() . '/styles/concerten.css');
+    wp_enqueue_style( 'concert', get_template_directory_uri() . '/styles/concert.css');
+    
+    
+    wp_enqueue_script( "swiper", get_template_directory_uri() . '/scripts/swiper.js', NULL, '3.5.1', true);
+
     // wp_enqueue_script("main", get_theme_file_uri('/js/main.js'), NULL, microtime(), true);
 
 }

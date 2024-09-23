@@ -1,0 +1,25 @@
+
+
+.concerthistorie ul li img {
+    height:30rem;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.5s ease; /* Zorgt voor een vloeiende overgang */
+    margin-bottom: 1rem;
+}
+
+.concerthistorie{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.concerthistorie section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .swiper.posterHistorie{
+    background-color: aqua;
+} */
