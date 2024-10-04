@@ -3,7 +3,7 @@
     <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
     <div>
         <h1>Concert</h1>
-        <a href="#koopKaarten">Ga naar sectie 1</a>
+        <a href="#koopKaartenScroll">Ga naar sectie 1</a>
     </div>
 
 
@@ -162,7 +162,8 @@
 
     </section>
 
-    <section id="koopKaarten" class="koopKaarten max-width">
+    <section class="max-width">
+    <section id="koopKaartenScroll" class="koopKaarten">
         <h2>Koop kaarten</h2>
 
         <article>
@@ -196,6 +197,8 @@
             </a>
         </article>
     </section>
+    </section>
+    
 
     <section class="swiperReview myswiperReview max-width swiperReview-css-mode">
         <h2>Dit zeggen onze klanten</h2>

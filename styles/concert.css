@@ -13,6 +13,7 @@
     /* border-top: 0.2rem solid var(--Rood); */
     border-bottom: 0.2rem solid var(--Rood);
     padding: 2rem 0;
+    width: 100%;
 }
 
 .koopKaarten article:first-of-type{
@@ -24,7 +25,8 @@
     list-style-type: none;
     gap: 3rem;
     padding: 0;
-    width: fit-content;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .koopKaarten article ul li{

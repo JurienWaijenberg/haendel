@@ -1,0 +1,22 @@
+.koopKaarten article ul li{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-weight: 400;
+}
+
+.koopKaarten article ul li a{
+    color: var(--Zwart);
+    text-decoration: underline;
+}
+
+.koopKaarten article ul li:last-of-type{
+    align-self: flex-end;
+    background-color: rgb(25, 169, 169);
+}
+
+.overigeVrijwillegers section > p{
+    margin: 0;
+}
+
+

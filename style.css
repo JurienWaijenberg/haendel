@@ -567,5 +567,19 @@ input[type="checkbox"]{
 }
 
 
+/******************************************************************/
+/* Lees verder dropdown  /* 
+/******************************************************************/
 
+.PaulIntroDropdown section:first-of-type img{
+  width: 80%;
+  height: 20rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .PaulIntroDropdown section:first-of-type img{
+    width: 100%;
+    height: 22rem;
+  }
+}
 
