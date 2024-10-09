@@ -1,10 +1,22 @@
-/* .eenXColumn.reverse{
+.eenXColumn.reverse{
 flex-direction: row-reverse;
-} */
+}
 
 .eenXColumn ul{
     list-style-type: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+/* pakt deze code niet*/
+.checklist ul{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: aqua;
 }
 
 .checklist li{
@@ -36,6 +48,10 @@ flex-direction: row-reverse;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-left: none;
+    border-right: none;
+    padding: 1.5rem 0;
+    align-items: center;
 }
 
 .btn_border.btnDownload span:first-of-type{
@@ -44,6 +60,7 @@ flex-direction: row-reverse;
 }
 
 .overzichtDirigenten{
+  margin-top: 4rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -81,9 +98,6 @@ flex-direction: row-reverse;
   }
 
   @media only screen and (max-width: 850px) {
-    body{
-        background-color: yellow;
-    }
 
     .overzichtDirigenten ul{
         flex: 1 1;
@@ -119,3 +133,10 @@ flex-direction: row-reverse;
  /* .titelTekstImg img{
     padding-top: 5rem;
  } */
+
+
+ @media only screen and (min-width: 168px) and (max-width: 900px){
+  .reverse{
+    flex-direction: column !important;
+}
+ }

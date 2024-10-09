@@ -1,4 +1,30 @@
   
+  .bannerConcert{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: var(--Groen);
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .TitelBannerConcert{
+    background-color: var(--Groen);
+}
+
+.TitelBannerConcert a{
+  text-decoration: underline;
+  color: white;
+
+}
+
+.TitelBannerConcert a i{
+  margin-left: 0.5rem;
+}
+  
   /******************************************************************/
 /* Koopkaarten /* /* Koopkaarten /* /* Koopkaarten /* /* Koopkaarten /* 
 /******************************************************************/
@@ -220,3 +246,24 @@
     flex-direction: column;
     gap: 2rem;
 }
+
+.subheadingXheading{
+  width: 55%;
+}
+
+.subheadingXheading span{
+  font-weight: 400;
+  text-transform: lowercase;
+  color: var(--Rood);
+  }
+
+  .subheadingXheading{
+    color: var(--Bruin);
+  }
+
+@media only screen and (max-width: 1045px) {
+  .subheadingXheading{
+    width: 100%
+  }
+}
+

@@ -1,0 +1,7 @@
+.IntroVriend section p{
+margin: 0;
+}
+
+.IntroVriend section > p:last-child{
+    margin: 0;
+}

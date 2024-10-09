@@ -81,10 +81,11 @@
 </section>
 
 
-
-    <section class="eenXColumn overigeVrijwillegers max-width">
-    <section>
-            <ul class="checklist">
+<section class="max-width overigeVrijwillegerTotaal max-width">
+    <h2>overige vrijwillegers</h2>
+    <section class="eenXColumn overigeVrijwillegers">
+        <section>
+            <ul class="checklist checklistRood">
                 <li>
                     <i class="fa-solid fa-check"></i>
                     <p>Het uitvoeren en promoten van werken van Handel en andere klassieke componisten.</p>
@@ -100,9 +101,15 @@
             </ul>
         </section>
         <section>
-        <p>Naast de muzikanten en dirigenten speelt een team van toegewijde vrijwilligers een cruciale rol binnen onze vereniging. Deze vrijwilligers zetten zich in voor een breed scala aan taken, van het organiseren van evenementen en administratieve ondersteuning tot het helpen bij de logistiek en public relations. Hun inzet en passie zijn onmisbaar voor het soepele verloop van de orkestactiviteiten en dragen bij aan de algehele ervaring van het publiek. Dankzij hun waardevolle bijdragen kan het orkest zijn missie om symfonische muziek toegankelijk en inspirerend te maken blijven vervullen.</p>
+            <p>Naast de muzikanten en dirigenten speelt een team van toegewijde vrijwilligers een cruciale rol binnen onze
+                vereniging. Deze vrijwilligers zetten zich in voor een breed scala aan taken, van het organiseren van
+                evenementen en administratieve ondersteuning tot het helpen bij de logistiek en public relations. Hun inzet
+                en passie zijn onmisbaar voor het soepele verloop van de orkestactiviteiten en dragen bij aan de algehele
+                ervaring van het publiek. Dankzij hun waardevolle bijdragen kan het orkest zijn missie om symfonische muziek
+                toegankelijk en inspirerend te maken blijven vervullen.</p>
         </section>
     </section>
+</section>
 
 
 

@@ -109,6 +109,7 @@ body{
     text-decoration: none;
     border-radius: 0 50px 50px 0;
     display: inline-block;
+    border: 0.2rem solid var(--Rood);
 }
 
 .btn_groen{
@@ -133,7 +134,15 @@ body{
   border: 0.2rem solid var(--Rood);
 }
 
+.btn_border.reverseBorder{
+  border-radius: 0px 50px 50px 0 ;
+}
 
+.doubleBtn{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
 
 
 /******************************************************************/
@@ -150,12 +159,12 @@ header{
     margin-right: auto;
 }
 
-/* Logo */
+
 header a img {
     height: 4.5rem;
 }
 
-/* Navigatie */
+
 header nav{
     display: flex;
     gap: 2rem;
@@ -168,13 +177,15 @@ header nav a{
   letter-spacing: 0.08rem;
 }
 
-/* Profile + Taal */
+
 header ul{
     display: flex;
     list-style-type: none;
     gap: 2rem;
     padding: 0;
 }
+
+
 
 /******************************************************************/
 /* ATF-Home /* /* ATF-Home /* /* ATF-Home /* /* ATF-Home /* /* ATF-Home /* 
@@ -391,58 +402,73 @@ input[type="checkbox"]{
 /* Footer /* /* Footer /* /* Footer /* /* Footer /* /* Footer /* 
 /******************************************************************/
 
-.footerTop{
+/* .footerTop{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex: wrap;
-}
-
-/* .footerTop{
-  align-items: center;
-  gap: 3em;
-  grid-template-columns: auto auto auto;
-  width: -moz-fit-content;
-  width: fit-content;
 } */
 
-/* Navigatie */
-.footerTop ul{
+/* .footerTop ul{
   list-style-type: none;
   padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
+} */
 
-.footerTop ul li p{
+/* .footerTop ul li p{
   color: var(--Zwart);
-}
+} */
 
-/* Logo + socials */
-.footerTop section:last-of-type{
+/* .footerTop section:last-of-type{
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
+} */
 
-/* Logo */
 .footerTop section:last-of-type img{
   width: 16rem;
 }
 
-/* socials */
-.footerTop section:last-of-type ul{
+/* .footerTop section:last-of-type ul{
   display: flex;
   justify-content: center;
   flex-direction: row;
   gap: 1rem;
+} */
+
+/* .footerTop section:last-of-type ul li p{
+  font-size: 2rem;
+} */
+
+.footerTop {
+  display: flex;
+  flex-wrap: wrap; /* Dit zorgt ervoor dat de items naar de volgende regel gaan als er niet genoeg ruimte is */
+  justify-content: space-between; /* Ruimte tussen de items */
 }
 
-/* socials ps*/
-.footerTop section:last-of-type ul li p{
-  font-size: 2rem;
+.footer-item {
+  flex: 1 1 ; /* Dit betekent dat elk item een basisbreedte van 22% heeft en kan groeien of krimpen */
+  box-sizing: border-box; /* Zorgt ervoor dat padding en borders in de breedte worden meegerekend */
+  padding: 0;
+  list-style-type: none;
+  width: fit-content;
 }
+
+/* Voor mobiele weergave */
+@media (max-width: 868px) {
+  .footer-item {
+      flex: 1 1 48%; /* Twee naast elkaar op kleinere schermen */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-item {
+      flex: 1 1 100%; /* Eén onder elkaar op de kleinste schermen */
+  }
+}
+
 
 /******************************************************************/
 /* FooterBottom /* /* FooterBottom /* /* FooterBottom /* /* FooterBottom /* 
@@ -510,8 +536,14 @@ input[type="checkbox"]{
 }
 
 @media only screen and (min-width: 168px) and (max-width: 900px){
-  .eenXColumn {
+  .eenXColumn,
+  .reverse{
     flex-direction: column;
+}
+
+.overzichtDirigenten div{
+  flex-direction: column;
+  gap: 0.5rem !important;
 }
 
 .eenXColumn section {

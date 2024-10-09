@@ -17,10 +17,10 @@
 <body>
     <header>
         <!--header-bottom-->
-        <section class="max-width">
+        <!-- <section class="max-width">
             
             <a href="#">
-                <!-- <i class="fa-solid fa-user"></i> -->
+
             </a>
             <a href="/"><img src="" alt="Logo Haendel"></a>
              <section class="menu-desktop">
@@ -44,7 +44,9 @@
                     </div>
                 </nav>
             </section>
-        </section>
+        </section> -->
+
+        
         <script>document.addEventListener("touchstart", function() {}, true);</script>
     </header>
     <main>

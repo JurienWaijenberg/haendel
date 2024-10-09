@@ -7,21 +7,6 @@
 </section>
 
 
-<section class="aankomende_concerten max-width">
-
-
-      
-
-
-
-
-
-
-
-
-
-
-
 <section class="introtekst max-width">
     <h2>Ontstaan</h2>
     <p>De Nederlandse Händelvereniging (NHV) ontstond oorspronkelijk in 1934 te Bussum onder de naam Christelijke Oratoriumvereniging ‘Bel Canto’. In het bevrijdingsjaar 1945 werd op diverse plaatsten in Nederland Händels “Messiah” in het Engels uitgevoerd, in 1946 opgevolgd door Händel’s grote bevrijdingsepos ‘Judas Maccabeus. In datzelfde jaar volgde de officiële oprichting onder de naam Nederlandse Händelvereniging. Dit laatste betekent dat in 2021 het 75 jarig bestaan van de Nederlandse Händelvereniging wordt gevierd.</p>
@@ -37,7 +22,7 @@
     </section>
 
     <section>
-        <h2>Over ons</h2>
+        <h2>Onze missie</h2>
         <ul class="checklist">
         <li>
         <i class="fa-solid fa-check"></i>
@@ -75,7 +60,7 @@
 </section>
 
 <section class="bg_transparant_lichtgroen">
-    <section class="eenXColumn reverse max-width ">
+    <section class="eenXColumn reverse max-width space">
     <section>
         <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
     </section>
@@ -88,8 +73,10 @@
     </section>
 </section>
 
-  <!-- Deze slider moet niet al bij 1200px terugspringen naar 1 img op het scherm maar bij pas bijv 800px 
-   swiper.css r.748 @mediaqueries voor de slider op homepagina, die willen we bij deze section overschrijven hoe?-->
+<section class="overzichtDirigenten max-width">
+
+<!-- Deze slider moet niet al bij 1200px terugspringen naar 1 img op het scherm maar bij pas bijv 800px 
+   swiper.css r.748 @mediaqueries voor de slider op homepagina, die willen we bij deze section overschrijven hoe? -->
 <section class="swiper mySwiper">
     <ul class="swiper-wrapper swiperDirigenten">
       <li class="swiper-slide sliderDirigenten">
@@ -111,13 +98,7 @@
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-pagination"></div>
-  </section>
-
-  <!-- <a href="#" class="btn_border"><p>Toon alle</p></a> -->
-</section>
-<section class="overzichtDirigenten max-width">
-
-
+</section> -->
     <h2>Dirigenten</h2>
     <div>
     <p>De NHV heeft tot nu toe slechts 4 vaste dirigenten gehad: oprichter Jack P. Loorij 1947-1989 (en al begonnen bij Bel Canto in 1941), Thijs Kramer (1989-2012) de Brit Andrew Wise (2012-2016), en de huidige dirigent Paul Valk. 
@@ -137,6 +118,15 @@ Paul Valk werd op 1 augustus 2021 benoemd tot de vierde vaste dirigent van de 
         <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="">
     </section>
 </section>
+
+<section class="ContactVraag max-width">
+            <h2 class="subheadingXheading">
+                <span>Mediatheek</span> <br>
+                heb je een vraag of wil
+                je meer informatie?
+            </h2>
+            <a href="#" class="btn_rood">Neem contact op</a>
+    </section>
 
 </body>
 

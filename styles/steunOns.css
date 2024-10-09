@@ -1,0 +1,33 @@
+.steunOptie {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.steun-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 kolommen */
+  gap: 3rem; /* 3rem ruimte tussen de items */
+  padding: 0;
+  list-style: none;
+}
+
+.steun-grid li {
+  width: 100%; /* Zorgt ervoor dat elk item volledig binnen zijn gridvak blijft */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.steun-grid img {
+  width: 100%; /* Zorgt ervoor dat de afbeeldingen responsief zijn */
+  height: 15rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .steun-grid {
+    grid-template-columns: 1fr; /* 1 kolom op kleine schermen */
+  }
+}

@@ -1,7 +1,7 @@
 </main>
 <footer>
 	<section class="footerTop max-width">
-		<section>
+		<section class="footer-item">
 			<h3>Repetitielocatie</h3>
 			<br>
 			<p>De Wilhelminakerk<br>
@@ -12,7 +12,7 @@
 				19:45 – 22:15 uur</p>
 		</section>
 
-		<ul>
+		<ul class="footer-item">
 			<li><a href="#">
 					<p>Concerten</p>
 				</a></li>
@@ -33,7 +33,7 @@
 				</a></li>
 		</ul>
 
-		<section>
+		<section class="footer-item">
 			<h3>Contact</h3>
 			<br>
 			<p>Nederlandse Händelvereniging <br>
@@ -46,7 +46,7 @@
 			</p>
 		</section>
 
-		<section>
+		<section class="footer-item">
 			<img src="http://haendel.local/wp-content/uploads/2024/09/handel-logo-2024.png" alt="#">
 
 			<ul>

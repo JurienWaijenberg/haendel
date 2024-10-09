@@ -1,11 +1,13 @@
 <?php get_header(); ?>
 <section class="atf bannerImg">
     <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
-    <div>
-        <h1>Concert</h1>
-        <a href="#koopKaartenScroll">Ga naar sectie 1</a>
-    </div>
 
+    <section class="TitelBannerConcert">
+        <div class="bannerConcert">
+            <h1>Concert</h1>
+            <a href="#koopKaartenScroll">Bekijk kaarten<i class="fa-solid fa-chevron-down"></i></a>
+        </div>
+    </section>
 
     <!-- swiperReviewsVacatures JS -->
     <script src="swiperReviews-vacatures-bundle.min.js"></script>
@@ -26,7 +28,8 @@
                 oratoria en cantates. Messiah werd bij de première aangekondigd als ‘Grand Musical Entertainment’.
                 Binnen een en hetzelfde koordeel komen frequent uiteenlopende stijlen en technieken aan bod.
                 Contrapuntische verwerkingen van thema’s gaan hand in hand met akkoordische declamaties van monumentale
-                allure.</p>
+                allure.
+            </p>
         </section>
 
         <section class="ConcertInfo">
@@ -163,42 +166,42 @@
     </section>
 
     <section class="max-width">
-    <section id="koopKaartenScroll" class="koopKaarten">
-        <h2>Koop kaarten</h2>
+        <section id="koopKaartenScroll" class="koopKaarten">
+            <h2>Koop kaarten</h2>
 
-        <article>
-            <ul>
-                <li>Woensdag, 11 december 2024</li>
-                <li>19:30 uur</li>
-                <li>Grote Kerk Gorinchem</li>
-            </ul>
-            <a href="#" class="btn_border">
-                <p>Bestel kaarten</p>
-            </a>
-        </article>
-        <article>
-            <ul>
-                <li>Woensdag, 11 december 2024</li>
-                <li>19:30 uur</li>
-                <li>Grote Kerk Gorinchem</li>
-            </ul>
-            <a href="#" class="btn_border">
-                <p>Bestel kaarten</p>
-            </a>
-        </article>
-        <article>
-            <ul>
-                <li>Woensdag, 11 december 2024</li>
-                <li>19:30 uur</li>
-                <li>Grote Kerk Gorinchem</li>
-            </ul>
-            <a href="#" class="btn_border">
-                <p>Bestel kaarten</p>
-            </a>
-        </article>
+            <article>
+                <ul>
+                    <li>Woensdag, 11 december 2024</li>
+                    <li>19:30 uur</li>
+                    <li>Grote Kerk Gorinchem</li>
+                </ul>
+                <a href="#" class="btn_border">
+                    <p>Bestel kaarten</p>
+                </a>
+            </article>
+            <article>
+                <ul>
+                    <li>Woensdag, 11 december 2024</li>
+                    <li>19:30 uur</li>
+                    <li>Grote Kerk Gorinchem</li>
+                </ul>
+                <a href="#" class="btn_border">
+                    <p>Bestel kaarten</p>
+                </a>
+            </article>
+            <article>
+                <ul>
+                    <li>Woensdag, 11 december 2024</li>
+                    <li>19:30 uur</li>
+                    <li>Grote Kerk Gorinchem</li>
+                </ul>
+                <a href="#" class="btn_border">
+                    <p>Bestel kaarten</p>
+                </a>
+            </article>
+        </section>
     </section>
-    </section>
-    
+
 
     <section class="swiperReview myswiperReview max-width swiperReview-css-mode">
         <h2>Dit zeggen onze klanten</h2>
@@ -286,11 +289,11 @@
     </section>
 
     <section class="ContactVraag max-width">
-            <h2>Contact <br>
-                <span>heb je een vraag of wil
-                je meer informatie?</span>
-            </h2>
-            <a href="#" class="btn_rood">Neem contact op</a>
+        <h2 class="subheadingXheading">
+            <span>Contact</span> <br>
+            heb je een vraag of wil je meer informatie?
+        </h2>
+        <a href="#" class="btn_rood">Neem contact op</a>
     </section>
 
 

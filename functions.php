@@ -14,6 +14,9 @@ function bofesto_setup(){
     wp_enqueue_style( 'gastdirigent', get_template_directory_uri() . '/styles/gastdirigent.css');
     wp_enqueue_style( 'begeleiding', get_template_directory_uri() . '/styles/begeleiding.css');
     wp_enqueue_style( 'organisatie', get_template_directory_uri() . '/styles/organisatie.css');
+    wp_enqueue_style( 'projectzanger', get_template_directory_uri() . '/styles/projectzanger.css');
+    wp_enqueue_style( 'steun-ons', get_template_directory_uri() . '/styles/steunOns.css');
+    wp_enqueue_style( 'word-vriend', get_template_directory_uri() . '/styles/wordVriend.css');
     
     
     wp_enqueue_script( "swiper", get_template_directory_uri() . '/scripts/swiper.js', NULL, '3.5.1', true);
