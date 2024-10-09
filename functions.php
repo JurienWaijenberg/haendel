@@ -6,6 +6,7 @@ function bofesto_setup(){
     wp_enqueue_style('style', get_stylesheet_uri(), NULL, microtime(), 'all');
 
     wp_enqueue_style( 'swiper', get_template_directory_uri() . '/styles/swiper.css');
+    wp_enqueue_style( 'swipeGelijk', get_template_directory_uri() . '/styles/swipeGelijk.css');
     wp_enqueue_style( 'concerten', get_template_directory_uri() . '/styles/concerten.css');
     wp_enqueue_style( 'concert', get_template_directory_uri() . '/styles/concert.css');
     wp_enqueue_style( 'swiper-review', get_template_directory_uri() . '/styles/swiper-review.css');
@@ -19,10 +20,12 @@ function bofesto_setup(){
     wp_enqueue_style( 'word-vriend', get_template_directory_uri() . '/styles/wordVriend.css');
     wp_enqueue_style( 'word-lid', get_template_directory_uri() . '/styles/wordLid.css');
     wp_enqueue_style( 'anbi', get_template_directory_uri() . '/styles/anbi.css');
+    wp_enqueue_style( 'concerthistorie', get_template_directory_uri() . '/styles/concerthistorie.css');
     
     
     wp_enqueue_script( "swiper", get_template_directory_uri() . '/scripts/swiper.js', NULL, '3.5.1', true);
     wp_enqueue_script( "swiper-review-bundle", get_template_directory_uri() . '/scripts/swiper-review.js', NULL, '3.5.1', true);
+    wp_enqueue_script( "swipeGelijk", get_template_directory_uri() . '/scripts/swipeGelijk.js', NULL, '3.5.1', true);
 
     // wp_enqueue_script("main", get_theme_file_uri('/js/main.js'), NULL, microtime(), true);
 

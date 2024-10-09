@@ -63,7 +63,7 @@
     <a href="#" class="btn_rood btnRoodLeft">Ontdek meer</a>
 </section>
 
-<section class="eenXColumn PaulIntroDropdown max-width">
+<section class="eenXColumn PaulIntroDropdown max-width space">
     <section>
         <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
     </section>

@@ -46,6 +46,22 @@
     </section>
 </section>
 
+<section class="sponsorSlider bg_transparant_lichtgroen space">
+    <section class="swipeGelijk myswipeGelijk max-width">
+        <ul class="swipeGelijk-wrapper">
+        <li class="swipeGelijk-slide"><img src="http://haendel.local/wp-content/uploads/2024/10/sponsortest.png" alt=""></li>
+        <li class="swipeGelijk-slide"><img src="http://haendel.local/wp-content/uploads/2024/09/handel-logo-2024.png" alt=""></li>
+        <li class="swipeGelijk-slide"><img src="http://haendel.local/wp-content/uploads/2024/10/sponsortest.png" alt=""></li>
+        <li class="swipeGelijk-slide"><img src="http://haendel.local/wp-content/uploads/2024/09/handel-logo-2024.png" alt=""></li>
+        <li class="swipeGelijk-slide"><img src="http://haendel.local/wp-content/uploads/2024/10/sponsortest.png" alt=""></li>
+        <li class="swipeGelijk-slide"><img src="http://haendel.local/wp-content/uploads/2024/09/handel-logo-2024.png" alt=""></li>
+        </ul>
+        <div class="swipeGelijk-button-next"></div>
+        <div class="swipeGelijk-button-prev"></div>
+        <div class="swipeGelijk-pagination"></div>
+    </section>
+</section>
+
 <section class="ContactVraag max-width">
             <h2 class="subheadingXheading">
                 <span>Contact</span> <br>

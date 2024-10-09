@@ -1,16 +1,16 @@
 /**
- * swiperReview 11.1.4
+ * swipeGelijk 11.1.14
  * Most modern mobile touch slider and framework with hardware accelerated transitions
- * https://swiperReviewjs.com
+ * https://swipeGelijkjs.com
  *
  * Copyright 2014-2024 Vladimir Kharlampidi
  *
  * Released under the MIT License
  *
- * Released on: May 30, 2024
+ * Released on: September 12, 2024
  */
 
-var swiperReview = (function () {
+var swipeGelijk = (function () {
   "use strict";
   function e(e) {
     return (
@@ -188,11 +188,11 @@ var swiperReview = (function () {
           void 0 !== r &&
             r.enumerable &&
             (c(e[a]) && c(i[a])
-              ? i[a].__swiperReview__
+              ? i[a].__swipeGelijk__
                 ? (e[a] = i[a])
                 : p(e[a], i[a])
               : !c(e[a]) && c(i[a])
-              ? ((e[a] = {}), i[a].__swiperReview__ ? (e[a] = i[a]) : p(e[a], i[a]))
+              ? ((e[a] = {}), i[a].__swipeGelijk__ ? (e[a] = i[a]) : p(e[a], i[a]))
               : (e[a] = i[a]));
         }
       }
@@ -204,7 +204,7 @@ var swiperReview = (function () {
     e.style.setProperty(t, s);
   }
   function m(e) {
-    let { swiperReview: t, targetPosition: s, side: a } = e;
+    let { swipeGelijk: t, targetPosition: s, side: a } = e;
     const i = r(),
       n = -t.translate;
     let l,
@@ -235,14 +235,17 @@ var swiperReview = (function () {
   }
   function h(e) {
     return (
-      e.querySelector(".swiperReview-slide-transform") ||
-      (e.shadowRoot && e.shadowRoot.querySelector(".swiperReview-slide-transform")) ||
+      e.querySelector(".swipeGelijk-slide-transform") ||
+      (e.shadowRoot && e.shadowRoot.querySelector(".swipeGelijk-slide-transform")) ||
       e
     );
   }
   function f(e, t) {
+    void 0 === t && (t = "");
+    const s = [...e.children];
     return (
-      void 0 === t && (t = ""), [...e.children].filter((e) => e.matches(t))
+      e instanceof HTMLSlotElement && s.push(...e.assignedElements()),
+      t ? s.filter((e) => e.matches(t)) : s
     );
   }
   function g(e) {
@@ -311,11 +314,20 @@ var swiperReview = (function () {
   function T(e) {
     return (Array.isArray(e) ? e : [e]).filter((e) => !!e);
   }
-  let M, C, P;
-  function L() {
+  function M(e) {
+    return (t) =>
+      Math.abs(t) > 0 &&
+      e.browser &&
+      e.browser.need3dFix &&
+      Math.abs(t) % 90 == 0
+        ? t + 0.001
+        : t;
+  }
+  let C, P, L;
+  function I() {
     return (
-      M ||
-        (M = (function () {
+      C ||
+        (C = (function () {
           const e = r(),
             t = a();
           return {
@@ -329,16 +341,16 @@ var swiperReview = (function () {
             ),
           };
         })()),
-      M
+      C
     );
   }
-  function I(e) {
+  function z(e) {
     return (
       void 0 === e && (e = {}),
-      C ||
-        (C = (function (e) {
+      P ||
+        (P = (function (e) {
           let { userAgent: t } = void 0 === e ? {} : e;
-          const s = L(),
+          const s = I(),
             a = r(),
             i = a.navigator.platform,
             n = t || a.navigator.userAgent,
@@ -377,15 +389,15 @@ var swiperReview = (function () {
             l
           );
         })(e)),
-      C
+      P
     );
   }
   function A() {
     return (
-      P ||
-        (P = (function () {
+      L ||
+        (L = (function () {
           const e = r(),
-            t = I();
+            t = z();
           let s = !1;
           function a() {
             const t = e.navigator.userAgent.toLowerCase();
@@ -417,10 +429,10 @@ var swiperReview = (function () {
             isWebView: i,
           };
         })()),
-      P
+      L
     );
   }
-  var z = {
+  var $ = {
     on(e, t, s) {
       const a = this;
       if (!a.eventsListeners || a.destroyed) return a;
@@ -507,20 +519,20 @@ var swiperReview = (function () {
       );
     },
   };
-  const $ = (e, t, s) => {
-    t && !e.classList.contains(s)
-      ? e.classList.add(s)
-      : !t && e.classList.contains(s) && e.classList.remove(s);
-  };
   const k = (e, t, s) => {
     t && !e.classList.contains(s)
       ? e.classList.add(s)
       : !t && e.classList.contains(s) && e.classList.remove(s);
   };
-  const O = (e, t) => {
+  const O = (e, t, s) => {
+    t && !e.classList.contains(s)
+      ? e.classList.add(s)
+      : !t && e.classList.contains(s) && e.classList.remove(s);
+  };
+  const D = (e, t) => {
       if (!e || e.destroyed || !e.params) return;
       const s = t.closest(
-        e.isElement ? "swiperReview-slide" : `.${e.params.slideClass}`
+        e.isElement ? "swipeGelijk-slide" : `.${e.params.slideClass}`
       );
       if (s) {
         let t = s.querySelector(`.${e.params.lazyPreloaderClass}`);
@@ -540,12 +552,12 @@ var swiperReview = (function () {
           t && t.remove();
       }
     },
-    D = (e, t) => {
+    G = (e, t) => {
       if (!e.slides[t]) return;
       const s = e.slides[t].querySelector('[loading="lazy"]');
       s && s.removeAttribute("loading");
     },
-    G = (e) => {
+    H = (e) => {
       if (!e || e.destroyed || !e.params) return;
       let t = e.params.lazyPreloadPrevNext;
       const s = e.slides.length;
@@ -562,7 +574,7 @@ var swiperReview = (function () {
         return (
           r.push(...Array.from({ length: t }).map((e, t) => s + a + t)),
           void e.slides.forEach((t, s) => {
-            r.includes(t.column) && D(e, s);
+            r.includes(t.column) && G(e, s);
           })
         );
       }
@@ -570,13 +582,13 @@ var swiperReview = (function () {
       if (e.params.rewind || e.params.loop)
         for (let a = i - t; a <= r + t; a += 1) {
           const t = ((a % s) + s) % s;
-          (t < i || t > r) && D(e, t);
+          (t < i || t > r) && G(e, t);
         }
       else
         for (let a = Math.max(i - t, 0); a <= Math.min(r + t, s - 1); a += 1)
-          a !== i && (a > r || a < i) && D(e, a);
+          a !== i && (a > r || a < i) && G(e, a);
     };
-  var H = {
+  var B = {
     updateSize: function () {
       const e = this;
       let t, s;
@@ -622,7 +634,7 @@ var swiperReview = (function () {
         } = e,
         o = e.virtual && s.virtual.enabled,
         d = o ? e.virtual.slides.length : e.slides.length,
-        c = f(i, `.${e.params.slideClass}, swiperReview-slide`),
+        c = f(i, `.${e.params.slideClass}, swipeGelijk-slide`),
         p = o ? e.virtual.slides.length : c.length;
       let m = [];
       const h = [],
@@ -649,8 +661,8 @@ var swiperReview = (function () {
         }),
         s.centeredSlides &&
           s.cssMode &&
-          (u(a, "--swiperReview-centered-offset-before", ""),
-          u(a, "--swiperReview-centered-offset-after", ""));
+          (u(a, "--swipeGelijk-centered-offset-before", ""),
+          u(a, "--swipeGelijk-centered-offset-after", ""));
       const P = s.grid && s.grid.rows > 1 && e.grid;
       let L;
       P ? e.grid.initSlides(c) : e.grid && e.grid.unsetSlides();
@@ -699,7 +711,7 @@ var swiperReview = (function () {
             (L = (r - (s.slidesPerView - 1) * x) / s.slidesPerView),
               s.roundLengths && (L = Math.floor(L)),
               c[a] && (c[a].style[e.getDirectionLabel("width")] = `${L}px`);
-          c[a] && (c[a].swiperReviewSlideSize = L),
+          c[a] && (c[a].swipeGelijkSlideSize = L),
             g.push(L),
             s.centeredSlides
               ? ((T = T + L / 2 + M / 2 + x),
@@ -777,7 +789,7 @@ var swiperReview = (function () {
           e += t + (x || 0);
         }),
           (e -= x);
-        const t = e - r;
+        const t = e > r ? e - r : 0;
         m = m.map((e) => (e <= 0 ? -v : e > t ? t + w : e));
       }
       if (s.centerInsufficientSlides) {
@@ -806,10 +818,10 @@ var swiperReview = (function () {
         }),
         s.centeredSlides && s.cssMode && !s.centeredSlidesBounds)
       ) {
-        u(a, "--swiperReview-centered-offset-before", -m[0] + "px"),
+        u(a, "--swipeGelijk-centered-offset-before", -m[0] + "px"),
           u(
             a,
-            "--swiperReview-centered-offset-after",
+            "--swipeGelijk-centered-offset-after",
             e.size / 2 - g[g.length - 1] / 2 + "px"
           );
         const t = -e.snapGrid[0],
@@ -872,7 +884,7 @@ var swiperReview = (function () {
             : e.wrapperEl.offsetTop
           : 0;
       for (let a = 0; a < t.length; a += 1)
-        t[a].swiperReviewSlideOffset =
+        t[a].swipeGelijkSlideOffset =
           (e.isHorizontal() ? t[a].offsetLeft : t[a].offsetTop) -
           s -
           e.cssOverflowAdjustment();
@@ -883,7 +895,7 @@ var swiperReview = (function () {
         s = t.params,
         { slides: a, rtlTranslate: i, snapGrid: r } = t;
       if (0 === a.length) return;
-      void 0 === a[0].swiperReviewSlideOffset && t.updateSlidesOffset();
+      void 0 === a[0].swipeGelijkSlideOffset && t.updateSlidesOffset();
       let n = -e;
       i && (n = e), (t.visibleSlidesIndexes = []), (t.visibleSlides = []);
       let l = s.spaceBetween;
@@ -892,14 +904,14 @@ var swiperReview = (function () {
         : "string" == typeof l && (l = parseFloat(l));
       for (let e = 0; e < a.length; e += 1) {
         const o = a[e];
-        let d = o.swiperReviewSlideOffset;
-        s.cssMode && s.centeredSlides && (d -= a[0].swiperReviewSlideOffset);
+        let d = o.swipeGelijkSlideOffset;
+        s.cssMode && s.centeredSlides && (d -= a[0].swipeGelijkSlideOffset);
         const c =
             (n + (s.centeredSlides ? t.minTranslate() : 0) - d) /
-            (o.swiperReviewSlideSize + l),
+            (o.swipeGelijkSlideSize + l),
           p =
             (n - r[0] + (s.centeredSlides ? t.minTranslate() : 0) - d) /
-            (o.swiperReviewSlideSize + l),
+            (o.swipeGelijkSlideSize + l),
           u = -(n - d),
           m = u + t.slidesSizesGrid[e],
           h = u >= 0 && u <= t.size - t.slidesSizesGrid[e],
@@ -908,8 +920,8 @@ var swiperReview = (function () {
             (m > 1 && m <= t.size) ||
             (u <= 0 && m >= t.size);
         f && (t.visibleSlides.push(o), t.visibleSlidesIndexes.push(e)),
-          $(o, f, s.slideVisibleClass),
-          $(o, h, s.slideFullyVisibleClass),
+          k(o, f, s.slideVisibleClass),
+          k(o, h, s.slideFullyVisibleClass),
           (o.progress = i ? -c : c),
           (o.originalProgress = i ? -p : p);
       }
@@ -959,15 +971,15 @@ var swiperReview = (function () {
         { slides: t, params: s, slidesEl: a, activeIndex: i } = e,
         r = e.virtual && s.virtual.enabled,
         n = e.grid && s.grid && s.grid.rows > 1,
-        l = (e) => f(a, `.${s.slideClass}${e}, swiperReview-slide${e}`)[0];
+        l = (e) => f(a, `.${s.slideClass}${e}, swipeGelijk-slide${e}`)[0];
       let o, d, c;
       if (r)
         if (s.loop) {
           let t = i - e.virtual.slidesBefore;
           t < 0 && (t = e.virtual.slides.length + t),
             t >= e.virtual.slides.length && (t -= e.virtual.slides.length),
-            (o = l(`[data-swiperReview-slide-index="${t}"]`));
-        } else o = l(`[data-swiperReview-slide-index="${i}"]`);
+            (o = l(`[data-swipeGelijk-slide-index="${t}"]`));
+        } else o = l(`[data-swipeGelijk-slide-index="${i}"]`);
       else
         n
           ? ((o = t.filter((e) => e.column === i)[0]),
@@ -983,7 +995,7 @@ var swiperReview = (function () {
               t ? a.matches(t) && s.push(a) : s.push(a), (e = a);
             }
             return s;
-          })(o, `.${s.slideClass}, swiperReview-slide`)[0]),
+          })(o, `.${s.slideClass}, swipeGelijk-slide`)[0]),
           s.loop && !c && (c = t[0]),
           (d = (function (e, t) {
             const s = [];
@@ -992,12 +1004,12 @@ var swiperReview = (function () {
               t ? a.matches(t) && s.push(a) : s.push(a), (e = a);
             }
             return s;
-          })(o, `.${s.slideClass}, swiperReview-slide`)[0]),
+          })(o, `.${s.slideClass}, swipeGelijk-slide`)[0]),
           s.loop && 0 === !d && (d = t[t.length - 1]))),
         t.forEach((e) => {
-          k(e, e === o, s.slideActiveClass),
-            k(e, e === c, s.slideNextClass),
-            k(e, e === d, s.slidePrevClass);
+          O(e, e === o, s.slideActiveClass),
+            O(e, e === c, s.slideNextClass),
+            O(e, e === d, s.slidePrevClass);
         }),
         e.emitSlidesClasses();
     },
@@ -1053,11 +1065,11 @@ var swiperReview = (function () {
       if (t.virtual && i.virtual.enabled && i.loop) u = c(d);
       else if (p) {
         const e = t.slides.filter((e) => e.column === d)[0];
-        let s = parseInt(e.getAttribute("data-swiperReview-slide-index"), 10);
+        let s = parseInt(e.getAttribute("data-swipeGelijk-slide-index"), 10);
         Number.isNaN(s) && (s = Math.max(t.slides.indexOf(e), 0)),
           (u = Math.floor(s / i.grid.rows));
       } else if (t.slides[d]) {
-        const e = t.slides[d].getAttribute("data-swiperReview-slide-index");
+        const e = t.slides[d].getAttribute("data-swipeGelijk-slide-index");
         u = e ? parseInt(e, 10) : d;
       } else u = d;
       Object.assign(t, {
@@ -1068,7 +1080,7 @@ var swiperReview = (function () {
         previousIndex: r,
         activeIndex: d,
       }),
-        t.initialized && G(t),
+        t.initialized && H(t),
         t.emit("activeIndexChange"),
         t.emit("snapIndexChange"),
         (t.initialized || t.params.runCallbacksOnInit) &&
@@ -1077,7 +1089,7 @@ var swiperReview = (function () {
     updateClickedSlide: function (e, t) {
       const s = this,
         a = s.params;
-      let i = e.closest(`.${a.slideClass}, swiperReview-slide`);
+      let i = e.closest(`.${a.slideClass}, swipeGelijk-slide`);
       !i &&
         s.isElement &&
         t &&
@@ -1086,7 +1098,7 @@ var swiperReview = (function () {
         [...t.slice(t.indexOf(e) + 1, t.length)].forEach((e) => {
           !i &&
             e.matches &&
-            e.matches(`.${a.slideClass}, swiperReview-slide`) &&
+            e.matches(`.${a.slideClass}, swipeGelijk-slide`) &&
             (i = e);
         });
       let r,
@@ -1102,7 +1114,7 @@ var swiperReview = (function () {
       (s.clickedSlide = i),
         s.virtual && s.params.virtual.enabled
           ? (s.clickedIndex = parseInt(
-              i.getAttribute("data-swiperReview-slide-index"),
+              i.getAttribute("data-swipeGelijk-slide-index"),
               10
             ))
           : (s.clickedIndex = r),
@@ -1172,7 +1184,7 @@ var swiperReview = (function () {
         else {
           if (!r.support.smoothScroll)
             return (
-              m({ swiperReview: r, targetPosition: -c, side: e ? "left" : "top" }), !0
+              m({ swipeGelijk: r, targetPosition: -c, side: e ? "left" : "top" }), !0
             );
           l.scrollTo({ [e ? "left" : "top"]: -c, behavior: "smooth" });
         }
@@ -1214,7 +1226,7 @@ var swiperReview = (function () {
     },
   };
   function X(e) {
-    let { swiperReview: t, runCallbacks: s, direction: a, step: i } = e;
+    let { swipeGelijk: t, runCallbacks: s, direction: a, step: i } = e;
     const { activeIndex: r, previousIndex: n } = t;
     let l = a;
     if (
@@ -1229,7 +1241,7 @@ var swiperReview = (function () {
           : t.emit(`slidePrevTransition${i}`);
     }
   }
-  var B = {
+  var Y = {
     slideTo: function (e, t, s, a, i) {
       void 0 === e && (e = 0),
         void 0 === s && (s = !0),
@@ -1286,12 +1298,11 @@ var swiperReview = (function () {
           return !1;
       }
       let b;
-      if (
-        (n !== (c || 0) && s && r.emit("beforeSlideChangeStart"),
+      n !== (c || 0) && s && r.emit("beforeSlideChangeStart"),
         r.updateProgress(w),
-        (b = n > p ? "next" : n < p ? "prev" : "reset"),
-        (u && -w === r.translate) || (!u && w === r.translate))
-      )
+        (b = n > p ? "next" : n < p ? "prev" : "reset");
+      const y = r.virtual && r.params.virtual.enabled;
+      if (!(y && i) && ((u && -w === r.translate) || (!u && w === r.translate)))
         return (
           r.updateActiveIndex(n),
           l.autoHeight && r.updateAutoHeight(),
@@ -1303,26 +1314,25 @@ var swiperReview = (function () {
       if (l.cssMode) {
         const e = r.isHorizontal(),
           s = u ? w : -w;
-        if (0 === t) {
-          const t = r.virtual && r.params.virtual.enabled;
-          t &&
+        if (0 === t)
+          y &&
             ((r.wrapperEl.style.scrollSnapType = "none"),
             (r._immediateVirtual = !0)),
-            t && !r._cssModeVirtualInitialSet && r.params.initialSlide > 0
+            y && !r._cssModeVirtualInitialSet && r.params.initialSlide > 0
               ? ((r._cssModeVirtualInitialSet = !0),
                 requestAnimationFrame(() => {
                   h[e ? "scrollLeft" : "scrollTop"] = s;
                 }))
               : (h[e ? "scrollLeft" : "scrollTop"] = s),
-            t &&
+            y &&
               requestAnimationFrame(() => {
                 (r.wrapperEl.style.scrollSnapType = ""),
                   (r._immediateVirtual = !1);
               });
-        } else {
+        else {
           if (!r.support.smoothScroll)
             return (
-              m({ swiperReview: r, targetPosition: s, side: e ? "left" : "top" }), !0
+              m({ swipeGelijk: r, targetPosition: s, side: e ? "left" : "top" }), !0
             );
           h.scrollTo({ [e ? "left" : "top"]: s, behavior: "smooth" });
         }
@@ -1379,7 +1389,7 @@ var swiperReview = (function () {
           if (r) {
             const t = n * i.params.grid.rows;
             e = i.slides.filter(
-              (e) => 1 * e.getAttribute("data-swiperReview-slide-index") === t
+              (e) => 1 * e.getAttribute("data-swipeGelijk-slide-index") === t
             )[0].column;
           } else e = i.getSlideIndexByData(n);
           const t = r
@@ -1414,7 +1424,7 @@ var swiperReview = (function () {
           if (r) {
             const e = n * i.params.grid.rows;
             n = i.slides.filter(
-              (t) => 1 * t.getAttribute("data-swiperReview-slide-index") === e
+              (t) => 1 * t.getAttribute("data-swipeGelijk-slide-index") === e
             )[0].column;
           } else n = i.getSlideIndexByData(n);
         }
@@ -1554,11 +1564,11 @@ var swiperReview = (function () {
             : t.slidesPerView;
       let i,
         r = e.clickedIndex;
-      const n = e.isElement ? "swiperReview-slide" : `.${t.slideClass}`;
+      const n = e.isElement ? "swipeGelijk-slide" : `.${t.slideClass}`;
       if (t.loop) {
         if (e.animating) return;
         (i = parseInt(
-          e.clickedSlide.getAttribute("data-swiperReview-slide-index"),
+          e.clickedSlide.getAttribute("data-swipeGelijk-slide-index"),
           10
         )),
           t.centeredSlides
@@ -1566,7 +1576,7 @@ var swiperReview = (function () {
               r > e.slides.length - e.loopedSlides + a / 2
               ? (e.loopFix(),
                 (r = e.getSlideIndex(
-                  f(s, `${n}[data-swiperReview-slide-index="${i}"]`)[0]
+                  f(s, `${n}[data-swipeGelijk-slide-index="${i}"]`)[0]
                 )),
                 l(() => {
                   e.slideTo(r);
@@ -1575,7 +1585,7 @@ var swiperReview = (function () {
             : r > e.slides.length - a
             ? (e.loopFix(),
               (r = e.getSlideIndex(
-                f(s, `${n}[data-swiperReview-slide-index="${i}"]`)[0]
+                f(s, `${n}[data-swipeGelijk-slide-index="${i}"]`)[0]
               )),
               l(() => {
                 e.slideTo(r);
@@ -1584,14 +1594,14 @@ var swiperReview = (function () {
       } else e.slideTo(r);
     },
   };
-  var Y = {
+  var R = {
     loopCreate: function (e) {
       const t = this,
         { params: s, slidesEl: a } = t;
       if (!s.loop || (t.virtual && t.params.virtual.enabled)) return;
       const i = () => {
-          f(a, `.${s.slideClass}, swiperReview-slide`).forEach((e, t) => {
-            e.setAttribute("data-swiperReview-slide-index", t);
+          f(a, `.${s.slideClass}, swipeGelijk-slide`).forEach((e, t) => {
+            e.setAttribute("data-swipeGelijk-slide-index", t);
           });
         },
         r = t.grid && s.grid && s.grid.rows > 1,
@@ -1601,7 +1611,7 @@ var swiperReview = (function () {
         d = (e) => {
           for (let a = 0; a < e; a += 1) {
             const e = t.isElement
-              ? v("swiperReview-slide", [s.slideBlankClass])
+              ? v("swipeGelijk-slide", [s.slideBlankClass])
               : v("div", [s.slideClass, s.slideBlankClass]);
             t.slidesEl.append(e);
           }
@@ -1611,7 +1621,7 @@ var swiperReview = (function () {
           d(n - (t.slides.length % n)), t.recalcSlides(), t.updateSlides();
         } else
           g(
-            "swiperReview Loop Warning: The number of slides is not even to slidesPerGroup, loop mode may not function properly. You need to add more slides (or make duplicates, or empty slides)"
+            "swipeGelijk Loop Warning: The number of slides is not even to slidesPerGroup, loop mode may not function properly. You need to add more slides (or make duplicates, or empty slides)"
           );
         i();
       } else if (o) {
@@ -1621,7 +1631,7 @@ var swiperReview = (function () {
             t.updateSlides();
         } else
           g(
-            "swiperReview Loop Warning: The number of slides is not even to grid.rows, loop mode may not function properly. You need to add more slides (or make duplicates, or empty slides)"
+            "swipeGelijk Loop Warning: The number of slides is not even to grid.rows, loop mode may not function properly. You need to add more slides (or make duplicates, or empty slides)"
           );
         i();
       } else i();
@@ -1681,12 +1691,12 @@ var swiperReview = (function () {
       const b = o.grid && m.grid && m.grid.rows > 1;
       d.length < f + w
         ? g(
-            "swiperReview Loop Warning: The number of slides is not enough for loop mode, it will be disabled and not function properly. You need to add more slides (or make duplicates) or lower the values of slidesPerView and slidesPerGroup parameters"
+            "swipeGelijk Loop Warning: The number of slides is not enough for loop mode, it will be disabled and not function properly. You need to add more slides (or make duplicates) or lower the values of slidesPerView and slidesPerGroup parameters"
           )
         : b &&
           "row" === m.grid.fill &&
           g(
-            "swiperReview Loop Warning: Loop mode is not compatible with grid.fill = `row`"
+            "swipeGelijk Loop Warning: Loop mode is not compatible with grid.fill = `row`"
           );
       const y = [],
         E = [];
@@ -1730,15 +1740,15 @@ var swiperReview = (function () {
         }),
         T &&
           y.forEach((e) => {
-            (d[e].swiperReviewLoopMoveDOM = !0),
+            (d[e].swipeGelijkLoopMoveDOM = !0),
               u.prepend(d[e]),
-              (d[e].swiperReviewLoopMoveDOM = !1);
+              (d[e].swipeGelijkLoopMoveDOM = !1);
           }),
         S &&
           E.forEach((e) => {
-            (d[e].swiperReviewLoopMoveDOM = !0),
+            (d[e].swipeGelijkLoopMoveDOM = !0),
               u.append(d[e]),
-              (d[e].swiperReviewLoopMoveDOM = !1);
+              (d[e].swipeGelijkLoopMoveDOM = !1);
           }),
         o.recalcSlides(),
         "auto" === m.slidesPerView
@@ -1824,13 +1834,13 @@ var swiperReview = (function () {
       const a = [];
       e.slides.forEach((e) => {
         const t =
-          void 0 === e.swiperReviewSlideIndex
-            ? 1 * e.getAttribute("data-swiperReview-slide-index")
-            : e.swiperReviewSlideIndex;
+          void 0 === e.swipeGelijkSlideIndex
+            ? 1 * e.getAttribute("data-swipeGelijk-slide-index")
+            : e.swipeGelijkSlideIndex;
         a[t] = e;
       }),
         e.slides.forEach((e) => {
-          e.removeAttribute("data-swiperReview-slide-index");
+          e.removeAttribute("data-swipeGelijk-slide-index");
         }),
         a.forEach((e) => {
           s.append(e);
@@ -1839,7 +1849,7 @@ var swiperReview = (function () {
         e.slideTo(e.realIndex, 0);
     },
   };
-  function R(e, t, s) {
+  function q(e, t, s) {
     const a = r(),
       { params: i } = e,
       n = i.edgeSwipeDetection,
@@ -1863,14 +1873,23 @@ var swiperReview = (function () {
       "touchstart" === i.type &&
         1 === i.targetTouches.length &&
         (n.touchId = i.targetTouches[0].identifier);
-    if ("touchstart" === i.type) return void R(t, i, i.targetTouches[0].pageX);
+    if ("touchstart" === i.type) return void q(t, i, i.targetTouches[0].pageX);
     const { params: l, touches: d, enabled: c } = t;
     if (!c) return;
     if (!l.simulateTouch && "mouse" === i.pointerType) return;
     if (t.animating && l.preventInteractionOnTransition) return;
     !t.animating && l.cssMode && l.loop && t.loopFix();
     let p = i.target;
-    if ("wrapper" === l.touchEventsTarget && !t.wrapperEl.contains(p)) return;
+    if (
+      "wrapper" === l.touchEventsTarget &&
+      !(function (e, t) {
+        const s = t.contains(e);
+        if (!s && t instanceof HTMLSlotElement)
+          return [...t.assignedElements()].includes(e);
+        return s;
+      })(p, t.wrapperEl)
+    )
+      return;
     if ("which" in i && 3 === i.which) return;
     if ("button" in i && i.button > 0) return;
     if (n.isTouched && n.isMoved) return;
@@ -1902,7 +1921,7 @@ var swiperReview = (function () {
     (d.currentX = i.pageX), (d.currentY = i.pageY);
     const g = d.currentX,
       v = d.currentY;
-    if (!R(t, i, g)) return;
+    if (!q(t, i, g)) return;
     Object.assign(n, {
       isTouched: !0,
       isMoved: !1,
@@ -1923,6 +1942,8 @@ var swiperReview = (function () {
       s.activeElement &&
         s.activeElement.matches(n.focusableElements) &&
         s.activeElement !== p &&
+        ("mouse" === i.pointerType ||
+          ("mouse" !== i.pointerType && !p.matches(n.focusableElements))) &&
         s.activeElement.blur();
     const b = w && t.allowTouchMove && l.touchStartPreventDefault;
     (!l.touchStartForcePreventDefault && !b) ||
@@ -1936,7 +1957,7 @@ var swiperReview = (function () {
         t.freeMode.onTouchStart(),
       t.emit("touchStart", i);
   }
-  function q(e) {
+  function V(e) {
     const t = a(),
       s = this,
       i = s.touchEventsData,
@@ -1966,7 +1987,7 @@ var swiperReview = (function () {
       );
     const u = c.pageX,
       m = c.pageY;
-    if (p.preventedByNestedswiperReview) return (n.startX = u), void (n.startY = m);
+    if (p.preventedByNestedswipeGelijk) return (n.startX = u), void (n.startY = m);
     if (!s.allowTouchMove)
       return (
         p.target.matches(i.focusableElements) || (s.allowClick = !1),
@@ -1989,9 +2010,14 @@ var swiperReview = (function () {
       )
         return;
     if (
+      (t.activeElement &&
+        t.activeElement.matches(i.focusableElements) &&
+        t.activeElement !== p.target &&
+        "mouse" !== p.pointerType &&
+        t.activeElement.blur(),
       t.activeElement &&
-      p.target === t.activeElement &&
-      p.target.matches(i.focusableElements)
+        p.target === t.activeElement &&
+        p.target.matches(i.focusableElements))
     )
       return (i.isMoved = !0), void (s.allowClick = !1);
     i.allowTouchCallbacks && s.emit("touchMove", p),
@@ -2053,7 +2079,7 @@ var swiperReview = (function () {
         const e = new window.CustomEvent("transitionend", {
           bubbles: !0,
           cancelable: !0,
-          detail: { byswiperReviewTouchMove: !0 },
+          detail: { byswipeGelijkTouchMove: !0 },
         });
         s.wrapperEl.dispatchEvent(e);
       }
@@ -2096,7 +2122,14 @@ var swiperReview = (function () {
             i.allowThresholdMove &&
             i.currentTranslate >
               (r.centeredSlides
-                ? s.minTranslate() - s.slidesSizesGrid[s.activeIndex + 1]
+                ? s.minTranslate() -
+                  s.slidesSizesGrid[s.activeIndex + 1] -
+                  ("auto" !== r.slidesPerView &&
+                  s.slides.length - r.slidesPerView >= 2
+                    ? s.slidesSizesGrid[s.activeIndex + 1] +
+                      s.params.spaceBetween
+                    : 0) -
+                  s.params.spaceBetween
                 : s.minTranslate()) &&
             s.loopFix({
               direction: "prev",
@@ -2117,7 +2150,13 @@ var swiperReview = (function () {
             i.currentTranslate <
               (r.centeredSlides
                 ? s.maxTranslate() +
-                  s.slidesSizesGrid[s.slidesSizesGrid.length - 1]
+                  s.slidesSizesGrid[s.slidesSizesGrid.length - 1] +
+                  s.params.spaceBetween +
+                  ("auto" !== r.slidesPerView &&
+                  s.slides.length - r.slidesPerView >= 2
+                    ? s.slidesSizesGrid[s.slidesSizesGrid.length - 1] +
+                      s.params.spaceBetween
+                    : 0)
                 : s.maxTranslate()) &&
             s.loopFix({
               direction: "next",
@@ -2135,7 +2174,7 @@ var swiperReview = (function () {
                 s.maxTranslate() +
                 1 -
                 (s.maxTranslate() - i.startTranslate - g) ** x))),
-      E && (p.preventedByNestedswiperReview = !0),
+      E && (p.preventedByNestedswipeGelijk = !0),
       !s.allowSlideNext &&
         "next" === s.swipeDirection &&
         i.currentTranslate < i.startTranslate &&
@@ -2174,7 +2213,7 @@ var swiperReview = (function () {
       s.updateProgress(i.currentTranslate),
       s.setTranslate(i.currentTranslate));
   }
-  function V(e) {
+  function _(e) {
     const t = this,
       s = t.touchEventsData;
     let a,
@@ -2316,7 +2355,7 @@ var swiperReview = (function () {
           "prev" === t.swipeDirection && t.slideTo(null !== b ? b : g));
     }
   }
-  function _() {
+  function W() {
     const e = this,
       { params: t, el: s } = e;
     if (s && 0 === s.offsetWidth) return;
@@ -2352,7 +2391,7 @@ var swiperReview = (function () {
       (e.allowSlideNext = a),
       e.params.watchOverflow && r !== e.snapGrid && e.checkOverflow();
   }
-  function W(e) {
+  function j(e) {
     const t = this;
     t.enabled &&
       (t.allowClick ||
@@ -2361,7 +2400,7 @@ var swiperReview = (function () {
           t.animating &&
           (e.stopPropagation(), e.stopImmediatePropagation())));
   }
-  function j() {
+  function U() {
     const e = this,
       { wrapperEl: t, rtlTranslate: s, enabled: a } = e;
     if (!a) return;
@@ -2378,20 +2417,20 @@ var swiperReview = (function () {
       i !== e.progress && e.updateProgress(s ? -e.translate : e.translate),
       e.emit("setTranslate", e.translate, !1);
   }
-  function U(e) {
+  function K(e) {
     const t = this;
-    O(t, e.target),
+    D(t, e.target),
       t.params.cssMode ||
         ("auto" !== t.params.slidesPerView && !t.params.autoHeight) ||
         t.update();
   }
-  function K() {
+  function Z() {
     const e = this;
     e.documentTouchHandlerProceeded ||
       ((e.documentTouchHandlerProceeded = !0),
       e.params.touchReleaseOnEdges && (e.el.style.touchAction = "auto"));
   }
-  const Z = (e, t) => {
+  const Q = (e, t) => {
     const s = a(),
       { params: i, el: r, wrapperEl: n, device: l } = e,
       o = !!i.nested,
@@ -2419,18 +2458,18 @@ var swiperReview = (function () {
             l.ios || l.android
               ? "resize orientationchange observerUpdate"
               : "resize observerUpdate",
-            _,
+            W,
             !0
           )
-        : e[c]("observerUpdate", _, !0),
+        : e[c]("observerUpdate", W, !0),
       r[d]("load", e.onLoad, { capture: !0 }));
   };
-  const Q = (e, t) => e.grid && t.grid && t.grid.rows > 1;
-  var J = {
+  const J = (e, t) => e.grid && t.grid && t.grid.rows > 1;
+  var ee = {
     init: !0,
     direction: "horizontal",
     oneWayMovement: !1,
-    swiperReviewElementNodeName: "swiperReview-CONTAINER",
+    swipeGelijkElementNodeName: "swipeGelijk-CONTAINER",
     touchEventsTarget: "wrapper",
     initialSlide: 0,
     speed: 300,
@@ -2439,7 +2478,7 @@ var swiperReview = (function () {
     resizeObserver: !0,
     nested: !1,
     createElements: !1,
-    eventsPrefix: "swiperReview",
+    eventsPrefix: "swipeGelijk",
     enabled: !0,
     focusableElements: "input, select, option, textarea, button, video, label",
     width: null,
@@ -2499,25 +2538,25 @@ var swiperReview = (function () {
     allowSlideNext: !0,
     swipeHandler: null,
     noSwiping: !0,
-    noSwipingClass: "swiperReview-no-swiping",
+    noSwipingClass: "swipeGelijk-no-swiping",
     noSwipingSelector: null,
     passiveListeners: !0,
     maxBackfaceHiddenSlides: 10,
-    containerModifierClass: "swiperReview-",
-    slideClass: "swiperReview-slide",
-    slideBlankClass: "swiperReview-slide-blank",
-    slideActiveClass: "swiperReview-slide-active",
-    slideVisibleClass: "swiperReview-slide-visible",
-    slideFullyVisibleClass: "swiperReview-slide-fully-visible",
-    slideNextClass: "swiperReview-slide-next",
-    slidePrevClass: "swiperReview-slide-prev",
-    wrapperClass: "swiperReview-wrapper",
-    lazyPreloaderClass: "swiperReview-lazy-preloader",
+    containerModifierClass: "swipeGelijk-",
+    slideClass: "swipeGelijk-slide",
+    slideBlankClass: "swipeGelijk-slide-blank",
+    slideActiveClass: "swipeGelijk-slide-active",
+    slideVisibleClass: "swipeGelijk-slide-visible",
+    slideFullyVisibleClass: "swipeGelijk-slide-fully-visible",
+    slideNextClass: "swipeGelijk-slide-next",
+    slidePrevClass: "swipeGelijk-slide-prev",
+    wrapperClass: "swipeGelijk-wrapper",
+    lazyPreloaderClass: "swipeGelijk-lazy-preloader",
     lazyPreloadPrevNext: 0,
     runCallbacksOnInit: !0,
     _emitClasses: !1,
   };
-  function ee(e, t) {
+  function te(e, t) {
     return function (s) {
       void 0 === s && (s = {});
       const a = Object.keys(s)[0],
@@ -2545,9 +2584,9 @@ var swiperReview = (function () {
         : p(t, s);
     };
   }
-  const te = {
-      eventsEmitter: z,
-      update: H,
+  const se = {
+      eventsEmitter: $,
+      update: B,
       translate: N,
       transition: {
         setTransition: function (e, t) {
@@ -2563,7 +2602,7 @@ var swiperReview = (function () {
             { params: a } = s;
           a.cssMode ||
             (a.autoHeight && s.updateAutoHeight(),
-            X({ swiperReview: s, runCallbacks: e, direction: t, step: "Start" }));
+            X({ swipeGelijk: s, runCallbacks: e, direction: t, step: "Start" }));
         },
         transitionEnd: function (e, t) {
           void 0 === e && (e = !0);
@@ -2572,11 +2611,11 @@ var swiperReview = (function () {
           (s.animating = !1),
             a.cssMode ||
               (s.setTransition(0),
-              X({ swiperReview: s, runCallbacks: e, direction: t, step: "End" }));
+              X({ swipeGelijk: s, runCallbacks: e, direction: t, step: "End" }));
         },
       },
-      slide: B,
-      loop: Y,
+      slide: Y,
+      loop: R,
       grabCursor: {
         setGrabCursor: function (e) {
           const t = this;
@@ -2615,16 +2654,16 @@ var swiperReview = (function () {
           const e = this,
             { params: t } = e;
           (e.onTouchStart = F.bind(e)),
-            (e.onTouchMove = q.bind(e)),
-            (e.onTouchEnd = V.bind(e)),
-            (e.onDocumentTouchStart = K.bind(e)),
-            t.cssMode && (e.onScroll = j.bind(e)),
-            (e.onClick = W.bind(e)),
-            (e.onLoad = U.bind(e)),
-            Z(e, "on");
+            (e.onTouchMove = V.bind(e)),
+            (e.onTouchEnd = _.bind(e)),
+            (e.onDocumentTouchStart = Z.bind(e)),
+            t.cssMode && (e.onScroll = U.bind(e)),
+            (e.onClick = j.bind(e)),
+            (e.onLoad = K.bind(e)),
+            Q(e, "on");
         },
         detachEvents: function () {
-          Z(this, "off");
+          Q(this, "off");
         },
       },
       breakpoints: {
@@ -2636,8 +2675,8 @@ var swiperReview = (function () {
           const n = e.getBreakpoint(r, e.params.breakpointsBase, e.el);
           if (!n || e.currentBreakpoint === n) return;
           const l = (n in r ? r[n] : void 0) || e.originalParams,
-            o = Q(e, a),
-            d = Q(e, l),
+            o = J(e, a),
+            d = J(e, l),
             c = e.params.grabCursor,
             u = l.grabCursor,
             m = a.enabled;
@@ -2768,8 +2807,8 @@ var swiperReview = (function () {
         },
       },
     },
-    se = {};
-  class ae {
+    ae = {};
+  class ie {
     constructor() {
       let e, t;
       for (var s = arguments.length, i = new Array(s), r = 0; r < s; r++)
@@ -2792,15 +2831,15 @@ var swiperReview = (function () {
         return (
           n.querySelectorAll(t.el).forEach((s) => {
             const a = p({}, t, { el: s });
-            e.push(new ae(a));
+            e.push(new ie(a));
           }),
           e
         );
       }
       const l = this;
-      (l.__swiperReview__ = !0),
-        (l.support = L()),
-        (l.device = I({ userAgent: t.userAgent })),
+      (l.__swipeGelijk__ = !0),
+        (l.support = I()),
+        (l.device = z({ userAgent: t.userAgent })),
         (l.browser = A()),
         (l.eventsListeners = {}),
         (l.eventsAnyListeners = []),
@@ -2810,17 +2849,17 @@ var swiperReview = (function () {
       l.modules.forEach((e) => {
         e({
           params: t,
-          swiperReview: l,
-          extendParams: ee(t, o),
+          swipeGelijk: l,
+          extendParams: te(t, o),
           on: l.on.bind(l),
           once: l.once.bind(l),
           off: l.off.bind(l),
           emit: l.emit.bind(l),
         });
       });
-      const d = p({}, J, o);
+      const d = p({}, ee, o);
       return (
-        (l.params = p({}, d, se, t)),
+        (l.params = p({}, d, ae, t)),
         (l.originalParams = p({}, l.params)),
         (l.passedParams = p({}, t)),
         l.params &&
@@ -2877,7 +2916,7 @@ var swiperReview = (function () {
           imagesToLoad: [],
           imagesLoaded: 0,
         }),
-        l.emit("_swiperReview"),
+        l.emit("_swipeGelijk"),
         l.params.init && l.init(),
         l
       );
@@ -2898,19 +2937,19 @@ var swiperReview = (function () {
     }
     getSlideIndex(e) {
       const { slidesEl: t, params: s } = this,
-        a = y(f(t, `.${s.slideClass}, swiperReview-slide`)[0]);
+        a = y(f(t, `.${s.slideClass}, swipeGelijk-slide`)[0]);
       return y(e) - a;
     }
     getSlideIndexByData(e) {
       return this.getSlideIndex(
         this.slides.filter(
-          (t) => 1 * t.getAttribute("data-swiperReview-slide-index") === e
+          (t) => 1 * t.getAttribute("data-swipeGelijk-slide-index") === e
         )[0]
       );
     }
     recalcSlides() {
       const { slidesEl: e, params: t } = this;
-      this.slides = f(e, `.${t.slideClass}, swiperReview-slide`);
+      this.slides = f(e, `.${t.slideClass}, swipeGelijk-slide`);
     }
     enable() {
       const e = this;
@@ -2942,7 +2981,7 @@ var swiperReview = (function () {
         .split(" ")
         .filter(
           (t) =>
-            0 === t.indexOf("swiperReview") ||
+            0 === t.indexOf("swipeGelijk") ||
             0 === t.indexOf(e.params.containerModifierClass)
         );
       e.emit("_containerClasses", t.join(" "));
@@ -2955,7 +2994,7 @@ var swiperReview = (function () {
             .split(" ")
             .filter(
               (e) =>
-                0 === e.indexOf("swiperReview-slide") ||
+                0 === e.indexOf("swipeGelijk-slide") ||
                 0 === e.indexOf(t.params.slideClass)
             )
             .join(" ");
@@ -2984,17 +3023,17 @@ var swiperReview = (function () {
       if ("number" == typeof s.slidesPerView) return s.slidesPerView;
       if (s.centeredSlides) {
         let e,
-          t = a[l] ? Math.ceil(a[l].swiperReviewSlideSize) : 0;
+          t = a[l] ? Math.ceil(a[l].swipeGelijkSlideSize) : 0;
         for (let s = l + 1; s < a.length; s += 1)
           a[s] &&
             !e &&
-            ((t += Math.ceil(a[s].swiperReviewSlideSize)),
+            ((t += Math.ceil(a[s].swipeGelijkSlideSize)),
             (o += 1),
             t > n && (e = !0));
         for (let s = l - 1; s >= 0; s -= 1)
           a[s] &&
             !e &&
-            ((t += a[s].swiperReviewSlideSize), (o += 1), t > n && (e = !0));
+            ((t += a[s].swipeGelijkSlideSize), (o += 1), t > n && (e = !0));
       } else if ("current" === e)
         for (let e = l + 1; e < a.length; e += 1) {
           (t ? i[e] + r[e] - i[l] < n : i[e] - i[l] < n) && (o += 1);
@@ -3018,7 +3057,7 @@ var swiperReview = (function () {
       if (
         (s.breakpoints && e.setBreakpoint(),
         [...e.el.querySelectorAll('[loading="lazy"]')].forEach((t) => {
-          t.complete && O(e, t);
+          t.complete && D(e, t);
         }),
         e.updateSize(),
         e.updateSlides(),
@@ -3081,11 +3120,11 @@ var swiperReview = (function () {
       let s = e || t.params.el;
       if (("string" == typeof s && (s = document.querySelector(s)), !s))
         return !1;
-      (s.swiperReview = t),
+      (s.swipeGelijk = t),
         s.parentNode &&
           s.parentNode.host &&
           s.parentNode.host.nodeName ===
-            t.params.swiperReviewElementNodeName.toUpperCase() &&
+            t.params.swipeGelijkElementNodeName.toUpperCase() &&
           (t.isElement = !0);
       const a = () =>
         `.${(t.params.wrapperClass || "").trim().split(" ").join(".")}`;
@@ -3154,14 +3193,14 @@ var swiperReview = (function () {
         t.isElement && s.push(...t.hostEl.querySelectorAll('[loading="lazy"]')),
         s.forEach((e) => {
           e.complete
-            ? O(t, e)
+            ? D(t, e)
             : e.addEventListener("load", (e) => {
-                O(t, e.target);
+                D(t, e.target);
               });
         }),
-        G(t),
+        H(t),
         (t.initialized = !0),
-        G(t),
+        H(t),
         t.emit("init"),
         t.emit("afterInit"),
         t
@@ -3193,14 +3232,14 @@ var swiperReview = (function () {
                   a.slidePrevClass
                 ),
                   e.removeAttribute("style"),
-                  e.removeAttribute("data-swiperReview-slide-index");
+                  e.removeAttribute("data-swipeGelijk-slide-index");
               })),
           s.emit("destroy"),
           Object.keys(s.eventsListeners).forEach((e) => {
             s.off(e);
           }),
           !1 !== e &&
-            (s.el && "string" != typeof s.el && (s.el.swiperReview = null),
+            (s.el && "string" != typeof s.el && (s.el.swipeGelijk = null),
             (function (e) {
               const t = e;
               Object.keys(t).forEach((e) => {
@@ -3217,26 +3256,26 @@ var swiperReview = (function () {
       );
     }
     static extendDefaults(e) {
-      p(se, e);
+      p(ae, e);
     }
     static get extendedDefaults() {
-      return se;
+      return ae;
     }
     static get defaults() {
-      return J;
+      return ee;
     }
     static installModule(e) {
-      ae.prototype.__modules__ || (ae.prototype.__modules__ = []);
-      const t = ae.prototype.__modules__;
+      ie.prototype.__modules__ || (ie.prototype.__modules__ = []);
+      const t = ie.prototype.__modules__;
       "function" == typeof e && t.indexOf(e) < 0 && t.push(e);
     }
     static use(e) {
       return Array.isArray(e)
-        ? (e.forEach((e) => ae.installModule(e)), ae)
-        : (ae.installModule(e), ae);
+        ? (e.forEach((e) => ie.installModule(e)), ie)
+        : (ie.installModule(e), ie);
     }
   }
-  function ie(e, t, s, a) {
+  function re(e, t, s, a) {
     return (
       e.params.createElements &&
         Object.keys(a).forEach((i) => {
@@ -3250,7 +3289,7 @@ var swiperReview = (function () {
       s
     );
   }
-  function re(e) {
+  function ne(e) {
     return (
       void 0 === e && (e = ""),
       `.${e
@@ -3259,7 +3298,7 @@ var swiperReview = (function () {
         .replace(/ /g, ".")}`
     );
   }
-  function ne(e) {
+  function le(e) {
     const t = this,
       { params: s, slidesEl: a } = t;
     s.loop && t.loopDestroy();
@@ -3276,7 +3315,7 @@ var swiperReview = (function () {
       s.loop && t.loopCreate(),
       (s.observer && !t.isElement) || t.update();
   }
-  function le(e) {
+  function oe(e) {
     const t = this,
       { params: s, activeIndex: a, slidesEl: i } = t;
     s.loop && t.loopDestroy();
@@ -3296,7 +3335,7 @@ var swiperReview = (function () {
       (s.observer && !t.isElement) || t.update(),
       t.slideTo(r, 0, !1);
   }
-  function oe(e, t) {
+  function de(e, t) {
     const s = this,
       { params: a, activeIndex: i, slidesEl: r } = s;
     let n = i;
@@ -3320,7 +3359,7 @@ var swiperReview = (function () {
       (a.observer && !s.isElement) || s.update(),
       a.loop ? s.slideTo(o + s.loopedSlides, 0, !1) : s.slideTo(o, 0, !1);
   }
-  function de(e) {
+  function ce(e) {
     const t = this,
       { params: s, activeIndex: a } = t;
     let i = a;
@@ -3341,16 +3380,16 @@ var swiperReview = (function () {
       (s.observer && !t.isElement) || t.update(),
       s.loop ? t.slideTo(n + t.loopedSlides, 0, !1) : t.slideTo(n, 0, !1);
   }
-  function ce() {
+  function pe() {
     const e = this,
       t = [];
     for (let s = 0; s < e.slides.length; s += 1) t.push(s);
     e.removeSlide(t);
   }
-  function pe(e) {
+  function ue(e) {
     const {
       effect: t,
-      swiperReview: s,
+      swipeGelijk: s,
       on: a,
       setTranslate: i,
       setTransition: r,
@@ -3378,7 +3417,7 @@ var swiperReview = (function () {
           if (!d || !d().slideShadows) return;
           s.slides.forEach((e) => {
             e.querySelectorAll(
-              ".swiperReview-slide-shadow-top, .swiperReview-slide-shadow-right, .swiperReview-slide-shadow-bottom, .swiperReview-slide-shadow-left"
+              ".swipeGelijk-slide-shadow-top, .swipeGelijk-slide-shadow-right, .swipeGelijk-slide-shadow-bottom, .swipeGelijk-slide-shadow-left"
             ).forEach((e) => e.remove());
           }),
             o();
@@ -3392,7 +3431,7 @@ var swiperReview = (function () {
           }));
       });
   }
-  function ue(e, t) {
+  function me(e, t) {
     const s = h(t);
     return (
       s !== t &&
@@ -3401,8 +3440,8 @@ var swiperReview = (function () {
       s
     );
   }
-  function me(e) {
-    let { swiperReview: t, duration: s, transformElements: a, allSlides: i } = e;
+  function he(e) {
+    let { swipeGelijk: t, duration: s, transformElements: a, allSlides: i } = e;
     const { activeIndex: r } = t;
     if (t.params.virtualTranslate && 0 !== s) {
       let e,
@@ -3410,7 +3449,7 @@ var swiperReview = (function () {
       (e = i
         ? a
         : a.filter((e) => {
-            const s = e.classList.contains("swiperReview-slide-transform")
+            const s = e.classList.contains("swipeGelijk-slide-transform")
               ? ((e) => {
                   if (!e.parentElement)
                     return t.slides.filter(
@@ -3435,22 +3474,22 @@ var swiperReview = (function () {
         });
     }
   }
-  function he(e, t, s) {
-    const a = `swiperReview-slide-shadow${s ? `-${s}` : ""}${
-        e ? ` swiperReview-slide-shadow-${e}` : ""
+  function fe(e, t, s) {
+    const a = `swipeGelijk-slide-shadow${s ? `-${s}` : ""}${
+        e ? ` swipeGelijk-slide-shadow-${e}` : ""
       }`,
       i = h(t);
     let r = i.querySelector(`.${a.split(" ").join(".")}`);
     return r || ((r = v("div", a.split(" "))), i.append(r)), r;
   }
-  Object.keys(te).forEach((e) => {
-    Object.keys(te[e]).forEach((t) => {
-      ae.prototype[t] = te[e][t];
+  Object.keys(se).forEach((e) => {
+    Object.keys(se[e]).forEach((t) => {
+      ie.prototype[t] = se[e][t];
     });
   }),
-    ae.use([
+    ie.use([
       function (e) {
-        let { swiperReview: t, on: s, emit: a } = e;
+        let { swipeGelijk: t, on: s, emit: a } = e;
         const i = r();
         let n = null,
           l = null;
@@ -3494,7 +3533,7 @@ var swiperReview = (function () {
           });
       },
       function (e) {
-        let { swiperReview: t, extendParams: s, on: a, emit: i } = e;
+        let { swipeGelijk: t, extendParams: s, on: a, emit: i } = e;
         const n = [],
           l = r(),
           o = function (e, s) {
@@ -3513,7 +3552,7 @@ var swiperReview = (function () {
             );
             a.observe(e, {
               attributes: void 0 === s.attributes || s.attributes,
-              childList: void 0 === s.childList || s.childList,
+              childList: t.isElement || (void 0 === s.childList || s).childList,
               characterData: void 0 === s.characterData || s.characterData,
             }),
               n.push(a);
@@ -3537,10 +3576,10 @@ var swiperReview = (function () {
           });
       },
     ]);
-  const fe = [
+  const ge = [
     function (e) {
       let t,
-        { swiperReview: s, extendParams: i, on: r, emit: n } = e;
+        { swipeGelijk: s, extendParams: i, on: r, emit: n } = e;
       i({
         virtual: {
           enabled: !1,
@@ -3572,9 +3611,9 @@ var swiperReview = (function () {
             ? ((i = a.renderSlide.call(s, e, t)),
               "string" == typeof i && ((o.innerHTML = i), (i = o.children[0])))
             : (i = s.isElement
-                ? v("swiperReview-slide")
+                ? v("swipeGelijk-slide")
                 : v("div", s.params.slideClass)),
-          i.setAttribute("data-swiperReview-slide-index", t),
+          i.setAttribute("data-swipeGelijk-slide-index", t),
           a.renderSlide || (i.innerHTML = e),
           a.cache && (s.virtual.cache[t] = i),
           i
@@ -3657,7 +3696,7 @@ var swiperReview = (function () {
           };
         if (e)
           s.slides
-            .filter((e) => e.matches(`.${s.params.slideClass}, swiperReview-slide`))
+            .filter((e) => e.matches(`.${s.params.slideClass}, swipeGelijk-slide`))
             .forEach((e) => {
               e.remove();
             });
@@ -3668,7 +3707,7 @@ var swiperReview = (function () {
               s.slides
                 .filter((e) =>
                   e.matches(
-                    `.${s.params.slideClass}[data-swiperReview-slide-index="${t}"], swiperReview-slide[data-swiperReview-slide-index="${t}"]`
+                    `.${s.params.slideClass}[data-swipeGelijk-slide-index="${t}"], swipeGelijk-slide[data-swipeGelijk-slide-index="${t}"]`
                   )
                 )
                 .forEach((e) => {
@@ -3676,8 +3715,8 @@ var swiperReview = (function () {
                 });
             }
         const I = l ? -h.length : 0,
-          A = l ? 2 * h.length : h.length;
-        for (let t = I; t < A; t += 1)
+          z = l ? 2 * h.length : h.length;
+        for (let t = I; t < z; t += 1)
           if (t >= x && t <= S) {
             const s = L(t);
             void 0 === m || e
@@ -3699,7 +3738,7 @@ var swiperReview = (function () {
             C.forEach((e) => {
               s.slidesEl.prepend(d(h[e], e));
             });
-        f(s.slidesEl, ".swiperReview-slide, swiperReview-slide").forEach((e) => {
+        f(s.slidesEl, ".swipeGelijk-slide, swipeGelijk-slide").forEach((e) => {
           e.style[b] = T - Math.abs(s.cssOverflowAdjustment()) + "px";
         }),
           M();
@@ -3709,14 +3748,14 @@ var swiperReview = (function () {
         let e;
         if (void 0 === s.passedParams.virtual.slides) {
           const t = [...s.slidesEl.children].filter((e) =>
-            e.matches(`.${s.params.slideClass}, swiperReview-slide`)
+            e.matches(`.${s.params.slideClass}, swipeGelijk-slide`)
           );
           t &&
             t.length &&
             ((s.virtual.slides = [...t]),
             (e = !0),
             t.forEach((e, t) => {
-              e.setAttribute("data-swiperReview-slide-index", t),
+              e.setAttribute("data-swipeGelijk-slide-index", t),
                 (s.virtual.cache[t] = e),
                 e.remove();
             }));
@@ -3739,7 +3778,7 @@ var swiperReview = (function () {
         r("init update resize", () => {
           s.params.virtual.enabled &&
             s.params.cssMode &&
-            u(s.wrapperEl, "--swiperReview-virtual-size", `${s.virtualSize}px`);
+            u(s.wrapperEl, "--swipeGelijk-virtual-size", `${s.virtualSize}px`);
         }),
         Object.assign(s.virtual, {
           appendSlide: function (e) {
@@ -3763,10 +3802,10 @@ var swiperReview = (function () {
                 t = {};
               Object.keys(e).forEach((s) => {
                 const a = e[s],
-                  r = a.getAttribute("data-swiperReview-slide-index");
+                  r = a.getAttribute("data-swipeGelijk-slide-index");
                 r &&
                   a.setAttribute(
-                    "data-swiperReview-slide-index",
+                    "data-swipeGelijk-slide-index",
                     parseInt(r, 10) + i
                   ),
                   (t[parseInt(s, 10) + i] = a);
@@ -3786,7 +3825,7 @@ var swiperReview = (function () {
                     t > e &&
                       ((s.virtual.cache[t - 1] = s.virtual.cache[t]),
                       s.virtual.cache[t - 1].setAttribute(
-                        "data-swiperReview-slide-index",
+                        "data-swipeGelijk-slide-index",
                         t - 1
                       ),
                       delete s.virtual.cache[t]);
@@ -3801,7 +3840,7 @@ var swiperReview = (function () {
                   t > e &&
                     ((s.virtual.cache[t - 1] = s.virtual.cache[t]),
                     s.virtual.cache[t - 1].setAttribute(
-                      "data-swiperReview-slide-index",
+                      "data-swipeGelijk-slide-index",
                       t - 1
                     ),
                     delete s.virtual.cache[t]);
@@ -3821,7 +3860,7 @@ var swiperReview = (function () {
         });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, on: i, emit: n } = e;
+      let { swipeGelijk: t, extendParams: s, on: i, emit: n } = e;
       const l = a(),
         o = r();
       function d(e) {
@@ -3865,7 +3904,7 @@ var swiperReview = (function () {
           ) {
             let e = !1;
             if (
-              E(t.el, `.${t.params.slideClass}, swiperReview-slide`).length > 0 &&
+              E(t.el, `.${t.params.slideClass}, swipeGelijk-slide`).length > 0 &&
               0 === E(t.el, `.${t.params.slideActiveClass}`).length
             )
               return;
@@ -3922,7 +3961,7 @@ var swiperReview = (function () {
         Object.assign(t.keyboard, { enable: c, disable: p });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, on: a, emit: i } = e;
+      let { swipeGelijk: t, extendParams: s, on: a, emit: i } = e;
       const n = r();
       let d;
       s({
@@ -3935,7 +3974,7 @@ var swiperReview = (function () {
           eventsTarget: "container",
           thresholdDelta: null,
           thresholdTime: null,
-          noMousewheelClass: "swiperReview-no-mousewheel",
+          noMousewheelClass: "swipeGelijk-no-mousewheel",
         },
       }),
         (t.mousewheel = { enabled: !1 });
@@ -4081,11 +4120,14 @@ var swiperReview = (function () {
                 (c = e),
                   u.splice(0),
                   (d = l(() => {
-                    t.slideToClosest(t.params.speed, !0, void 0, s);
+                    !t.destroyed &&
+                      t.params &&
+                      t.slideToClosest(t.params.speed, !0, void 0, s);
                   }, 0));
               }
               d ||
                 (d = l(() => {
+                  if (t.destroyed || !t.params) return;
                   (c = e),
                     u.splice(0),
                     t.slideToClosest(t.params.speed, !0, void 0, 0.5);
@@ -4161,13 +4203,13 @@ var swiperReview = (function () {
         Object.assign(t.mousewheel, { enable: w, disable: b });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, on: a, emit: i } = e;
+      let { swipeGelijk: t, extendParams: s, on: a, emit: i } = e;
       function r(e) {
         let s;
         return e &&
           "string" == typeof e &&
           t.isElement &&
-          ((s = t.el.querySelector(e)), s)
+          ((s = t.el.querySelector(e) || t.hostEl.querySelector(e)), s)
           ? s
           : (e &&
               ("string" == typeof e && (s = [...document.querySelectorAll(e)]),
@@ -4210,11 +4252,11 @@ var swiperReview = (function () {
       function c() {
         const e = t.params.navigation;
         if (
-          ((t.params.navigation = ie(
+          ((t.params.navigation = re(
             t,
             t.originalParams.navigation,
             t.params.navigation,
-            { nextEl: "swiperReview-button-next", prevEl: "swiperReview-button-prev" }
+            { nextEl: "swipeGelijk-button-next", prevEl: "swipeGelijk-button-prev" }
           )),
           !e.nextEl && !e.prevEl)
         )
@@ -4244,10 +4286,10 @@ var swiperReview = (function () {
           nextEl: null,
           prevEl: null,
           hideOnClick: !1,
-          disabledClass: "swiperReview-button-disabled",
-          hiddenClass: "swiperReview-button-hidden",
-          lockClass: "swiperReview-button-lock",
-          navigationDisabledClass: "swiperReview-navigation-disabled",
+          disabledClass: "swipeGelijk-button-disabled",
+          hiddenClass: "swipeGelijk-button-hidden",
+          lockClass: "swipeGelijk-button-lock",
+          navigationDisabledClass: "swipeGelijk-navigation-disabled",
         },
       }),
         (t.navigation = { nextEl: null, prevEl: null }),
@@ -4323,8 +4365,8 @@ var swiperReview = (function () {
       });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, on: a, emit: i } = e;
-      const r = "swiperReview-pagination";
+      let { swipeGelijk: t, extendParams: s, on: a, emit: i } = e;
+      const r = "swipeGelijk-pagination";
       let n;
       s({
         pagination: {
@@ -4375,14 +4417,28 @@ var swiperReview = (function () {
             e.classList.add(`${a}-${s}-${s}`));
       }
       function c(e) {
-        const s = e.target.closest(re(t.params.pagination.bulletClass));
+        const s = e.target.closest(ne(t.params.pagination.bulletClass));
         if (!s) return;
         e.preventDefault();
         const a = y(s) * t.params.slidesPerGroup;
         if (t.params.loop) {
           if (t.realIndex === a) return;
-          t.slideToLoop(a);
+          const e =
+            ((i = t.realIndex),
+            (r = a),
+            (n = t.slides.length),
+            (r %= n) == 1 + (i %= n)
+              ? "next"
+              : r === i - 1
+              ? "previous"
+              : void 0);
+          "next" === e
+            ? t.slideNext()
+            : "previous" === e
+            ? t.slidePrev()
+            : t.slideToLoop(a);
         } else t.slideTo(a);
+        var i, r, n;
       }
       function p() {
         const e = t.rtl,
@@ -4496,10 +4552,10 @@ var swiperReview = (function () {
         c.forEach((e, r) => {
           if (
             ("fraction" === s.type &&
-              (e.querySelectorAll(re(s.currentClass)).forEach((e) => {
+              (e.querySelectorAll(ne(s.currentClass)).forEach((e) => {
                 e.textContent = s.formatFractionCurrent(a + 1);
               }),
-              e.querySelectorAll(re(s.totalClass)).forEach((e) => {
+              e.querySelectorAll(ne(s.totalClass)).forEach((e) => {
                 e.textContent = s.formatFractionTotal(u);
               })),
             "progressbar" === s.type)
@@ -4516,7 +4572,7 @@ var swiperReview = (function () {
             let n = 1,
               l = 1;
             "horizontal" === i ? (n = r) : (l = r),
-              e.querySelectorAll(re(s.progressbarFillClass)).forEach((e) => {
+              e.querySelectorAll(ne(s.progressbarFillClass)).forEach((e) => {
                 (e.style.transform = `translate3d(0,0,0) scaleX(${n}) scaleY(${l})`),
                   (e.style.transitionDuration = `${t.params.speed}ms`);
               });
@@ -4567,17 +4623,17 @@ var swiperReview = (function () {
             "custom" !== e.type && (s.innerHTML = r || ""),
               "bullets" === e.type &&
                 t.pagination.bullets.push(
-                  ...s.querySelectorAll(re(e.bulletClass))
+                  ...s.querySelectorAll(ne(e.bulletClass))
                 );
           }),
           "custom" !== e.type && i("paginationRender", a[0]);
       }
       function m() {
-        t.params.pagination = ie(
+        t.params.pagination = re(
           t,
           t.originalParams.pagination,
           t.params.pagination,
-          { el: "swiperReview-pagination" }
+          { el: "swipeGelijk-pagination" }
         );
         const e = t.params.pagination;
         if (!e.el) return;
@@ -4597,7 +4653,7 @@ var swiperReview = (function () {
               s.length > 1 &&
               ((s = [...t.el.querySelectorAll(e.el)]),
               s.length > 1 &&
-                (s = s.filter((e) => E(e, ".swiperReview")[0] === t.el)[0])),
+                (s = s.filter((e) => E(e, ".swipeGelijk")[0] === t.el)[0])),
             Array.isArray(s) && 1 === s.length && (s = s[0]),
             Object.assign(t.pagination, { el: s }),
             (s = T(s)),
@@ -4736,7 +4792,7 @@ var swiperReview = (function () {
       });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, on: i, emit: r } = e;
+      let { swipeGelijk: t, extendParams: s, on: i, emit: r } = e;
       const o = a();
       let d,
         c,
@@ -4886,11 +4942,11 @@ var swiperReview = (function () {
       }
       function P() {
         const { scrollbar: e, el: s } = t;
-        t.params.scrollbar = ie(
+        t.params.scrollbar = re(
           t,
           t.originalParams.scrollbar,
           t.params.scrollbar,
-          { el: "swiperReview-scrollbar" }
+          { el: "swipeGelijk-scrollbar" }
         );
         const a = t.params.scrollbar;
         if (!a.el) return;
@@ -4913,7 +4969,7 @@ var swiperReview = (function () {
             t.isHorizontal() ? a.horizontalClass : a.verticalClass
           ),
           i &&
-            ((r = i.querySelector(re(t.params.scrollbar.dragClass))),
+            ((r = i.querySelector(ne(t.params.scrollbar.dragClass))),
             r || ((r = v("div", t.params.scrollbar.dragClass)), i.append(r))),
           Object.assign(e, { el: i, dragEl: r }),
           a.draggable && t.params.scrollbar.el && t.scrollbar.el && C("on"),
@@ -4938,11 +4994,11 @@ var swiperReview = (function () {
           hide: !1,
           draggable: !1,
           snapOnRelease: !0,
-          lockClass: "swiperReview-scrollbar-lock",
-          dragClass: "swiperReview-scrollbar-drag",
-          scrollbarDisabledClass: "swiperReview-scrollbar-disabled",
-          horizontalClass: "swiperReview-scrollbar-horizontal",
-          verticalClass: "swiperReview-scrollbar-vertical",
+          lockClass: "swipeGelijk-scrollbar-lock",
+          dragClass: "swipeGelijk-scrollbar-drag",
+          scrollbarDisabledClass: "swipeGelijk-scrollbar-disabled",
+          horizontalClass: "swipeGelijk-scrollbar-horizontal",
+          verticalClass: "swipeGelijk-scrollbar-vertical",
         },
       }),
         (t.scrollbar = { el: null, dragEl: null }),
@@ -5013,19 +5069,19 @@ var swiperReview = (function () {
       });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, on: a } = e;
+      let { swipeGelijk: t, extendParams: s, on: a } = e;
       s({ parallax: { enabled: !1 } });
       const i =
-          "[data-swiperReview-parallax], [data-swiperReview-parallax-x], [data-swiperReview-parallax-y], [data-swiperReview-parallax-opacity], [data-swiperReview-parallax-scale]",
+          "[data-swipeGelijk-parallax], [data-swipeGelijk-parallax-x], [data-swipeGelijk-parallax-y], [data-swipeGelijk-parallax-opacity], [data-swipeGelijk-parallax-scale]",
         r = (e, s) => {
           const { rtl: a } = t,
             i = a ? -1 : 1,
-            r = e.getAttribute("data-swiperReview-parallax") || "0";
-          let n = e.getAttribute("data-swiperReview-parallax-x"),
-            l = e.getAttribute("data-swiperReview-parallax-y");
-          const o = e.getAttribute("data-swiperReview-parallax-scale"),
-            d = e.getAttribute("data-swiperReview-parallax-opacity"),
-            c = e.getAttribute("data-swiperReview-parallax-rotate");
+            r = e.getAttribute("data-swipeGelijk-parallax") || "0";
+          let n = e.getAttribute("data-swipeGelijk-parallax-x"),
+            l = e.getAttribute("data-swipeGelijk-parallax-y");
+          const o = e.getAttribute("data-swipeGelijk-parallax-scale"),
+            d = e.getAttribute("data-swipeGelijk-parallax-opacity"),
+            c = e.getAttribute("data-swipeGelijk-parallax-rotate");
           if (
             (n || l
               ? ((n = n || "0"), (l = l || "0"))
@@ -5072,7 +5128,7 @@ var swiperReview = (function () {
                 (l += Math.ceil(s / 2) - a * (n.length - 1)),
                 (l = Math.min(Math.max(l, -1), 1)),
                 e
-                  .querySelectorAll(`${i}, [data-swiperReview-parallax-rotate]`)
+                  .querySelectorAll(`${i}, [data-swipeGelijk-parallax-rotate]`)
                   .forEach((e) => {
                     r(e, l);
                   });
@@ -5099,7 +5155,7 @@ var swiperReview = (function () {
                 r.forEach((t) => {
                   let s =
                     parseInt(
-                      t.getAttribute("data-swiperReview-parallax-duration"),
+                      t.getAttribute("data-swipeGelijk-parallax-duration"),
                       10
                     ) || e;
                   0 === e && (s = 0), (t.style.transitionDuration = `${s}ms`);
@@ -5108,7 +5164,7 @@ var swiperReview = (function () {
         });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, on: a, emit: i } = e;
+      let { swipeGelijk: t, extendParams: s, on: a, emit: i } = e;
       const n = r();
       s({
         zoom: {
@@ -5117,8 +5173,8 @@ var swiperReview = (function () {
           maxRatio: 3,
           minRatio: 1,
           toggle: !0,
-          containerClass: "swiperReview-zoom-container",
-          zoomedSlideClass: "swiperReview-slide-zoomed",
+          containerClass: "swipeGelijk-zoom-container",
+          zoomedSlideClass: "swipeGelijk-slide-zoomed",
         },
       }),
         (t.zoom = { enabled: !1 });
@@ -5172,7 +5228,7 @@ var swiperReview = (function () {
       }
       function x() {
         const e = t.params.zoom,
-          s = m.imageWrapEl.getAttribute("data-swiperReview-zoom") || e.maxRatio;
+          s = m.imageWrapEl.getAttribute("data-swipeGelijk-zoom") || e.maxRatio;
         if (e.limitToOriginalSize && m.imageEl && m.imageEl.naturalWidth) {
           const e = m.imageEl.naturalWidth / m.imageEl.offsetWidth;
           return Math.min(e, s);
@@ -5180,7 +5236,7 @@ var swiperReview = (function () {
         return s;
       }
       function S(e) {
-        const s = t.isElement ? "swiperReview-slide" : `.${t.params.slideClass}`;
+        const s = t.isElement ? "swipeGelijk-slide" : `.${t.params.slideClass}`;
         return (
           !!e.target.matches(s) ||
           t.slides.filter((t) => t.contains(e.target)).length > 0
@@ -5192,14 +5248,14 @@ var swiperReview = (function () {
         if (((l = !1), (o = !1), u.push(e), !(u.length < 2))) {
           if (((l = !0), (m.scaleStart = y()), !m.slideEl)) {
             (m.slideEl = e.target.closest(
-              `.${t.params.slideClass}, swiperReview-slide`
+              `.${t.params.slideClass}, swipeGelijk-slide`
             )),
               m.slideEl || (m.slideEl = t.slides[t.activeIndex]);
             let a = m.slideEl.querySelector(`.${s.containerClass}`);
             if (
               (a &&
                 (a = a.querySelectorAll(
-                  "picture, img, svg, canvas, .swiperReview-zoom-target"
+                  "picture, img, svg, canvas, .swipeGelijk-zoom-target"
                 )[0]),
               (m.imageEl = a),
               (m.imageWrapEl = a
@@ -5335,7 +5391,7 @@ var swiperReview = (function () {
           clearTimeout(v),
           (t.touchEventsData.preventTouchMoveFromPointerMove = !0),
           (v = setTimeout(() => {
-            P();
+            t.destroyed || P();
           })),
           (h.isMoved = !0);
         const r = (s.scale - c) / (m.maxRatio - t.params.zoom.minRatio),
@@ -5393,14 +5449,14 @@ var swiperReview = (function () {
           (m.originX = 0),
           (m.originY = 0));
       }
-      function A(e) {
+      function z(e) {
         const s = t.zoom,
           a = t.params.zoom;
         if (!m.slideEl) {
           e &&
             e.target &&
             (m.slideEl = e.target.closest(
-              `.${t.params.slideClass}, swiperReview-slide`
+              `.${t.params.slideClass}, swipeGelijk-slide`
             )),
             m.slideEl ||
               (t.params.virtual && t.params.virtual.enabled && t.virtual
@@ -5412,7 +5468,7 @@ var swiperReview = (function () {
           let s = m.slideEl.querySelector(`.${a.containerClass}`);
           s &&
             (s = s.querySelectorAll(
-              "picture, img, svg, canvas, .swiperReview-zoom-target"
+              "picture, img, svg, canvas, .swipeGelijk-zoom-target"
             )[0]),
             (m.imageEl = s),
             (m.imageWrapEl = s
@@ -5428,12 +5484,17 @@ var swiperReview = (function () {
           void 0 === h.touchesStart.x && e
             ? ((i = e.pageX), (r = e.pageY))
             : ((i = h.touchesStart.x), (r = h.touchesStart.y));
-        const A = "number" == typeof e ? e : null;
-        1 === c && A && ((i = void 0), (r = void 0));
-        const z = x();
-        (s.scale = A || z),
-          (c = A || z),
-          !e || (1 === c && A)
+        const z = "number" == typeof e ? e : null;
+        1 === c &&
+          z &&
+          ((i = void 0),
+          (r = void 0),
+          (h.touchesStart.x = void 0),
+          (h.touchesStart.y = void 0));
+        const A = x();
+        (s.scale = z || A),
+          (c = z || A),
+          !e || (1 === c && z)
             ? ((u = 0), (g = 0))
             : ((L = m.slideEl.offsetWidth),
               (I = m.slideEl.offsetHeight),
@@ -5455,13 +5516,13 @@ var swiperReview = (function () {
               u > C && (u = C),
               g < M && (g = M),
               g > P && (g = P)),
-          A && 1 === s.scale && ((m.originX = 0), (m.originY = 0)),
+          z && 1 === s.scale && ((m.originX = 0), (m.originY = 0)),
           (m.imageWrapEl.style.transitionDuration = "300ms"),
           (m.imageWrapEl.style.transform = `translate3d(${u}px, ${g}px,0)`),
           (m.imageEl.style.transitionDuration = "300ms"),
           (m.imageEl.style.transform = `translate3d(0,0,0) scale(${s.scale})`);
       }
-      function z() {
+      function A() {
         const e = t.zoom,
           s = t.params.zoom;
         if (!m.slideEl) {
@@ -5471,7 +5532,7 @@ var swiperReview = (function () {
           let e = m.slideEl.querySelector(`.${s.containerClass}`);
           e &&
             (e = e.querySelectorAll(
-              "picture, img, svg, canvas, .swiperReview-zoom-target"
+              "picture, img, svg, canvas, .swipeGelijk-zoom-target"
             )[0]),
             (m.imageEl = e),
             (m.imageWrapEl = e
@@ -5485,6 +5546,8 @@ var swiperReview = (function () {
             (t.wrapperEl.style.touchAction = "")),
           (e.scale = 1),
           (c = 1),
+          (h.touchesStart.x = void 0),
+          (h.touchesStart.y = void 0),
           (m.imageWrapEl.style.transitionDuration = "300ms"),
           (m.imageWrapEl.style.transform = "translate3d(0,0,0)"),
           (m.imageEl.style.transitionDuration = "300ms"),
@@ -5496,7 +5559,7 @@ var swiperReview = (function () {
       }
       function $(e) {
         const s = t.zoom;
-        s.scale && 1 !== s.scale ? z() : A(e);
+        s.scale && 1 !== s.scale ? A() : z(e);
       }
       function k() {
         return {
@@ -5609,13 +5672,13 @@ var swiperReview = (function () {
         Object.assign(t.zoom, {
           enable: O,
           disable: D,
-          in: A,
-          out: z,
+          in: z,
+          out: A,
           toggle: $,
         });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, on: a } = e;
+      let { swipeGelijk: t, extendParams: s, on: a } = e;
       function i(e, t) {
         const s = (function () {
           let e, t, s;
@@ -5655,16 +5718,25 @@ var swiperReview = (function () {
             ("string" == typeof t.params.controller.control ||
               t.params.controller.control instanceof HTMLElement)
           ) {
-            const e = document.querySelector(t.params.controller.control);
-            if (e && e.swiperReview) t.controller.control = e.swiperReview;
-            else if (e) {
-              const s = (a) => {
-                (t.controller.control = a.detail[0]),
-                  t.update(),
-                  e.removeEventListener("init", s);
-              };
-              e.addEventListener("init", s);
-            }
+            ("string" == typeof t.params.controller.control
+              ? [...document.querySelectorAll(t.params.controller.control)]
+              : [t.params.controller.control]
+            ).forEach((e) => {
+              if (
+                (t.controller.control || (t.controller.control = []),
+                e && e.swipeGelijk)
+              )
+                t.controller.control.push(e.swipeGelijk);
+              else if (e) {
+                const s = `${t.params.eventsPrefix}init`,
+                  a = (i) => {
+                    t.controller.control.push(i.detail[0]),
+                      t.update(),
+                      e.removeEventListener(s, a);
+                  };
+                e.addEventListener(s, a);
+              }
+            });
           } else t.controller.control = t.params.controller.control;
         }),
         a("update", () => {
@@ -5743,11 +5815,11 @@ var swiperReview = (function () {
         });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, on: i } = e;
+      let { swipeGelijk: t, extendParams: s, on: i } = e;
       s({
         a11y: {
           enabled: !0,
-          notificationClass: "swiperReview-notification",
+          notificationClass: "swipeGelijk-notification",
           prevSlideMessage: "Previous slide",
           nextSlideMessage: "Next slide",
           firstSlideMessage: "This is the first slide",
@@ -5756,9 +5828,11 @@ var swiperReview = (function () {
           slideLabelMessage: "{{index}} / {{slidesLength}}",
           containerMessage: null,
           containerRoleDescriptionMessage: null,
+          containerRole: null,
           itemRoleDescriptionMessage: null,
           slideRole: "group",
           id: null,
+          scrollOnFocus: !0,
         },
       }),
         (t.a11y = { clicked: !1 });
@@ -5813,7 +5887,7 @@ var swiperReview = (function () {
           !t.pagination ||
           !t.pagination.el ||
           (a !== t.pagination.el && !t.pagination.el.contains(e.target)) ||
-          e.target.matches(re(t.params.pagination.bulletClass))
+          e.target.matches(ne(t.params.pagination.bulletClass))
         ) {
           if (t.navigation && t.navigation.prevEl && t.navigation.nextEl) {
             const e = T(t.navigation.prevEl);
@@ -5825,7 +5899,7 @@ var swiperReview = (function () {
                 t.isBeginning ? d(s.firstSlideMessage) : d(s.prevSlideMessage));
           }
           t.pagination &&
-            a.matches(re(t.params.pagination.bulletClass)) &&
+            a.matches(ne(t.params.pagination.bulletClass)) &&
             a.click();
         }
       }
@@ -5864,9 +5938,9 @@ var swiperReview = (function () {
           o = new Date().getTime();
         },
         P = (e) => {
-          if (t.a11y.clicked) return;
+          if (t.a11y.clicked || !t.params.a11y.scrollOnFocus) return;
           if (new Date().getTime() - o < 100) return;
-          const s = e.target.closest(`.${t.params.slideClass}, swiperReview-slide`);
+          const s = e.target.closest(`.${t.params.slideClass}, swipeGelijk-slide`);
           if (!s || !t.slides.includes(s)) return;
           n = s;
           const a = t.slides.indexOf(s) === t.activeIndex,
@@ -5882,7 +5956,7 @@ var swiperReview = (function () {
               r ||
                 (t.params.loop
                   ? t.slideToLoop(
-                      parseInt(s.getAttribute("data-swiperReview-slide-index")),
+                      parseInt(s.getAttribute("data-swipeGelijk-slide-index")),
                       0
                     )
                   : t.slideTo(t.slides.indexOf(s), 0),
@@ -5898,7 +5972,7 @@ var swiperReview = (function () {
           e.slideLabelMessage &&
             t.slides.forEach((a, i) => {
               const r = t.params.loop
-                ? parseInt(a.getAttribute("data-swiperReview-slide-index"), 10)
+                ? parseInt(a.getAttribute("data-swipeGelijk-slide-index"), 10)
                 : i;
               h(
                 a,
@@ -5914,12 +5988,13 @@ var swiperReview = (function () {
           const s = t.el;
           e.containerRoleDescriptionMessage &&
             m(s, e.containerRoleDescriptionMessage),
-            e.containerMessage && h(s, e.containerMessage);
+            e.containerMessage && h(s, e.containerMessage),
+            e.containerRole && u(s, e.containerRole);
           const i = t.wrapperEl,
             r =
               e.id ||
               i.getAttribute("id") ||
-              `swiperReview-wrapper-${
+              `swipeGelijk-wrapper-${
                 ((n = 16),
                 void 0 === n && (n = 16),
                 "x"
@@ -6000,7 +6075,7 @@ var swiperReview = (function () {
                           y(s) + 1
                         )
                       ))),
-                    s.matches(re(t.params.pagination.bulletActiveClass))
+                    s.matches(ne(t.params.pagination.bulletActiveClass))
                       ? s.setAttribute("aria-current", "true")
                       : s.removeAttribute("aria-current");
                 });
@@ -6029,7 +6104,7 @@ var swiperReview = (function () {
         });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, on: a } = e;
+      let { swipeGelijk: t, extendParams: s, on: a } = e;
       s({
         history: {
           enabled: !1,
@@ -6067,7 +6142,7 @@ var swiperReview = (function () {
           n = t.params.url ? new URL(t.params.url) : a.location;
           const o =
             t.virtual && t.params.virtual.enabled
-              ? t.slidesEl.querySelector(`[data-swiperReview-slide-index="${s}"]`)
+              ? t.slidesEl.querySelector(`[data-swipeGelijk-slide-index="${s}"]`)
               : t.slides[s];
           let d = l(o.getAttribute("data-history"));
           if (t.params.history.root.length > 0) {
@@ -6133,7 +6208,7 @@ var swiperReview = (function () {
         });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, emit: i, on: n } = e,
+      let { swipeGelijk: t, extendParams: s, emit: i, on: n } = e,
         l = !1;
       const o = a(),
         d = r();
@@ -6148,12 +6223,12 @@ var swiperReview = (function () {
                 (e) => e.getAttribute("data-hash") === s
               )[0];
               if (!e) return 0;
-              return parseInt(e.getAttribute("data-swiperReview-slide-index"), 10);
+              return parseInt(e.getAttribute("data-swipeGelijk-slide-index"), 10);
             }
             return t.getSlideIndex(
               f(
                 t.slidesEl,
-                `.${t.params.slideClass}[data-hash="${s}"], swiperReview-slide[data-hash="${s}"]`
+                `.${t.params.slideClass}[data-hash="${s}"], swipeGelijk-slide[data-hash="${s}"]`
               )[0]
             );
           },
@@ -6165,7 +6240,7 @@ var swiperReview = (function () {
             s =
               t.virtual && t.params.virtual.enabled
                 ? t.slidesEl.querySelector(
-                    `[data-swiperReview-slide-index="${t.activeIndex}"]`
+                    `[data-swipeGelijk-slide-index="${t.activeIndex}"]`
                   )
                 : t.slides[t.activeIndex];
           if (e !== (s ? s.getAttribute("data-hash") : "")) {
@@ -6179,7 +6254,7 @@ var swiperReview = (function () {
           const e =
               t.virtual && t.params.virtual.enabled
                 ? t.slidesEl.querySelector(
-                    `[data-swiperReview-slide-index="${t.activeIndex}"]`
+                    `[data-swipeGelijk-slide-index="${t.activeIndex}"]`
                   )
                 : t.slides[t.activeIndex],
             s = e
@@ -6225,7 +6300,7 @@ var swiperReview = (function () {
     function (e) {
       let t,
         s,
-        { swiperReview: i, extendParams: r, on: n, emit: l, params: o } = e;
+        { swipeGelijk: i, extendParams: r, on: n, emit: l, params: o } = e;
       (i.autoplay = { running: !1, paused: !1, timeLeft: 0 }),
         r({
           autoplay: {
@@ -6255,7 +6330,7 @@ var swiperReview = (function () {
           i.wrapperEl &&
           e.target === i.wrapperEl &&
           (i.wrapperEl.removeEventListener("transitionend", y),
-          g || (e.detail && e.detail.byswiperReviewTouchMove) || C());
+          g || (e.detail && e.detail.byswipeGelijkTouchMove) || C());
       }
       const E = () => {
           if (i.destroyed || !i.autoplay.running) return;
@@ -6278,13 +6353,13 @@ var swiperReview = (function () {
               ((e =
                 i.virtual && i.params.virtual.enabled
                   ? i.slides.filter((e) =>
-                      e.classList.contains("swiperReview-slide-active")
+                      e.classList.contains("swipeGelijk-slide-active")
                     )[0]
                   : i.slides[i.activeIndex]),
               !e)
             )
               return;
-            return parseInt(e.getAttribute("data-swiperReview-autoplay"), 10);
+            return parseInt(e.getAttribute("data-swipeGelijk-autoplay"), 10);
           })();
           !Number.isNaN(r) &&
             r > 0 &&
@@ -6427,20 +6502,20 @@ var swiperReview = (function () {
         Object.assign(i.autoplay, { start: S, stop: T, pause: M, resume: C });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, on: i } = e;
+      let { swipeGelijk: t, extendParams: s, on: i } = e;
       s({
         thumbs: {
-          swiperReview: null,
+          swipeGelijk: null,
           multipleActiveThumbs: !0,
           autoScrollOffset: 0,
-          slideThumbActiveClass: "swiperReview-slide-thumb-active",
-          thumbsContainerClass: "swiperReview-thumbs",
+          slideThumbActiveClass: "swipeGelijk-slide-thumb-active",
+          thumbsContainerClass: "swipeGelijk-thumbs",
         },
       });
       let r = !1,
         n = !1;
       function l() {
-        const e = t.thumbs.swiperReview;
+        const e = t.thumbs.swipeGelijk;
         if (!e || e.destroyed) return;
         const s = e.clickedIndex,
           a = e.clickedSlide;
@@ -6449,7 +6524,7 @@ var swiperReview = (function () {
         if (null == s) return;
         let i;
         (i = e.params.loop
-          ? parseInt(e.clickedSlide.getAttribute("data-swiperReview-slide-index"), 10)
+          ? parseInt(e.clickedSlide.getAttribute("data-swipeGelijk-slide-index"), 10)
           : s),
           t.params.loop ? t.slideToLoop(i) : t.slideTo(i);
       }
@@ -6458,36 +6533,36 @@ var swiperReview = (function () {
         if (r) return !1;
         r = !0;
         const s = t.constructor;
-        if (e.swiperReview instanceof s)
-          (t.thumbs.swiperReview = e.swiperReview),
-            Object.assign(t.thumbs.swiperReview.originalParams, {
+        if (e.swipeGelijk instanceof s)
+          (t.thumbs.swipeGelijk = e.swipeGelijk),
+            Object.assign(t.thumbs.swipeGelijk.originalParams, {
               watchSlidesProgress: !0,
               slideToClickedSlide: !1,
             }),
-            Object.assign(t.thumbs.swiperReview.params, {
+            Object.assign(t.thumbs.swipeGelijk.params, {
               watchSlidesProgress: !0,
               slideToClickedSlide: !1,
             }),
-            t.thumbs.swiperReview.update();
-        else if (c(e.swiperReview)) {
-          const a = Object.assign({}, e.swiperReview);
+            t.thumbs.swipeGelijk.update();
+        else if (c(e.swipeGelijk)) {
+          const a = Object.assign({}, e.swipeGelijk);
           Object.assign(a, {
             watchSlidesProgress: !0,
             slideToClickedSlide: !1,
           }),
-            (t.thumbs.swiperReview = new s(a)),
+            (t.thumbs.swipeGelijk = new s(a)),
             (n = !0);
         }
         return (
-          t.thumbs.swiperReview.el.classList.add(
+          t.thumbs.swipeGelijk.el.classList.add(
             t.params.thumbs.thumbsContainerClass
           ),
-          t.thumbs.swiperReview.on("tap", l),
+          t.thumbs.swipeGelijk.on("tap", l),
           !0
         );
       }
       function d(e) {
-        const s = t.thumbs.swiperReview;
+        const s = t.thumbs.swipeGelijk;
         if (!s || s.destroyed) return;
         const a =
           "auto" === s.params.slidesPerView
@@ -6507,7 +6582,7 @@ var swiperReview = (function () {
           for (let e = 0; e < i; e += 1)
             f(
               s.slidesEl,
-              `[data-swiperReview-slide-index="${t.realIndex + e}"]`
+              `[data-swipeGelijk-slide-index="${t.realIndex + e}"]`
             ).forEach((e) => {
               e.classList.add(r);
             });
@@ -6523,7 +6598,7 @@ var swiperReview = (function () {
           if (s.params.loop) {
             const e = s.slides.filter(
               (e) =>
-                e.getAttribute("data-swiperReview-slide-index") === `${t.realIndex}`
+                e.getAttribute("data-swipeGelijk-slide-index") === `${t.realIndex}`
             )[0];
             (r = s.slides.indexOf(e)),
               (o = t.activeIndex > t.previousIndex ? "next" : "prev");
@@ -6540,31 +6615,32 @@ var swiperReview = (function () {
               s.slideTo(r, e ? 0 : void 0));
         }
       }
-      (t.thumbs = { swiperReview: null }),
+      (t.thumbs = { swipeGelijk: null }),
         i("beforeInit", () => {
           const { thumbs: e } = t.params;
-          if (e && e.swiperReview)
+          if (e && e.swipeGelijk)
             if (
-              "string" == typeof e.swiperReview ||
-              e.swiperReview instanceof HTMLElement
+              "string" == typeof e.swipeGelijk ||
+              e.swipeGelijk instanceof HTMLElement
             ) {
               const s = a(),
                 i = () => {
                   const a =
-                    "string" == typeof e.swiperReview
-                      ? s.querySelector(e.swiperReview)
-                      : e.swiperReview;
-                  if (a && a.swiperReview) (e.swiperReview = a.swiperReview), o(), d(!0);
+                    "string" == typeof e.swipeGelijk
+                      ? s.querySelector(e.swipeGelijk)
+                      : e.swipeGelijk;
+                  if (a && a.swipeGelijk) (e.swipeGelijk = a.swipeGelijk), o(), d(!0);
                   else if (a) {
-                    const s = (i) => {
-                      (e.swiperReview = i.detail[0]),
-                        a.removeEventListener("init", s),
-                        o(),
-                        d(!0),
-                        e.swiperReview.update(),
-                        t.update();
-                    };
-                    a.addEventListener("init", s);
+                    const s = `${t.params.eventsPrefix}init`,
+                      i = (r) => {
+                        (e.swipeGelijk = r.detail[0]),
+                          a.removeEventListener(s, i),
+                          o(),
+                          d(!0),
+                          e.swipeGelijk.update(),
+                          t.update();
+                      };
+                    a.addEventListener(s, i);
                   }
                   return a;
                 },
@@ -6579,17 +6655,17 @@ var swiperReview = (function () {
           d();
         }),
         i("setTransition", (e, s) => {
-          const a = t.thumbs.swiperReview;
+          const a = t.thumbs.swipeGelijk;
           a && !a.destroyed && a.setTransition(s);
         }),
         i("beforeDestroy", () => {
-          const e = t.thumbs.swiperReview;
+          const e = t.thumbs.swipeGelijk;
           e && !e.destroyed && n && e.destroy();
         }),
         Object.assign(t.thumbs, { init: o, update: d });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, emit: a, once: i } = e;
+      let { swipeGelijk: t, extendParams: s, emit: a, once: i } = e;
       s({
         freeMode: {
           enabled: !1,
@@ -6773,7 +6849,7 @@ var swiperReview = (function () {
         s,
         a,
         i,
-        { swiperReview: r, extendParams: n, on: l } = e;
+        { swipeGelijk: r, extendParams: n, on: l } = e;
       n({ grid: { rows: 1, fill: "column" } });
       const o = () => {
         let e = r.params.spaceBetween;
@@ -6821,7 +6897,7 @@ var swiperReview = (function () {
           unsetSlides: () => {
             r.slides &&
               r.slides.forEach((e) => {
-                e.swiperReviewSlideGridSet &&
+                e.swipeGelijkSlideGridSet &&
                   ((e.style.height = ""),
                   (e.style[r.getDirectionLabel("margin-top")] = ""));
               });
@@ -6855,7 +6931,7 @@ var swiperReview = (function () {
               (i.style.height = `calc((100% - ${(c - 1) * d}px) / ${c})`),
               (i.style[r.getDirectionLabel("margin-top")] =
                 0 !== f ? d && `${d}px` : ""),
-              (i.swiperReviewSlideGridSet = !0);
+              (i.swipeGelijkSlideGridSet = !0);
           },
           updateWrapperSize: (e, s) => {
             const { centeredSlides: a, roundLengths: i } = r.params,
@@ -6882,35 +6958,35 @@ var swiperReview = (function () {
         });
     },
     function (e) {
-      let { swiperReview: t } = e;
+      let { swipeGelijk: t } = e;
       Object.assign(t, {
-        appendSlide: ne.bind(t),
-        prependSlide: le.bind(t),
-        addSlide: oe.bind(t),
-        removeSlide: de.bind(t),
-        removeAllSlides: ce.bind(t),
+        appendSlide: le.bind(t),
+        prependSlide: oe.bind(t),
+        addSlide: de.bind(t),
+        removeSlide: ce.bind(t),
+        removeAllSlides: pe.bind(t),
       });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, on: a } = e;
+      let { swipeGelijk: t, extendParams: s, on: a } = e;
       s({ fadeEffect: { crossFade: !1 } }),
-        pe({
+        ue({
           effect: "fade",
-          swiperReview: t,
+          swipeGelijk: t,
           on: a,
           setTranslate: () => {
             const { slides: e } = t;
             t.params.fadeEffect;
             for (let s = 0; s < e.length; s += 1) {
               const e = t.slides[s];
-              let a = -e.swiperReviewSlideOffset;
+              let a = -e.swipeGelijkSlideOffset;
               t.params.virtualTranslate || (a -= t.translate);
               let i = 0;
               t.isHorizontal() || ((i = a), (a = 0));
               const r = t.params.fadeEffect.crossFade
                   ? Math.max(1 - Math.abs(e.progress), 0)
                   : 1 + Math.min(Math.max(e.progress, -1), 0),
-                n = ue(0, e);
+                n = me(0, e);
               (n.style.opacity = r),
                 (n.style.transform = `translate3d(${a}px, ${i}px, 0px)`);
             }
@@ -6920,8 +6996,8 @@ var swiperReview = (function () {
             s.forEach((t) => {
               t.style.transitionDuration = `${e}ms`;
             }),
-              me({
-                swiperReview: t,
+              he({
+                swipeGelijk: t,
                 duration: e,
                 transformElements: s,
                 allSlides: !0,
@@ -6937,7 +7013,7 @@ var swiperReview = (function () {
         });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, on: a } = e;
+      let { swipeGelijk: t, extendParams: s, on: a } = e;
       s({
         cubeEffect: {
           slideShadows: !0,
@@ -6948,16 +7024,16 @@ var swiperReview = (function () {
       });
       const i = (e, t, s) => {
         let a = s
-            ? e.querySelector(".swiperReview-slide-shadow-left")
-            : e.querySelector(".swiperReview-slide-shadow-top"),
+            ? e.querySelector(".swipeGelijk-slide-shadow-left")
+            : e.querySelector(".swipeGelijk-slide-shadow-top"),
           i = s
-            ? e.querySelector(".swiperReview-slide-shadow-right")
-            : e.querySelector(".swiperReview-slide-shadow-bottom");
+            ? e.querySelector(".swipeGelijk-slide-shadow-right")
+            : e.querySelector(".swipeGelijk-slide-shadow-bottom");
         a ||
           ((a = v(
             "div",
             (
-              "swiperReview-slide-shadow-cube swiperReview-slide-shadow-" +
+              "swipeGelijk-slide-shadow-cube swipeGelijk-slide-shadow-" +
               (s ? "left" : "top")
             ).split(" ")
           )),
@@ -6966,7 +7042,7 @@ var swiperReview = (function () {
             ((i = v(
               "div",
               (
-                "swiperReview-slide-shadow-cube swiperReview-slide-shadow-" +
+                "swipeGelijk-slide-shadow-cube swipeGelijk-slide-shadow-" +
                 (s ? "right" : "bottom")
               ).split(" ")
             )),
@@ -6974,9 +7050,9 @@ var swiperReview = (function () {
           a && (a.style.opacity = Math.max(-t, 0)),
           i && (i.style.opacity = Math.max(t, 0));
       };
-      pe({
+      ue({
         effect: "cube",
-        swiperReview: t,
+        swipeGelijk: t,
         on: a,
         setTranslate: () => {
           const {
@@ -6989,83 +7065,79 @@ var swiperReview = (function () {
               size: o,
               browser: d,
             } = t,
-            c = t.params.cubeEffect,
-            p = t.isHorizontal(),
-            u = t.virtual && t.params.virtual.enabled;
-          let m,
-            h = 0;
-          c.shadow &&
-            (p
-              ? ((m = t.wrapperEl.querySelector(".swiperReview-cube-shadow")),
-                m ||
-                  ((m = v("div", "swiperReview-cube-shadow")), t.wrapperEl.append(m)),
-                (m.style.height = `${r}px`))
-              : ((m = e.querySelector(".swiperReview-cube-shadow")),
-                m || ((m = v("div", "swiperReview-cube-shadow")), e.append(m))));
+            c = M(t),
+            p = t.params.cubeEffect,
+            u = t.isHorizontal(),
+            m = t.virtual && t.params.virtual.enabled;
+          let h,
+            f = 0;
+          p.shadow &&
+            (u
+              ? ((h = t.wrapperEl.querySelector(".swipeGelijk-cube-shadow")),
+                h ||
+                  ((h = v("div", "swipeGelijk-cube-shadow")), t.wrapperEl.append(h)),
+                (h.style.height = `${r}px`))
+              : ((h = e.querySelector(".swipeGelijk-cube-shadow")),
+                h || ((h = v("div", "swipeGelijk-cube-shadow")), e.append(h))));
           for (let e = 0; e < a.length; e += 1) {
-            const s = a[e];
-            let r = e;
-            u && (r = parseInt(s.getAttribute("data-swiperReview-slide-index"), 10));
-            let n = 90 * r,
-              d = Math.floor(n / 360);
-            l && ((n = -n), (d = Math.floor(-n / 360)));
-            const m = Math.max(Math.min(s.progress, 1), -1);
-            let f = 0,
+            const t = a[e];
+            let s = e;
+            m && (s = parseInt(t.getAttribute("data-swipeGelijk-slide-index"), 10));
+            let r = 90 * s,
+              n = Math.floor(r / 360);
+            l && ((r = -r), (n = Math.floor(-r / 360)));
+            const d = Math.max(Math.min(t.progress, 1), -1);
+            let h = 0,
               g = 0,
               v = 0;
-            r % 4 == 0
-              ? ((f = 4 * -d * o), (v = 0))
-              : (r - 1) % 4 == 0
-              ? ((f = 0), (v = 4 * -d * o))
-              : (r - 2) % 4 == 0
-              ? ((f = o + 4 * d * o), (v = o))
-              : (r - 3) % 4 == 0 && ((f = -o), (v = 3 * o + 4 * o * d)),
-              l && (f = -f),
-              p || ((g = f), (f = 0));
-            const w = `rotateX(${p ? 0 : -n}deg) rotateY(${
-              p ? n : 0
-            }deg) translate3d(${f}px, ${g}px, ${v}px)`;
-            m <= 1 &&
-              m > -1 &&
-              ((h = 90 * r + 90 * m),
-              l && (h = 90 * -r - 90 * m),
-              t.browser &&
-                t.browser.need3dFix &&
-                (Math.abs(h) / 90) % 2 == 1 &&
-                (h += 0.001)),
-              (s.style.transform = w),
-              c.slideShadows && i(s, m, p);
+            s % 4 == 0
+              ? ((h = 4 * -n * o), (v = 0))
+              : (s - 1) % 4 == 0
+              ? ((h = 0), (v = 4 * -n * o))
+              : (s - 2) % 4 == 0
+              ? ((h = o + 4 * n * o), (v = o))
+              : (s - 3) % 4 == 0 && ((h = -o), (v = 3 * o + 4 * o * n)),
+              l && (h = -h),
+              u || ((g = h), (h = 0));
+            const w = `rotateX(${c(u ? 0 : -r)}deg) rotateY(${c(
+              u ? r : 0
+            )}deg) translate3d(${h}px, ${g}px, ${v}px)`;
+            d <= 1 &&
+              d > -1 &&
+              ((f = 90 * s + 90 * d), l && (f = 90 * -s - 90 * d)),
+              (t.style.transform = w),
+              p.slideShadows && i(t, d, u);
           }
           if (
             ((s.style.transformOrigin = `50% 50% -${o / 2}px`),
             (s.style["-webkit-transform-origin"] = `50% 50% -${o / 2}px`),
-            c.shadow)
+            p.shadow)
           )
-            if (p)
-              m.style.transform = `translate3d(0px, ${
-                r / 2 + c.shadowOffset
+            if (u)
+              h.style.transform = `translate3d(0px, ${
+                r / 2 + p.shadowOffset
               }px, ${-r / 2}px) rotateX(89.99deg) rotateZ(0deg) scale(${
-                c.shadowScale
+                p.shadowScale
               })`;
             else {
-              const e = Math.abs(h) - 90 * Math.floor(Math.abs(h) / 90),
+              const e = Math.abs(f) - 90 * Math.floor(Math.abs(f) / 90),
                 t =
                   1.5 -
                   (Math.sin((2 * e * Math.PI) / 360) / 2 +
                     Math.cos((2 * e * Math.PI) / 360) / 2),
-                s = c.shadowScale,
-                a = c.shadowScale / t,
-                i = c.shadowOffset;
-              m.style.transform = `scale3d(${s}, 1, ${a}) translate3d(0px, ${
+                s = p.shadowScale,
+                a = p.shadowScale / t,
+                i = p.shadowOffset;
+              h.style.transform = `scale3d(${s}, 1, ${a}) translate3d(0px, ${
                 n / 2 + i
               }px, ${-n / 2 / a}px) rotateX(-89.99deg)`;
             }
-          const f =
+          const g =
             (d.isSafari || d.isWebView) && d.needPerspectiveFix ? -o / 2 : 0;
-          (s.style.transform = `translate3d(0px,0,${f}px) rotateX(${
-            t.isHorizontal() ? 0 : h
-          }deg) rotateY(${t.isHorizontal() ? -h : 0}deg)`),
-            s.style.setProperty("--swiperReview-cube-translate-z", `${f}px`);
+          (s.style.transform = `translate3d(0px,0,${g}px) rotateX(${c(
+            t.isHorizontal() ? 0 : f
+          )}deg) rotateY(${c(t.isHorizontal() ? -f : 0)}deg)`),
+            s.style.setProperty("--swipeGelijk-cube-translate-z", `${g}px`);
         },
         setTransition: (e) => {
           const { el: s, slides: a } = t;
@@ -7074,7 +7146,7 @@ var swiperReview = (function () {
               (t.style.transitionDuration = `${e}ms`),
                 t
                   .querySelectorAll(
-                    ".swiperReview-slide-shadow-top, .swiperReview-slide-shadow-right, .swiperReview-slide-shadow-bottom, .swiperReview-slide-shadow-left"
+                    ".swipeGelijk-slide-shadow-top, .swipeGelijk-slide-shadow-right, .swipeGelijk-slide-shadow-bottom, .swipeGelijk-slide-shadow-left"
                   )
                   .forEach((t) => {
                     t.style.transitionDuration = `${e}ms`;
@@ -7082,7 +7154,7 @@ var swiperReview = (function () {
             }),
             t.params.cubeEffect.shadow && !t.isHorizontal())
           ) {
-            const t = s.querySelector(".swiperReview-cube-shadow");
+            const t = s.querySelector(".swipeGelijk-cube-shadow");
             t && (t.style.transitionDuration = `${e}ms`);
           }
         },
@@ -7107,48 +7179,47 @@ var swiperReview = (function () {
       });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, on: a } = e;
+      let { swipeGelijk: t, extendParams: s, on: a } = e;
       s({ flipEffect: { slideShadows: !0, limitRotation: !0 } });
       const i = (e, s) => {
         let a = t.isHorizontal()
-            ? e.querySelector(".swiperReview-slide-shadow-left")
-            : e.querySelector(".swiperReview-slide-shadow-top"),
+            ? e.querySelector(".swipeGelijk-slide-shadow-left")
+            : e.querySelector(".swipeGelijk-slide-shadow-top"),
           i = t.isHorizontal()
-            ? e.querySelector(".swiperReview-slide-shadow-right")
-            : e.querySelector(".swiperReview-slide-shadow-bottom");
-        a || (a = he("flip", e, t.isHorizontal() ? "left" : "top")),
-          i || (i = he("flip", e, t.isHorizontal() ? "right" : "bottom")),
+            ? e.querySelector(".swipeGelijk-slide-shadow-right")
+            : e.querySelector(".swipeGelijk-slide-shadow-bottom");
+        a || (a = fe("flip", e, t.isHorizontal() ? "left" : "top")),
+          i || (i = fe("flip", e, t.isHorizontal() ? "right" : "bottom")),
           a && (a.style.opacity = Math.max(-s, 0)),
           i && (i.style.opacity = Math.max(s, 0));
       };
-      pe({
+      ue({
         effect: "flip",
-        swiperReview: t,
+        swipeGelijk: t,
         on: a,
         setTranslate: () => {
           const { slides: e, rtlTranslate: s } = t,
-            a = t.params.flipEffect;
-          for (let r = 0; r < e.length; r += 1) {
-            const n = e[r];
-            let l = n.progress;
+            a = t.params.flipEffect,
+            r = M(t);
+          for (let n = 0; n < e.length; n += 1) {
+            const l = e[n];
+            let o = l.progress;
             t.params.flipEffect.limitRotation &&
-              (l = Math.max(Math.min(n.progress, 1), -1));
-            const o = n.swiperReviewSlideOffset;
-            let d = -180 * l,
-              c = 0,
-              p = t.params.cssMode ? -o - t.translate : -o,
-              u = 0;
+              (o = Math.max(Math.min(l.progress, 1), -1));
+            const d = l.swipeGelijkSlideOffset;
+            let c = -180 * o,
+              p = 0,
+              u = t.params.cssMode ? -d - t.translate : -d,
+              m = 0;
             t.isHorizontal()
-              ? s && (d = -d)
-              : ((u = p), (p = 0), (c = -d), (d = 0)),
-              t.browser &&
-                t.browser.need3dFix &&
-                ((Math.abs(d) / 90) % 2 == 1 && (d += 0.001),
-                (Math.abs(c) / 90) % 2 == 1 && (c += 0.001)),
-              (n.style.zIndex = -Math.abs(Math.round(l)) + e.length),
-              a.slideShadows && i(n, l);
-            const m = `translate3d(${p}px, ${u}px, 0px) rotateX(${c}deg) rotateY(${d}deg)`;
-            ue(0, n).style.transform = m;
+              ? s && (c = -c)
+              : ((m = u), (u = 0), (p = -c), (c = 0)),
+              (l.style.zIndex = -Math.abs(Math.round(o)) + e.length),
+              a.slideShadows && i(l, o);
+            const h = `translate3d(${u}px, ${m}px, 0px) rotateX(${r(
+              p
+            )}deg) rotateY(${r(c)}deg)`;
+            me(0, l).style.transform = h;
           }
         },
         setTransition: (e) => {
@@ -7157,13 +7228,13 @@ var swiperReview = (function () {
             (t.style.transitionDuration = `${e}ms`),
               t
                 .querySelectorAll(
-                  ".swiperReview-slide-shadow-top, .swiperReview-slide-shadow-right, .swiperReview-slide-shadow-bottom, .swiperReview-slide-shadow-left"
+                  ".swipeGelijk-slide-shadow-top, .swipeGelijk-slide-shadow-right, .swipeGelijk-slide-shadow-bottom, .swipeGelijk-slide-shadow-left"
                 )
                 .forEach((t) => {
                   t.style.transitionDuration = `${e}ms`;
                 });
           }),
-            me({ swiperReview: t, duration: e, transformElements: s });
+            he({ swipeGelijk: t, duration: e, transformElements: s });
         },
         recreateShadows: () => {
           t.params.flipEffect,
@@ -7186,7 +7257,7 @@ var swiperReview = (function () {
       });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, on: a } = e;
+      let { swipeGelijk: t, extendParams: s, on: a } = e;
       s({
         coverflowEffect: {
           rotate: 50,
@@ -7197,9 +7268,9 @@ var swiperReview = (function () {
           slideShadows: !0,
         },
       }),
-        pe({
+        ue({
           effect: "coverflow",
-          swiperReview: t,
+          swipeGelijk: t,
           on: a,
           setTranslate: () => {
             const { width: e, height: s, slides: a, slidesSizesGrid: i } = t,
@@ -7208,22 +7279,23 @@ var swiperReview = (function () {
               l = t.translate,
               o = n ? e / 2 - l : s / 2 - l,
               d = n ? r.rotate : -r.rotate,
-              c = r.depth;
-            for (let e = 0, s = a.length; e < s; e += 1) {
-              const s = a[e],
-                l = i[e],
-                p = (o - s.swiperReviewSlideOffset - l / 2) / l,
+              c = r.depth,
+              p = M(t);
+            for (let e = 0, t = a.length; e < t; e += 1) {
+              const t = a[e],
+                s = i[e],
+                l = (o - t.swipeGelijkSlideOffset - s / 2) / s,
                 u =
                   "function" == typeof r.modifier
-                    ? r.modifier(p)
-                    : p * r.modifier;
+                    ? r.modifier(l)
+                    : l * r.modifier;
               let m = n ? d * u : 0,
                 h = n ? 0 : d * u,
                 f = -c * Math.abs(u),
                 g = r.stretch;
               "string" == typeof g &&
                 -1 !== g.indexOf("%") &&
-                (g = (parseFloat(r.stretch) / 100) * l);
+                (g = (parseFloat(r.stretch) / 100) * s);
               let v = n ? 0 : g * u,
                 w = n ? g * u : 0,
                 b = 1 - (1 - r.scale) * Math.abs(u);
@@ -7232,27 +7304,25 @@ var swiperReview = (function () {
                 Math.abs(f) < 0.001 && (f = 0),
                 Math.abs(m) < 0.001 && (m = 0),
                 Math.abs(h) < 0.001 && (h = 0),
-                Math.abs(b) < 0.001 && (b = 0),
-                t.browser &&
-                  t.browser.need3dFix &&
-                  ((Math.abs(m) / 90) % 2 == 1 && (m += 0.001),
-                  (Math.abs(h) / 90) % 2 == 1 && (h += 0.001));
-              const y = `translate3d(${w}px,${v}px,${f}px)  rotateX(${h}deg) rotateY(${m}deg) scale(${b})`;
+                Math.abs(b) < 0.001 && (b = 0);
+              const y = `translate3d(${w}px,${v}px,${f}px)  rotateX(${p(
+                h
+              )}deg) rotateY(${p(m)}deg) scale(${b})`;
               if (
-                ((ue(0, s).style.transform = y),
-                (s.style.zIndex = 1 - Math.abs(Math.round(u))),
+                ((me(0, t).style.transform = y),
+                (t.style.zIndex = 1 - Math.abs(Math.round(u))),
                 r.slideShadows)
               ) {
                 let e = n
-                    ? s.querySelector(".swiperReview-slide-shadow-left")
-                    : s.querySelector(".swiperReview-slide-shadow-top"),
-                  t = n
-                    ? s.querySelector(".swiperReview-slide-shadow-right")
-                    : s.querySelector(".swiperReview-slide-shadow-bottom");
-                e || (e = he("coverflow", s, n ? "left" : "top")),
-                  t || (t = he("coverflow", s, n ? "right" : "bottom")),
+                    ? t.querySelector(".swipeGelijk-slide-shadow-left")
+                    : t.querySelector(".swipeGelijk-slide-shadow-top"),
+                  s = n
+                    ? t.querySelector(".swipeGelijk-slide-shadow-right")
+                    : t.querySelector(".swipeGelijk-slide-shadow-bottom");
+                e || (e = fe("coverflow", t, n ? "left" : "top")),
+                  s || (s = fe("coverflow", t, n ? "right" : "bottom")),
                   e && (e.style.opacity = u > 0 ? u : 0),
-                  t && (t.style.opacity = -u > 0 ? -u : 0);
+                  s && (s.style.opacity = -u > 0 ? -u : 0);
               }
             }
           },
@@ -7263,7 +7333,7 @@ var swiperReview = (function () {
                 (t.style.transitionDuration = `${e}ms`),
                   t
                     .querySelectorAll(
-                      ".swiperReview-slide-shadow-top, .swiperReview-slide-shadow-right, .swiperReview-slide-shadow-bottom, .swiperReview-slide-shadow-left"
+                      ".swipeGelijk-slide-shadow-top, .swipeGelijk-slide-shadow-right, .swipeGelijk-slide-shadow-bottom, .swipeGelijk-slide-shadow-left"
                     )
                     .forEach((t) => {
                       t.style.transitionDuration = `${e}ms`;
@@ -7275,7 +7345,7 @@ var swiperReview = (function () {
         });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, on: a } = e;
+      let { swipeGelijk: t, extendParams: s, on: a } = e;
       s({
         creativeEffect: {
           limitProgress: 1,
@@ -7297,93 +7367,92 @@ var swiperReview = (function () {
         },
       });
       const i = (e) => ("string" == typeof e ? e : `${e}px`);
-      pe({
+      ue({
         effect: "creative",
-        swiperReview: t,
+        swipeGelijk: t,
         on: a,
         setTranslate: () => {
           const { slides: e, wrapperEl: s, slidesSizesGrid: a } = t,
             r = t.params.creativeEffect,
             { progressMultiplier: n } = r,
-            l = t.params.centeredSlides;
+            l = t.params.centeredSlides,
+            o = M(t);
           if (l) {
             const e = a[0] / 2 - t.params.slidesOffsetBefore || 0;
             s.style.transform = `translateX(calc(50% - ${e}px))`;
           }
           for (let s = 0; s < e.length; s += 1) {
             const a = e[s],
-              o = a.progress,
-              d = Math.min(
+              d = a.progress,
+              c = Math.min(
                 Math.max(a.progress, -r.limitProgress),
                 r.limitProgress
               );
-            let c = d;
+            let p = c;
             l ||
-              (c = Math.min(
+              (p = Math.min(
                 Math.max(a.originalProgress, -r.limitProgress),
                 r.limitProgress
               ));
-            const p = a.swiperReviewSlideOffset,
-              u = [t.params.cssMode ? -p - t.translate : -p, 0, 0],
-              m = [0, 0, 0];
-            let h = !1;
-            t.isHorizontal() || ((u[1] = u[0]), (u[0] = 0));
-            let f = {
+            const u = a.swipeGelijkSlideOffset,
+              m = [t.params.cssMode ? -u - t.translate : -u, 0, 0],
+              h = [0, 0, 0];
+            let f = !1;
+            t.isHorizontal() || ((m[1] = m[0]), (m[0] = 0));
+            let g = {
               translate: [0, 0, 0],
               rotate: [0, 0, 0],
               scale: 1,
               opacity: 1,
             };
-            d < 0
-              ? ((f = r.next), (h = !0))
-              : d > 0 && ((f = r.prev), (h = !0)),
-              u.forEach((e, t) => {
-                u[t] = `calc(${e}px + (${i(f.translate[t])} * ${Math.abs(
-                  d * n
+            c < 0
+              ? ((g = r.next), (f = !0))
+              : c > 0 && ((g = r.prev), (f = !0)),
+              m.forEach((e, t) => {
+                m[t] = `calc(${e}px + (${i(g.translate[t])} * ${Math.abs(
+                  c * n
                 )}))`;
               }),
-              m.forEach((e, s) => {
-                let a = f.rotate[s] * Math.abs(d * n);
-                t.browser &&
-                  t.browser.need3dFix &&
-                  (Math.abs(a) / 90) % 2 == 1 &&
-                  (a += 0.001),
-                  (m[s] = a);
+              h.forEach((e, t) => {
+                let s = g.rotate[t] * Math.abs(c * n);
+                h[t] = s;
               }),
-              (a.style.zIndex = -Math.abs(Math.round(o)) + e.length);
-            const g = u.join(", "),
-              v = `rotateX(${m[0]}deg) rotateY(${m[1]}deg) rotateZ(${m[2]}deg)`,
-              w =
-                c < 0
-                  ? `scale(${1 + (1 - f.scale) * c * n})`
-                  : `scale(${1 - (1 - f.scale) * c * n})`,
+              (a.style.zIndex = -Math.abs(Math.round(d)) + e.length);
+            const v = m.join(", "),
+              w = `rotateX(${o(h[0])}deg) rotateY(${o(h[1])}deg) rotateZ(${o(
+                h[2]
+              )}deg)`,
               b =
-                c < 0
-                  ? 1 + (1 - f.opacity) * c * n
-                  : 1 - (1 - f.opacity) * c * n,
-              y = `translate3d(${g}) ${v} ${w}`;
-            if ((h && f.shadow) || !h) {
-              let e = a.querySelector(".swiperReview-slide-shadow");
-              if ((!e && f.shadow && (e = he("creative", a)), e)) {
-                const t = r.shadowPerProgress ? d * (1 / r.limitProgress) : d;
+                p < 0
+                  ? `scale(${1 + (1 - g.scale) * p * n})`
+                  : `scale(${1 - (1 - g.scale) * p * n})`,
+              y =
+                p < 0
+                  ? 1 + (1 - g.opacity) * p * n
+                  : 1 - (1 - g.opacity) * p * n,
+              E = `translate3d(${v}) ${w} ${b}`;
+            if ((f && g.shadow) || !f) {
+              let e = a.querySelector(".swipeGelijk-slide-shadow");
+              if ((!e && g.shadow && (e = fe("creative", a)), e)) {
+                const t = r.shadowPerProgress ? c * (1 / r.limitProgress) : c;
                 e.style.opacity = Math.min(Math.max(Math.abs(t), 0), 1);
               }
             }
-            const E = ue(0, a);
-            (E.style.transform = y),
-              (E.style.opacity = b),
-              f.origin && (E.style.transformOrigin = f.origin);
+            const x = me(0, a);
+            (x.style.transform = E),
+              (x.style.opacity = y),
+              g.origin && (x.style.transformOrigin = g.origin);
           }
         },
         setTransition: (e) => {
           const s = t.slides.map((e) => h(e));
           s.forEach((t) => {
             (t.style.transitionDuration = `${e}ms`),
-              t.querySelectorAll(".swiperReview-slide-shadow").forEach((t) => {
+              t.querySelectorAll(".swipeGelijk-slide-shadow").forEach((t) => {
                 t.style.transitionDuration = `${e}ms`;
               });
           }),
-            me({ swiperReview: t, duration: e, transformElements: s, allSlides: !0 });
+            he({ swipeGelijk: t, duration: e, transformElements: s, allSlides: !0 });
         },
         perspective: () => t.params.creativeEffect.perspective,
         overwriteParams: () => ({
@@ -7393,7 +7462,7 @@ var swiperReview = (function () {
       });
     },
     function (e) {
-      let { swiperReview: t, extendParams: s, on: a } = e;
+      let { swipeGelijk: t, extendParams: s, on: a } = e;
       s({
         cardsEffect: {
           slideShadows: !0,
@@ -7402,9 +7471,9 @@ var swiperReview = (function () {
           perSlideOffset: 8,
         },
       }),
-        pe({
+        ue({
           effect: "cards",
-          swiperReview: t,
+          swipeGelijk: t,
           on: a,
           setTranslate: () => {
             const { slides: e, activeIndex: s, rtlTranslate: a } = t,
@@ -7415,13 +7484,13 @@ var swiperReview = (function () {
               const d = e[o],
                 c = d.progress,
                 p = Math.min(Math.max(c, -4), 4);
-              let u = d.swiperReviewSlideOffset;
+              let u = d.swipeGelijkSlideOffset;
               t.params.centeredSlides &&
                 !t.params.cssMode &&
                 (t.wrapperEl.style.transform = `translateX(${t.minTranslate()}px)`),
                 t.params.centeredSlides &&
                   t.params.cssMode &&
-                  (u -= e[0].swiperReviewSlideOffset);
+                  (u -= e[0].swipeGelijkSlideOffset);
               let m = t.params.cssMode ? -u - t.translate : -u,
                 h = 0;
               const f = -100 * Math.abs(p);
@@ -7468,8 +7537,8 @@ var swiperReview = (function () {
                   i.rotate ? (a ? -v : v) : 0
                 }deg)\n        scale(${x})\n      `;
               if (i.slideShadows) {
-                let e = d.querySelector(".swiperReview-slide-shadow");
-                e || (e = he("cards", d)),
+                let e = d.querySelector(".swipeGelijk-slide-shadow");
+                e || (e = fe("cards", d)),
                   e &&
                     (e.style.opacity = Math.min(
                       Math.max((Math.abs(p) - 0.5) / 0.5, 0),
@@ -7477,18 +7546,18 @@ var swiperReview = (function () {
                     ));
               }
               d.style.zIndex = -Math.abs(Math.round(c)) + e.length;
-              ue(0, d).style.transform = S;
+              me(0, d).style.transform = S;
             }
           },
           setTransition: (e) => {
             const s = t.slides.map((e) => h(e));
             s.forEach((t) => {
               (t.style.transitionDuration = `${e}ms`),
-                t.querySelectorAll(".swiperReview-slide-shadow").forEach((t) => {
+                t.querySelectorAll(".swipeGelijk-slide-shadow").forEach((t) => {
                   t.style.transitionDuration = `${e}ms`;
                 });
             }),
-              me({ swiperReview: t, duration: e, transformElements: s });
+              he({ swipeGelijk: t, duration: e, transformElements: s });
           },
           perspective: () => !0,
           overwriteParams: () => ({
@@ -7498,34 +7567,34 @@ var swiperReview = (function () {
         });
     },
   ];
-  return ae.use(fe), ae;
+  return ie.use(ge), ie;
 })();
-//# sourceMappingURL=swiperReview-bundle.min.js.map
+//# sourceMappingURL=swipeGelijk-bundle.min.js.map
 
-
-var swiperReview = new swiperReview(".myswiperReview", {
-  cssMode: true,
-  mousewheel: true,
-  keyboard: true,
-  slidesPerView: 1,
-  slidesPerGroup: 1,
-    // spaceBetween: 0,
-  loop: true,
-  pagination: {
-    el: ".swiperReview-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiperReview-button-next",
-    prevEl: ".swiperReview-button-prev",
-  },
-  breakpoints: {
-    1000: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
+var swipeGelijk = new swipeGelijk(".myswipeGelijk", {
+    slidesPerView: 1, // Aantal slides per view op mobiel
+    // spaceBetween: 60,
+    loop: true,
+    pagination: {
+      el: ".swipeGelijk-pagination",
+      clickable: true,
     },
-  },
-});
-
-
-
+    navigation: {
+      nextEl: ".swipeGelijk-button-next",
+      prevEl: ".swipeGelijk-button-prev",
+    },
+    breakpoints: { // Voeg breakpoints toe voor verschillende schermformaten
+      640: { // Voor schermen kleiner dan 640px
+        slidesPerView: 1, // 1 slide per view op mobiele schermen
+        spaceBetween: 10, // Pas ruimte aan indien nodig
+      },
+      768: { // Voor schermen groter dan 640px, maar kleiner dan 768px
+        slidesPerView: 2, // 2 slides per view
+        spaceBetween: 20,
+      },
+      1024: { // Voor schermen groter dan 768px
+        slidesPerView: 3, // 3 slides per view
+        spaceBetween: 30,
+      },
+    },
+  });

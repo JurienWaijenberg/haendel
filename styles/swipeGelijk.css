@@ -1,0 +1,762 @@
+/**
+ * swipeGelijk 11.1.14
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * https://swipeGelijkjs.com
+ *
+ * Copyright 2014-2024 Vladimir Kharlampidi
+ *
+ * Released under the MIT License
+ *
+ * Released on: September 12, 2024
+ */
+
+@font-face {
+  font-family: swipeGelijk-icons;
+  src: url("data:application/font-woff;charset=utf-8;base64, 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");
+  font-weight: 400;
+  font-style: normal;
+}
+:root {
+  --swipeGelijk-theme-color: #007aff;
+}
+:host {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+}
+.swipeGelijk {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+  display: block;
+}
+.swipeGelijk-vertical > .swipeGelijk-wrapper {
+  flex-direction: column;
+}
+.swipeGelijk-wrapper {
+    padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  transition-timing-function: var(
+    --swipeGelijk-wrapper-transition-timing-function,
+    initial
+  );
+  box-sizing: content-box;
+}
+.swipeGelijk-android .swipeGelijk-slide,
+.swipeGelijk-ios .swipeGelijk-slide,
+.swipeGelijk-wrapper {
+  transform: translate3d(0px, 0, 0);
+}
+.swipeGelijk-horizontal {
+  touch-action: pan-y;
+}
+.swipeGelijk-vertical {
+  touch-action: pan-x;
+}
+.swipeGelijk-slide {
+    background-color: aqua;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  display: block;
+}
+.swipeGelijk-slide-invisible-blank {
+  visibility: hidden;
+}
+.swipeGelijk-autoheight,
+.swipeGelijk-autoheight .swipeGelijk-slide {
+  height: auto;
+}
+.swipeGelijk-autoheight .swipeGelijk-wrapper {
+  align-items: flex-start;
+  transition-property: transform, height;
+}
+.swipeGelijk-backface-hidden .swipeGelijk-slide {
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.swipeGelijk-3d.swipeGelijk-css-mode .swipeGelijk-wrapper {
+  perspective: 1200px;
+}
+.swipeGelijk-3d .swipeGelijk-wrapper {
+  transform-style: preserve-3d;
+}
+.swipeGelijk-3d {
+  perspective: 1200px;
+}
+.swipeGelijk-3d .swipeGelijk-cube-shadow,
+.swipeGelijk-3d .swipeGelijk-slide {
+  transform-style: preserve-3d;
+}
+.swipeGelijk-css-mode > .swipeGelijk-wrapper {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.swipeGelijk-css-mode > .swipeGelijk-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.swipeGelijk-css-mode > .swipeGelijk-wrapper > .swipeGelijk-slide {
+  scroll-snap-align: start start;
+}
+.swipeGelijk-css-mode.swipeGelijk-horizontal > .swipeGelijk-wrapper {
+  scroll-snap-type: x mandatory;
+}
+.swipeGelijk-css-mode.swipeGelijk-vertical > .swipeGelijk-wrapper {
+  scroll-snap-type: y mandatory;
+}
+.swipeGelijk-css-mode.swipeGelijk-free-mode > .swipeGelijk-wrapper {
+  scroll-snap-type: none;
+}
+.swipeGelijk-css-mode.swipeGelijk-free-mode > .swipeGelijk-wrapper > .swipeGelijk-slide {
+  scroll-snap-align: none;
+}
+.swipeGelijk-css-mode.swipeGelijk-centered > .swipeGelijk-wrapper::before {
+  content: "";
+  flex-shrink: 0;
+  order: 9999;
+}
+.swipeGelijk-css-mode.swipeGelijk-centered > .swipeGelijk-wrapper > .swipeGelijk-slide {
+  scroll-snap-align: center center;
+  scroll-snap-stop: always;
+}
+.swipeGelijk-css-mode.swipeGelijk-centered.swipeGelijk-horizontal
+  > .swipeGelijk-wrapper
+  > .swipeGelijk-slide:first-child {
+  margin-inline-start: var(--swipeGelijk-centered-offset-before);
+}
+.swipeGelijk-css-mode.swipeGelijk-centered.swipeGelijk-horizontal > .swipeGelijk-wrapper::before {
+  height: 100%;
+  min-height: 1px;
+  width: var(--swipeGelijk-centered-offset-after);
+}
+.swipeGelijk-css-mode.swipeGelijk-centered.swipeGelijk-vertical
+  > .swipeGelijk-wrapper
+  > .swipeGelijk-slide:first-child {
+  margin-block-start: var(--swipeGelijk-centered-offset-before);
+}
+.swipeGelijk-css-mode.swipeGelijk-centered.swipeGelijk-vertical > .swipeGelijk-wrapper::before {
+  width: 100%;
+  min-width: 1px;
+  height: var(--swipeGelijk-centered-offset-after);
+}
+.swipeGelijk-3d .swipeGelijk-slide-shadow,
+.swipeGelijk-3d .swipeGelijk-slide-shadow-bottom,
+.swipeGelijk-3d .swipeGelijk-slide-shadow-left,
+.swipeGelijk-3d .swipeGelijk-slide-shadow-right,
+.swipeGelijk-3d .swipeGelijk-slide-shadow-top {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+.swipeGelijk-3d .swipeGelijk-slide-shadow {
+  background: rgba(0, 0, 0, 0.15);
+}
+.swipeGelijk-3d .swipeGelijk-slide-shadow-left {
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0)
+  );
+}
+.swipeGelijk-3d .swipeGelijk-slide-shadow-right {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0)
+  );
+}
+.swipeGelijk-3d .swipeGelijk-slide-shadow-top {
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0)
+  );
+}
+.swipeGelijk-3d .swipeGelijk-slide-shadow-bottom {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0)
+  );
+}
+.swipeGelijk-lazy-preloader {
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -21px;
+  margin-top: -21px;
+  z-index: 10;
+  transform-origin: 50%;
+  box-sizing: border-box;
+  border: 4px solid var(--swipeGelijk-preloader-color, var(--swipeGelijk-theme-color));
+  border-radius: 50%;
+  border-top-color: transparent;
+}
+.swipeGelijk-watch-progress .swipeGelijk-slide-visible .swipeGelijk-lazy-preloader,
+.swipeGelijk:not(.swipeGelijk-watch-progress) .swipeGelijk-lazy-preloader {
+  animation: swipeGelijk-preloader-spin 1s infinite linear;
+}
+.swipeGelijk-lazy-preloader-white {
+  --swipeGelijk-preloader-color: #fff;
+}
+.swipeGelijk-lazy-preloader-black {
+  --swipeGelijk-preloader-color: #000;
+}
+@keyframes swipeGelijk-preloader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.swipeGelijk-virtual .swipeGelijk-slide {
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+.swipeGelijk-virtual.swipeGelijk-css-mode .swipeGelijk-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+.swipeGelijk-virtual.swipeGelijk-css-mode.swipeGelijk-horizontal .swipeGelijk-wrapper::after {
+  height: 1px;
+  width: var(--swipeGelijk-virtual-size);
+}
+.swipeGelijk-virtual.swipeGelijk-css-mode.swipeGelijk-vertical .swipeGelijk-wrapper::after {
+  width: 1px;
+  height: var(--swipeGelijk-virtual-size);
+}
+:root {
+  --swipeGelijk-navigation-size: 44px;
+}
+.swipeGelijk-button-next,
+.swipeGelijk-button-prev {
+    position: absolute;
+    top: 0;
+    /* width: calc(var(--swiper-navigation-size) / 44* 27); */
+    height: var(--swiper-navigation-size);
+    /* margin-top: calc(0px -(var(--swiper-navigation-size) / 2)); */
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: var(--Rood);
+    /* padding: 2rem; */
+    height: 4rem;
+    width: 6rem;
+}
+.swipeGelijk-button-next.swipeGelijk-button-disabled,
+.swipeGelijk-button-prev.swipeGelijk-button-disabled {
+  opacity: 0.35;
+  cursor: auto;
+  pointer-events: none;
+}
+.swipeGelijk-button-next.swipeGelijk-button-hidden,
+.swipeGelijk-button-prev.swipeGelijk-button-hidden {
+  opacity: 0;
+  cursor: auto;
+  pointer-events: none;
+}
+.swipeGelijk-navigation-disabled .swipeGelijk-button-next,
+.swipeGelijk-navigation-disabled .swipeGelijk-button-prev {
+  display: none !important;
+}
+.swipeGelijk-button-next svg,
+.swipeGelijk-button-prev svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform-origin: center;
+}
+.swipeGelijk-rtl .swipeGelijk-button-next svg,
+.swipeGelijk-rtl .swipeGelijk-button-prev svg {
+  transform: rotate(180deg);
+}
+.swipeGelijk-button-prev,
+.swipeGelijk-rtl .swipeGelijk-button-next {
+  left: 0;
+  right: auto;
+}
+.swipeGelijk-button-next,
+.swipeGelijk-rtl .swipeGelijk-button-prev {
+  right: var(--swipeGelijk-navigation-sides-offset, 10px);
+  left: auto;
+}
+.swipeGelijk-button-lock {
+  display: none;
+}
+.swipeGelijk-button-next:after,
+.swipeGelijk-button-prev:after {
+  font-family: swipeGelijk-icons;
+  font-size: 2rem;
+  text-transform: none !important;
+  letter-spacing: 0;
+  font-variant: initial;
+  line-height: 1;
+}
+.swipeGelijk-button-prev:after,
+.swipeGelijk-rtl .swipeGelijk-button-next:after {
+  content: "prev";
+}
+.swipeGelijk-button-next,
+.swipeGelijk-rtl .swipeGelijk-button-prev {
+  right: 0;
+  left: auto;
+}
+.swipeGelijk-button-next:after,
+.swipeGelijk-rtl .swipeGelijk-button-prev:after {
+  content: "next";
+}
+.swipeGelijk-pagination {
+  position: absolute;
+  text-align: center;
+  transition: 0.3s opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}
+.swipeGelijk-pagination.swipeGelijk-pagination-hidden {
+  opacity: 0;
+}
+.swipeGelijk-pagination-disabled > .swipeGelijk-pagination,
+.swipeGelijk-pagination.swipeGelijk-pagination-disabled {
+  display: none !important;
+}
+.swipeGelijk-horizontal > .swipeGelijk-pagination-bullets,
+.swipeGelijk-pagination-bullets.swipeGelijk-pagination-horizontal,
+.swipeGelijk-pagination-custom,
+.swipeGelijk-pagination-fraction {
+  bottom: var(--swipeGelijk-pagination-bottom, 8px);
+  top: var(--swipeGelijk-pagination-top, auto);
+  left: 0;
+  width: 100%;
+}
+.swipeGelijk-pagination-bullets-dynamic {
+  overflow: hidden;
+  font-size: 0;
+}
+.swipeGelijk-pagination-bullets-dynamic .swipeGelijk-pagination-bullet {
+  transform: scale(0.33);
+  position: relative;
+}
+.swipeGelijk-pagination-bullets-dynamic .swipeGelijk-pagination-bullet-active {
+  transform: scale(1);
+}
+.swipeGelijk-pagination-bullets-dynamic .swipeGelijk-pagination-bullet-active-main {
+  transform: scale(1);
+}
+.swipeGelijk-pagination-bullets-dynamic .swipeGelijk-pagination-bullet-active-prev {
+  transform: scale(0.66);
+}
+.swipeGelijk-pagination-bullets-dynamic .swipeGelijk-pagination-bullet-active-prev-prev {
+  transform: scale(0.33);
+}
+.swipeGelijk-pagination-bullets-dynamic .swipeGelijk-pagination-bullet-active-next {
+  transform: scale(0.66);
+}
+.swipeGelijk-pagination-bullets-dynamic .swipeGelijk-pagination-bullet-active-next-next {
+  transform: scale(0.33);
+}
+.swipeGelijk-pagination-bullet {
+  width: var(
+    --swipeGelijk-pagination-bullet-width,
+    var(--swipeGelijk-pagination-bullet-size, 8px)
+  );
+  height: var(
+    --swipeGelijk-pagination-bullet-height,
+    var(--swipeGelijk-pagination-bullet-size, 8px)
+  );
+  display: inline-block;
+  border-radius: var(--swipeGelijk-pagination-bullet-border-radius, 50%);
+  background: var(--swipeGelijk-pagination-bullet-inactive-color, #000);
+  opacity: var(--swipeGelijk-pagination-bullet-inactive-opacity, 0.2);
+}
+button.swipeGelijk-pagination-bullet {
+  border: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.swipeGelijk-pagination-clickable .swipeGelijk-pagination-bullet {
+  cursor: pointer;
+}
+.swipeGelijk-pagination-bullet:only-child {
+  display: none !important;
+}
+.swipeGelijk-pagination-bullet-active {
+  opacity: var(--swipeGelijk-pagination-bullet-opacity, 1);
+  background: var(--Rood);
+}
+.swipeGelijk-pagination-vertical.swipeGelijk-pagination-bullets,
+.swipeGelijk-vertical > .swipeGelijk-pagination-bullets {
+  right: var(--swipeGelijk-pagination-right, 8px);
+  left: var(--swipeGelijk-pagination-left, auto);
+  top: 50%;
+  transform: translate3d(0px, -50%, 0);
+}
+.swipeGelijk-pagination-vertical.swipeGelijk-pagination-bullets .swipeGelijk-pagination-bullet,
+.swipeGelijk-vertical > .swipeGelijk-pagination-bullets .swipeGelijk-pagination-bullet {
+  margin: var(--swipeGelijk-pagination-bullet-vertical-gap, 6px) 0;
+  display: block;
+}
+.swipeGelijk-pagination-vertical.swipeGelijk-pagination-bullets.swipeGelijk-pagination-bullets-dynamic,
+.swipeGelijk-vertical
+  > .swipeGelijk-pagination-bullets.swipeGelijk-pagination-bullets-dynamic {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+}
+.swipeGelijk-pagination-vertical.swipeGelijk-pagination-bullets.swipeGelijk-pagination-bullets-dynamic
+  .swipeGelijk-pagination-bullet,
+.swipeGelijk-vertical
+  > .swipeGelijk-pagination-bullets.swipeGelijk-pagination-bullets-dynamic
+  .swipeGelijk-pagination-bullet {
+  display: inline-block;
+  transition: 0.2s transform, 0.2s top;
+}
+.swipeGelijk-horizontal > .swipeGelijk-pagination-bullets .swipeGelijk-pagination-bullet,
+.swipeGelijk-pagination-horizontal.swipeGelijk-pagination-bullets
+  .swipeGelijk-pagination-bullet {
+  margin: 0 var(--swipeGelijk-pagination-bullet-horizontal-gap, 4px);
+}
+.swipeGelijk-horizontal
+  > .swipeGelijk-pagination-bullets.swipeGelijk-pagination-bullets-dynamic,
+.swipeGelijk-pagination-horizontal.swipeGelijk-pagination-bullets.swipeGelijk-pagination-bullets-dynamic {
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.swipeGelijk-horizontal
+  > .swipeGelijk-pagination-bullets.swipeGelijk-pagination-bullets-dynamic
+  .swipeGelijk-pagination-bullet,
+.swipeGelijk-pagination-horizontal.swipeGelijk-pagination-bullets.swipeGelijk-pagination-bullets-dynamic
+  .swipeGelijk-pagination-bullet {
+  transition: 0.2s transform, 0.2s left;
+}
+.swipeGelijk-horizontal.swipeGelijk-rtl
+  > .swipeGelijk-pagination-bullets-dynamic
+  .swipeGelijk-pagination-bullet {
+  transition: 0.2s transform, 0.2s right;
+}
+.swipeGelijk-pagination-fraction {
+  color: var(--swipeGelijk-pagination-fraction-color, inherit);
+}
+.swipeGelijk-pagination-progressbar {
+  background: var(
+    --swipeGelijk-pagination-progressbar-bg-color,
+    rgba(0, 0, 0, 0.25)
+  );
+  position: absolute;
+}
+.swipeGelijk-pagination-progressbar .swipeGelijk-pagination-progressbar-fill {
+  background: var(--swipeGelijk-pagination-color, var(--swipeGelijk-theme-color));
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  transform-origin: left top;
+}
+.swipeGelijk-rtl .swipeGelijk-pagination-progressbar .swipeGelijk-pagination-progressbar-fill {
+  transform-origin: right top;
+}
+.swipeGelijk-horizontal > .swipeGelijk-pagination-progressbar,
+.swipeGelijk-pagination-progressbar.swipeGelijk-pagination-horizontal,
+.swipeGelijk-pagination-progressbar.swipeGelijk-pagination-vertical.swipeGelijk-pagination-progressbar-opposite,
+.swipeGelijk-vertical
+  > .swipeGelijk-pagination-progressbar.swipeGelijk-pagination-progressbar-opposite {
+  width: 100%;
+  height: var(--swipeGelijk-pagination-progressbar-size, 4px);
+  left: 0;
+  top: 0;
+}
+.swipeGelijk-horizontal
+  > .swipeGelijk-pagination-progressbar.swipeGelijk-pagination-progressbar-opposite,
+.swipeGelijk-pagination-progressbar.swipeGelijk-pagination-horizontal.swipeGelijk-pagination-progressbar-opposite,
+.swipeGelijk-pagination-progressbar.swipeGelijk-pagination-vertical,
+.swipeGelijk-vertical > .swipeGelijk-pagination-progressbar {
+  width: var(--swipeGelijk-pagination-progressbar-size, 4px);
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.swipeGelijk-pagination-lock {
+  display: none;
+}
+.swipeGelijk-scrollbar {
+  border-radius: var(--swipeGelijk-scrollbar-border-radius, 10px);
+  position: relative;
+  touch-action: none;
+  background: var(--swipeGelijk-scrollbar-bg-color, rgba(0, 0, 0, 0.1));
+}
+.swipeGelijk-scrollbar-disabled > .swipeGelijk-scrollbar,
+.swipeGelijk-scrollbar.swipeGelijk-scrollbar-disabled {
+  display: none !important;
+}
+.swipeGelijk-horizontal > .swipeGelijk-scrollbar,
+.swipeGelijk-scrollbar.swipeGelijk-scrollbar-horizontal {
+  position: absolute;
+  left: var(--swipeGelijk-scrollbar-sides-offset, 1%);
+  bottom: var(--swipeGelijk-scrollbar-bottom, 4px);
+  top: var(--swipeGelijk-scrollbar-top, auto);
+  z-index: 50;
+  height: var(--swipeGelijk-scrollbar-size, 4px);
+  width: calc(100% - 2 * var(--swipeGelijk-scrollbar-sides-offset, 1%));
+}
+.swipeGelijk-scrollbar.swipeGelijk-scrollbar-vertical,
+.swipeGelijk-vertical > .swipeGelijk-scrollbar {
+  position: absolute;
+  left: var(--swipeGelijk-scrollbar-left, auto);
+  right: var(--swipeGelijk-scrollbar-right, 4px);
+  top: var(--swipeGelijk-scrollbar-sides-offset, 1%);
+  z-index: 50;
+  width: var(--swipeGelijk-scrollbar-size, 4px);
+  height: calc(100% - 2 * var(--swipeGelijk-scrollbar-sides-offset, 1%));
+}
+.swipeGelijk-scrollbar-drag {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: var(--swipeGelijk-scrollbar-drag-bg-color, rgba(0, 0, 0, 0.5));
+  border-radius: var(--swipeGelijk-scrollbar-border-radius, 10px);
+  left: 0;
+  top: 0;
+}
+.swipeGelijk-scrollbar-cursor-drag {
+  cursor: move;
+}
+.swipeGelijk-scrollbar-lock {
+  display: none;
+}
+.swipeGelijk-zoom-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.swipeGelijk-zoom-container > canvas,
+.swipeGelijk-zoom-container > img,
+.swipeGelijk-zoom-container > svg {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.swipeGelijk-slide-zoomed {
+  cursor: move;
+  touch-action: none;
+}
+.swipeGelijk .swipeGelijk-notification {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: -1000;
+}
+.swipeGelijk-free-mode > .swipeGelijk-wrapper {
+  transition-timing-function: ease-out;
+  margin: 0 auto;
+}
+.swipeGelijk-grid > .swipeGelijk-wrapper {
+  flex-wrap: wrap;
+}
+.swipeGelijk-grid-column > .swipeGelijk-wrapper {
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.swipeGelijk-fade.swipeGelijk-free-mode .swipeGelijk-slide {
+  transition-timing-function: ease-out;
+}
+.swipeGelijk-fade .swipeGelijk-slide {
+  pointer-events: none;
+  transition-property: opacity;
+}
+.swipeGelijk-fade .swipeGelijk-slide .swipeGelijk-slide {
+  pointer-events: none;
+}
+.swipeGelijk-fade .swipeGelijk-slide-active {
+  pointer-events: auto;
+}
+.swipeGelijk-fade .swipeGelijk-slide-active .swipeGelijk-slide-active {
+  pointer-events: auto;
+}
+.swipeGelijk.swipeGelijk-cube {
+  overflow: visible;
+}
+.swipeGelijk-cube .swipeGelijk-slide {
+  pointer-events: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 1;
+  visibility: hidden;
+  transform-origin: 0 0;
+  width: 100%;
+  height: 100%;
+}
+.swipeGelijk-cube .swipeGelijk-slide .swipeGelijk-slide {
+  pointer-events: none;
+}
+.swipeGelijk-cube.swipeGelijk-rtl .swipeGelijk-slide {
+  transform-origin: 100% 0;
+}
+.swipeGelijk-cube .swipeGelijk-slide-active,
+.swipeGelijk-cube .swipeGelijk-slide-active .swipeGelijk-slide-active {
+  pointer-events: auto;
+}
+.swipeGelijk-cube .swipeGelijk-slide-active,
+.swipeGelijk-cube .swipeGelijk-slide-next,
+.swipeGelijk-cube .swipeGelijk-slide-prev {
+  pointer-events: auto;
+  visibility: visible;
+}
+.swipeGelijk-cube .swipeGelijk-cube-shadow {
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  z-index: 0;
+}
+.swipeGelijk-cube .swipeGelijk-cube-shadow:before {
+  content: "";
+  background: #000;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  filter: blur(50px);
+}
+.swipeGelijk-cube .swipeGelijk-slide-next + .swipeGelijk-slide {
+  pointer-events: auto;
+  visibility: visible;
+}
+.swipeGelijk-cube .swipeGelijk-slide-shadow-cube.swipeGelijk-slide-shadow-bottom,
+.swipeGelijk-cube .swipeGelijk-slide-shadow-cube.swipeGelijk-slide-shadow-left,
+.swipeGelijk-cube .swipeGelijk-slide-shadow-cube.swipeGelijk-slide-shadow-right,
+.swipeGelijk-cube .swipeGelijk-slide-shadow-cube.swipeGelijk-slide-shadow-top {
+  z-index: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.swipeGelijk.swipeGelijk-flip {
+  overflow: visible;
+}
+.swipeGelijk-flip .swipeGelijk-slide {
+  pointer-events: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 1;
+}
+.swipeGelijk-flip .swipeGelijk-slide .swipeGelijk-slide {
+  pointer-events: none;
+}
+.swipeGelijk-flip .swipeGelijk-slide-active,
+.swipeGelijk-flip .swipeGelijk-slide-active .swipeGelijk-slide-active {
+  pointer-events: auto;
+}
+.swipeGelijk-flip .swipeGelijk-slide-shadow-flip.swipeGelijk-slide-shadow-bottom,
+.swipeGelijk-flip .swipeGelijk-slide-shadow-flip.swipeGelijk-slide-shadow-left,
+.swipeGelijk-flip .swipeGelijk-slide-shadow-flip.swipeGelijk-slide-shadow-right,
+.swipeGelijk-flip .swipeGelijk-slide-shadow-flip.swipeGelijk-slide-shadow-top {
+  z-index: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.swipeGelijk-creative .swipeGelijk-slide {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  transition-property: transform, opacity, height;
+}
+.swipeGelijk.swipeGelijk-cards {
+  overflow: visible;
+}
+.swipeGelijk-cards .swipeGelijk-slide {
+  transform-origin: center bottom;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.swipeGelijk {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.swipeGelijk-slide {
+    height: 25rem;
+  text-align: center;
+  font-size: 18px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+li.swipeGelijk-slide.swipeGelijk-slide-next{
+    margin: 0;
+}
+
+.swipeGelijk-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swipeGelijk {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.swipeGelijk-slide img{
+    height: auto;
+    object-fit: cover;
+}
+
+.swipeGelijk-button-prev{
+    border-radius: 0 50px 50px 0;
+}
+
+.swipeGelijk-button-next{
+    border-radius: 50px 0 0 50px; 
+}
+
+/* li.swipeGelijk-slide.swipeGelijk-slide-active{
+    margin-right: 60px;
+} */

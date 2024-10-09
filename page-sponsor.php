@@ -1,4 +1,10 @@
 <?php get_header(); ?>
+<section class="atf bannerImg">
+    <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
+    <h1>Word sponsor van de nederlandse händelvereniging</h1>
+</section>
+
+
 <section class="max-width overigeVrijwillegerTotaal max-width">
     <section class="eenXColumn overigeVrijwillegers">
         <section>
@@ -27,91 +33,33 @@
     </section>
 </section>
 
-<!-- 
-<section class="swiperReview myswiperReview max-width swiperReview-css-mode">
-        <h2>Dit zeggen onze klanten</h2>
-        <ul class="swiperReview-wrapper swiperSponsor">
-
-            <li class="swiperReview-slide">
-                <div>
-                    <i class="fa-solid fa-quote-left"></i>
-                    <p>
-                        Ik was helemaal betoverd door de uitvoering. De energie en de emotie die overgebracht werden,
-                        waren gewoonweg fenomenaal. Dit concert is een echte aanrader voor iedere muziekliefhebber. De
-                        setting was mooi en de akoestiek uitstekend, waardoor elke nuance van de muziek goed tot zijn
-                        recht kwam.
-                        <br>
-                        <span> – Margot van Dam</span>
-                    </p>
-                </div>
-            </li>
-
-            <li class="swiperReview-slide">
-                <div>
-                    <i class="fa-solid fa-quote-left"></i>
-                    <p>
-                        Het publiek werd meegenomen op een muzikale reis vol hoogtepunten. Dit was zonder twijfel een
-                        van de beste concerten die ik in lange tijd heb bijgewoond.<br>
-                        <span>- Isabella Rossi</span>
-                    </p>
-                </div>
-            </li>
-            <li class="swiperReview-slide">
-                <div>
-                    <i class="fa-solid fa-quote-left"></i>
-                    <p>
-                        Ik was helemaal betoverd door de uitvoering. De energie en de emotie die overgebracht werden,
-                        waren gewoonweg fenomenaal. Dit concert is een echte aanrader voor iedere muziekliefhebber. De
-                        setting was mooi en de akoestiek uitstekend, waardoor elke nuance van de muziek goed tot zijn
-                        recht kwam.
-                        <br>
-                        <span> – Margot van Dam</span>
-                    </p>
-                </div>
-            </li>
-
-            <li class="swiperReview-slide">
-                <div>
-                    <i class="fa-solid fa-quote-left"></i>
-                    <p>
-                        Het publiek werd meegenomen op een muzikale reis vol hoogtepunten. Dit was zonder twijfel een
-                        van de beste concerten die ik in lange tijd heb bijgewoond.<br>
-                        <span>- Isabella Rossi</span>
-                    </p>
-                </div>
-            </li>
-            <li class="swiperReview-slide">
-                <div>
-                    <i class="fa-solid fa-quote-left"></i>
-                    <p>
-                        Ik was helemaal betoverd door de uitvoering. De energie en de emotie die overgebracht werden,
-                        waren gewoonweg fenomenaal. Dit concert is een echte aanrader voor iedere muziekliefhebber. De
-                        setting was mooi en de akoestiek uitstekend, waardoor elke nuance van de muziek goed tot zijn
-                        recht kwam.
-                        <br>
-                        <span> – Margot van Dam</span>
-                    </p>
-                </div>
-            </li>
-
-            <li class="swiperReview-slide">
-                <div>
-                    <i class="fa-solid fa-quote-left"></i>
-                    <p>
-                        Het publiek werd meegenomen op een muzikale reis vol hoogtepunten. Dit was zonder twijfel een
-                        van de beste concerten die ik in lange tijd heb bijgewoond.<br>
-                        <span>- Isabella Rossi</span>
-                    </p>
-                </div>
-            </li>
 
 
-
+<section class="sponsorSlider bg_transparant_lichtgroen space">
+    <section class="swipeGelijk myswipeGelijk max-width">
+        <ul class="swipeGelijk-wrapper">
+        <li class="swipeGelijk-slide"><img src="http://haendel.local/wp-content/uploads/2024/10/sponsortest.png" alt=""></li>
+        <li class="swipeGelijk-slide"><img src="http://haendel.local/wp-content/uploads/2024/09/handel-logo-2024.png" alt=""></li>
+        <li class="swipeGelijk-slide"><img src="http://haendel.local/wp-content/uploads/2024/10/sponsortest.png" alt=""></li>
+        <li class="swipeGelijk-slide"><img src="http://haendel.local/wp-content/uploads/2024/09/handel-logo-2024.png" alt=""></li>
+        <li class="swipeGelijk-slide"><img src="http://haendel.local/wp-content/uploads/2024/10/sponsortest.png" alt=""></li>
+        <li class="swipeGelijk-slide"><img src="http://haendel.local/wp-content/uploads/2024/09/handel-logo-2024.png" alt=""></li>
         </ul>
-        <div class="swiperReview-button-next">>></div>
-        <div class="swiperReview-button-prev"><i class="fa-solid fa-chevron-left"></i></div>
-        <div class="swiperReview-pagination"></div>
-    </section> -->
+        <div class="swipeGelijk-button-next"></div>
+        <div class="swipeGelijk-button-prev"></div>
+        <div class="swipeGelijk-pagination"></div>
+    </section>
+</section>
+
+
+<section class="ContactVraag max-width">
+            <h2 class="subheadingXheading">
+                <span>Contact</span> <br>
+                heb je een vraag of wil
+                je meer informatie?
+            </h2>
+            <a href="#" class="btn_rood">Neem contact op</a>
+    </section>
 
 
 <?php get_footer(); ?>

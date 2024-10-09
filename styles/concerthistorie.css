@@ -1,0 +1,13 @@
+.postersConcerthistorie ul li{
+    justify-content: flex-start;
+    background-color: aqua;
+}
+
+.postersConcerthistorie ul li div{
+    height: 100%;
+}
+
+.postersConcerthistorie ul li img{
+    height: 100%;
+    object-fit: cover;
+}
