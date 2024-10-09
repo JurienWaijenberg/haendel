@@ -8,6 +8,7 @@ body{
 * {
     margin: 0;
     scroll-behavior: smooth;
+    box-sizing: border-box;
   }
   
   .max-width {
@@ -15,8 +16,9 @@ body{
     margin: 5rem 0;
     margin-left: auto;
     margin-right: auto;
-    /* padding-left: 2rem;
-    padding-right: 2rem; */
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .bg_transparant_lichtgroen{
@@ -28,7 +30,7 @@ body{
   }
 
 .space{
-    padding: 5rem 0;
+    padding: 5rem 1.5rem;
   }
 
   :root {
@@ -58,7 +60,7 @@ body{
 
   h1{
     font-size: 1.5rem;
-    font-weight: 900;
+    font-weight: 600;
     letter-spacing: 0.08rem;
     line-height: 2rem;
     text-transform: uppercase;
@@ -67,7 +69,7 @@ body{
 
   h2{
     font-size: 2.5rem;
-    /* font-weight: 900; */
+    font-weight: 600;
     letter-spacing: 0.08rem;
     text-transform: uppercase; 
     color: var(--Rood);
@@ -75,24 +77,26 @@ body{
 
   h3,.koopKaarten ul li {
     font-size: 1.4rem;
-    font-weight: 900;
+    font-weight: 700;
     letter-spacing: 0.08rem;
   }
 
   h4{
     font-size: 1.3rem;
-    font-weight: 900;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.08rem;
   }
 
-  /* h5{
+  h5{
+    font-size: 1rem;
+    font-weight: 500;
+  }
 
-  } */
 
   p, label, input, button,  .ConcertInfo dl,   .uitvoerenden a div, a{
     font-size: 1.2rem;
-    /* font-weight: 900; */
+    font-weight: 400;
     line-height: 2.2rem;
     margin: 0;
   }
@@ -142,6 +146,11 @@ body{
   display: flex;
   flex-direction: row;
   gap: 2rem;
+}
+
+.link{
+  color: var(--Rood);
+  text-decoration: underline;
 }
 
 
@@ -198,7 +207,7 @@ header ul{
 
 .atf img {
     width: 100vw;
-    height: 70vh;
+    height: 50vh;
     object-fit: cover;
 }
 
@@ -208,6 +217,8 @@ header ul{
     text-align: center; 
     background-color: var(--Groen);
 }
+
+
 
 /******************************************************************/
 /* aankomende_concerten /* /* aankomende_concerten /* /* aankomende_concerten /* 
@@ -232,6 +243,7 @@ header ul{
     margin: 0;
     list-style: none;
     gap: 3rem;
+    padding: 0;
 }
 
 
@@ -244,6 +256,12 @@ header ul{
     display: flex;
     flex-direction: column;
     overflow: hidden;
+}
+
+.tweeXColumnXtitel{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
 }
 
 .swiper-slide img,
@@ -402,72 +420,69 @@ input[type="checkbox"]{
 /* Footer /* /* Footer /* /* Footer /* /* Footer /* /* Footer /* 
 /******************************************************************/
 
-/* .footerTop{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex: wrap;
-} */
-
-/* .footerTop ul{
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-} */
-
-/* .footerTop ul li p{
-  color: var(--Zwart);
-} */
-
-/* .footerTop section:last-of-type{
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-} */
 
 .footerTop section:last-of-type img{
   width: 16rem;
+  max-width: 100%; /* Zorgt ervoor dat het logo niet groter wordt dan zijn container */
+  height: auto;
 }
-
-/* .footerTop section:last-of-type ul{
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  gap: 1rem;
-} */
-
-/* .footerTop section:last-of-type ul li p{
-  font-size: 2rem;
-} */
 
 .footerTop {
   display: flex;
-  flex-wrap: wrap; /* Dit zorgt ervoor dat de items naar de volgende regel gaan als er niet genoeg ruimte is */
+  flex-wrap: wrap;
   justify-content: space-between; /* Ruimte tussen de items */
 }
 
 .footer-item {
-  flex: 1 1 ; /* Dit betekent dat elk item een basisbreedte van 22% heeft en kan groeien of krimpen */
   box-sizing: border-box; /* Zorgt ervoor dat padding en borders in de breedte worden meegerekend */
   padding: 0;
   list-style-type: none;
   width: fit-content;
 }
 
-/* Voor mobiele weergave */
-@media (max-width: 868px) {
-  .footer-item {
-      flex: 1 1 48%; /* Twee naast elkaar op kleinere schermen */
+/* socials + logo */
+.footerTop section:last-of-type{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer-item ul:last-child{
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.footerTop section:last-of-type ul li p{
+  font-size: 2rem;
+}
+
+
+@media (max-width: 1254px) {
+  .footer-item{
+    min-width: 45%;
+  }
+
+  .footerTop{
+    gap: 4rem;
   }
 }
 
-@media (max-width: 480px) {
-  .footer-item {
-      flex: 1 1 100%; /* Eén onder elkaar op de kleinste schermen */
+@media (max-width: 840px) {
+  .footer-item{
+    min-width: 95%;
+  }
+
+  .footerTop{
+    gap: 4rem;
   }
 }
+
+
+
+/* Voor mobiele weergave */
+
 
 
 /******************************************************************/
@@ -476,25 +491,30 @@ input[type="checkbox"]{
 
 .footerBottom{
   background-color: var(--Zwart);
-  height: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 1.5rem;
+  height: fit-content;
 }
+
 
 .footerBottom ul{
   display: flex;
   width: 100%;
+  height: 100%;
   list-style-type: none;
   padding: 0;
+  flex-wrap: wrap;
   justify-content: space-between;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  
 }
 
 .footerBottom h5{
   color: white;
 }
 
-.footerBottom ul li:nth-of-type(2){
+.footerBottom ul li{
   display: flex;
   align-items: center; /* Centreert de items verticaal binnen de ul */
   gap: 1rem;
@@ -502,6 +522,7 @@ input[type="checkbox"]{
   margin: 0;
   list-style: none;
 }
+
 
 .footerBottom ul li a {
   display: inline-flex;
@@ -518,10 +539,30 @@ input[type="checkbox"]{
   content: ""; /* Verwijder de separator na het laatste item */
 }
 
+
+@media (max-width: 1220px) {
+  .footerBottom ul{
+    gap: 1rem;
+    height: 100%;
+  }
+
+  .footerBottom ul li:nth-child(3) {
+    flex-basis: 100%; /* Zet de breedte op 100% zodat de derde li op een nieuwe regel komt */
+  }
+}
+
+
+
+@media (max-width: 950px) {
+  .footerBottom ul li:nth-child(2) {
+    flex-basis: 100%; /* Zet de breedte op 100% zodat de derde li op een nieuwe regel komt */
+    flex-wrap: wrap;
+    gap: 0.2rem 1rem;
+}
+}
+
 @media only screen and (min-width: 168px) and (max-width: 768px) {
-  /* body{
-    background-color: red;
-  } */
+
 
   header nav{
     display: none;
@@ -571,7 +612,7 @@ input[type="checkbox"]{
 
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1099px) {
 
 
   .titelButton a{
@@ -580,6 +621,13 @@ input[type="checkbox"]{
   
   .aankomende_concerten > a{
     display: block;
+    width: auto;
+    border-radius: 0;
+    text-align: center;
+  }
+
+  .swiper-slide img{
+    height: 20rem !important;
   }
 
 
@@ -614,4 +662,5 @@ input[type="checkbox"]{
     height: 22rem;
   }
 }
+
 

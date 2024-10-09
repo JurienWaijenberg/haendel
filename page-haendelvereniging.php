@@ -6,11 +6,6 @@
 
 
 
-
-
-
-
-
 <!-- Aankomende concerten slider-->
 <section class="aankomende_concerten max-width">
 
@@ -71,7 +66,7 @@
 
 <!-- 2 colums -->
 <section class="bg_transparant_lichtgroen">
-  <section class="tweeXColumn max-width">
+  <section class="tweeXColumn max-width space">
     <ul class="space">
       <li>
         <a href="#">

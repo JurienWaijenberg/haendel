@@ -7,7 +7,7 @@
 .steun-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 kolommen */
-  gap: 3rem; /* 3rem ruimte tussen de items */
+  gap: 5rem; /* 3rem ruimte tussen de items */
   padding: 0;
   list-style: none;
 }

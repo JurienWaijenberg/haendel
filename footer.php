@@ -64,7 +64,7 @@
 	</section>
 
 	<section class="footerBottom">
-		<ul class="max-width">
+		<ul>
 			<li>
 				<h5>© 2024 Nederlandse Händelvereniging</h5>
 			</li>

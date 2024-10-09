@@ -13,20 +13,18 @@
 </section>
 
 
-<section class="aankomende_concerten max-width">
+<section class="aankomende_concerten sliderPosterHistorie max-width">
 
-    <section class="titelButton">
+    <section class="titelButton sliderPosterHistorieTitel">
         <h2>Ajoe</h2>
-        <a href="#" class="btn_border">
-            <p>Toon alle</p>
-        </a>
+        <a href="#" class="btn_border"><p>Toon alle</p></a>
     </section>
 
     <section class="swiper mySwiper">
         <ul class="swiper-wrapper">
             <li class="swiper-slide posterhistorie" data-section="posterhistorie">
                 <a href="#">
-                    <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
+                    <div><img src="http://haendel.local/wp-content/uploads/2024/10/poster.jpg" alt="#"></div>
                     <h4>Voorjaar 2024</h4>
                     <h3>John Rutter
                         Requiem magnificat</h3>
@@ -34,14 +32,14 @@
             </li>
             <li class="swiper-slide posterhistorie">
                 <a href="#">
-                    <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
+                    <div><img src="http://haendel.local/wp-content/uploads/2024/10/poster2.jpg" alt="#"></div>
                     <h4>Voorjaar 2024</h4>
                     <h3>test</h3>
                 </a>
             </li>
             <li class="swiper-slide posterhistorie">
                 <a href="#">
-                        <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
+                        <div><img src="http://haendel.local/wp-content/uploads/2024/10/poster2.jpg" alt="#"></div>
                         <h4>Voorjaar 2024</h4>
                         <h3>John Rutter
                             Requiem magnificat</h3>
@@ -49,14 +47,12 @@
             </li>
 
         </ul>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next btnNextPosterhistorie"></div>
+        <div class="swiper-button-prev btnPrevPosterhistorie"></div>
+        <div class="swiper-pagination paginationPosterhistorie"></div>
     </section>
 
-    <a href="#" class="btn_border">
-        <p>Toon alle</p>
-    </a>
+    <a href="#" class="btn_border"><p>Toon alle</p></a>
 </section>
 
 

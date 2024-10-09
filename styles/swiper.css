@@ -740,9 +740,6 @@ button.swiper-pagination-bullet {
 }
 
 
-.swiper-slide.posterhistorie img{
-    height: 30rem;
-}
 
 
 
@@ -775,36 +772,88 @@ button.swiper-pagination-bullet {
 
 }
 
-/* 1 card */
-@media only screen and (min-width: 1100px) {
-  .swiper-slide {
-    flex: 1 1 30%; 
-
-}
-}
 
 
 /* Posterhistorie */
-@media only screen and (min-width: 900px){
-    .swiper-slide.posterhistorie img{
-        height: 25rem;
+@media only screen and (min-width: 800px){
+    .swiper-slide.posterhistorie div{
+        /* height: 34rem; */
+        height: 100%;
     } 
+
+    .swiper-slide.posterhistorie div img{
+      /* height: 34rem; */
+      height: 100%;
+      object-fit: cover;
+  } 
 }
 
-@media only screen and (min-width: 800px) {
+
+@media only screen and (max-width: 1100px) {
+  .swiper-slide.posterhistorie {
+    /* background-color: rgb(88, 146, 55); */
+    flex: 1; 
+}
+
+.swiper-slide.posterhistorie div{
+  /* height: 34rem; */
+  height: 100% !important;
+} 
+
+.swiper-slide.posterhistorie div img{
+/* height: 34rem; */
+height: 100% !important;
+object-fit: cover;
+} 
+
+
+.btnNextPosterhistorie,
+.btnPrevPosterhistorie,
+.paginationPosterhistorie{
+    display: none;
+}
+
+
+
+
+.sliderPosterHistorie > a{
+  display: none;
+}
+
+.sliderPosterHistorieTitel a{
+  display: block;
+}
+
+}
+
+
+/* Concerten --> posthistorie slider */
+@media only screen and (max-width: 800px) {
     .swiper-slide.posterhistorie {
-      background-color: rgb(210, 74, 33);
-      flex: 1 1 30%; 
-      box-sizing: border-box;
+      flex: none;
+}
+
+
+.paginationPosterhistorie{
+    display: block;
+}
+
+/* Concerten --> posthistorie slider: buttons zichtbaar */
+.btnNextPosterhistorie, .btnPrevPosterhistorie{
       display: flex;
-      flex-direction: column;
-      overflow: hidden;
 }
 
-
+/* Concerten --> posthistorie slider: a (toon alle) onderop zichtbaar */
+.sliderPosterHistorie > a{
+  display: block;
 }
 
+/* Concerten --> posthistorie slider: a (toon alle) bovenaan weg */
+.sliderPosterHistorieTitel a{
+  display: none;
+}
 
+}
 
 
 

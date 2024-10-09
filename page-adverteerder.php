@@ -1,8 +1,8 @@
 <?php get_header(); ?>
+
 <section class="atf bannerImg">
     <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
-    <h1>Speel mee met de VriendenLoterij 
-    voor de Nederlandse Händelvereniging</h1>
+    <h1>Word adverteerder van de nederlandse händelvereniging</h1>
 </section>
 
 <section class="eenXColumn reverse max-width">
@@ -18,14 +18,6 @@
 
             Wil je ook bijdragen aan onze missie?</p>
     </section>
-</section>
-
-<section class="speelMee max-width">
-<a href="#" class="btn_border btnDownload ">
-        <span>Speel mee voor de nederlandse händelvereniging</span>
-        <span class="btn_rood reverseBorder">Direct online aanmelden</span>
-      </p>
-    </a>
 </section>
 
 
@@ -54,7 +46,6 @@
     </section>
 </section>
 
-
 <section class="ContactVraag max-width">
             <h2 class="subheadingXheading">
                 <span>Contact</span> <br>
@@ -63,6 +54,5 @@
             </h2>
             <a href="#" class="btn_rood">Neem contact op</a>
     </section>
-
 
 <?php get_footer(); ?>

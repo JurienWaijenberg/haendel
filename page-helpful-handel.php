@@ -23,6 +23,44 @@
 </section>
 
 
+<section class="bg_transparant_lichtgroen">
+    <section class="max-width space tweeXColumnXtitel">
+        <h2>hello</h2>
+        <section class="tweeXColumn">
+            <ul>
+            <li>
+                <a href="#">
+                <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
+                <h2>Zing mee!</h2>
+                <p>Wil je grote koorwerken zingen, met goede orkesten en in grote concertzalen? En vind je het een uitdaging
+                    om ook minder bekende muziek te zingen? Kom dan kennismaken op een van onze repetities (laat even weten dat
+                    je komt!). Als de kennismaking bevalt kun je direct komen meezingen op enkele repetities. Daarna maken we
+                    een afspraak voor een eenvoudige stemtest bij de dirigent.</p>
+                <span class="btn_rood">
+                    <p>Meer informatie</p>
+                </span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
+                <h2>Zing mee!</h2>
+                <p>Wil je grote koorwerken zingen, met goede orkesten en in grote concertzalen? En vind je het een uitdaging
+                    om ook minder bekende muziek te zingen? Kom dan kennismaken op een van onze repetities (laat even weten dat
+                    je komt!). Als de kennismaking bevalt kun je direct komen meezingen op enkele repetities. Daarna maken we
+                    een afspraak voor een eenvoudige stemtest bij de dirigent.</p>
+                <span class="btn_rood">
+                    <p>Meer informatie</p>
+                </span>
+                </a>
+            </li>
+            </ul>
+        </section>
+    </section>
+
+</section>
+
+
 <!-- Slider bijzondere concerten hiertussen -->
 
 <section class="ContactVraag max-width">

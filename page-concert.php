@@ -174,30 +174,24 @@
                     <li>Woensdag, 11 december 2024</li>
                     <li>19:30 uur</li>
                     <li>Grote Kerk Gorinchem</li>
+                    <li><a href="#" class="btn_border"><p>Bestel kaarten</p></a></li>
                 </ul>
-                <a href="#" class="btn_border">
-                    <p>Bestel kaarten</p>
-                </a>
             </article>
             <article>
-                <ul>
+            <ul>
                     <li>Woensdag, 11 december 2024</li>
                     <li>19:30 uur</li>
                     <li>Grote Kerk Gorinchem</li>
+                    <li><a href="#" class="btn_border"><p>Bestel kaarten</p></a></li>
                 </ul>
-                <a href="#" class="btn_border">
-                    <p>Bestel kaarten</p>
-                </a>
             </article>
             <article>
-                <ul>
+            <ul>
                     <li>Woensdag, 11 december 2024</li>
                     <li>19:30 uur</li>
                     <li>Grote Kerk Gorinchem</li>
+                    <li><a href="#" class="btn_border"><p>Bestel kaarten</p></a></li>
                 </ul>
-                <a href="#" class="btn_border">
-                    <p>Bestel kaarten</p>
-                </a>
             </article>
         </section>
     </section>

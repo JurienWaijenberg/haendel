@@ -1,0 +1,10 @@
+.anbiWerkwijze {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.anbiWerkwijze p,
+.anbiWerkwijze ul{
+margin: 0 !important;
+}

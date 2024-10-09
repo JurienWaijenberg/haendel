@@ -1,0 +1,10 @@
+.subheadingColumn{
+    color: var(--Bruin);
+}
+
+.subheadingColumn span{
+    font-weight: 400;
+    text-transform: lowercase;
+    color: var(--Rood);
+}
+

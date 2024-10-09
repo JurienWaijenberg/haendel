@@ -17,6 +17,8 @@ function bofesto_setup(){
     wp_enqueue_style( 'projectzanger', get_template_directory_uri() . '/styles/projectzanger.css');
     wp_enqueue_style( 'steun-ons', get_template_directory_uri() . '/styles/steunOns.css');
     wp_enqueue_style( 'word-vriend', get_template_directory_uri() . '/styles/wordVriend.css');
+    wp_enqueue_style( 'word-lid', get_template_directory_uri() . '/styles/wordLid.css');
+    wp_enqueue_style( 'anbi', get_template_directory_uri() . '/styles/anbi.css');
     
     
     wp_enqueue_script( "swiper", get_template_directory_uri() . '/scripts/swiper.js', NULL, '3.5.1', true);

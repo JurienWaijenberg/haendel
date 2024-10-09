@@ -19,11 +19,11 @@
     </section>
 </section>
 
-<section id="koopKaarten bestuursoverzicht" class="koopKaarten max-width">
+<section id="koopKaarten" class="koopKaarten bestuursoverzicht max-width">
 
     <article>
         <ul>
-            <li>Jan van Berkel</li>
+            <li><h3>Jan van Berkel</h3></li>
             <li>Voorzitter</li>
             <li>
                 <i><i class="fa-regular fa-envelope"></i></i>
@@ -33,7 +33,7 @@
     </article>
     <article>
         <ul>
-            <li>Marijke Dekker</li>
+            <li><h3>Marijke Dekker</h3></li>
             <li>Secretaris</li>
             <li>
                 <i><i class="fa-regular fa-envelope"></i></i>
@@ -43,7 +43,7 @@
     </article>
     <article>
         <ul>
-            <li>Jan van Berkel</li>
+            <li><h3>Jan van Berkel</h3></li>
             <li>Voorzitter</li>
             <li>
                 <i><i class="fa-regular fa-envelope"></i></i>
@@ -53,24 +53,15 @@
     </article>
     <article>
         <ul>
-            <li>Jan van Berkel</li>
-            <li>Voorzitter</li>
+            <li><h3>Marijke Dekker</h3></li>
+            <li>Secretaris</li>
             <li>
                 <i><i class="fa-regular fa-envelope"></i></i>
-                <a href="#">voorzitter@haendelvereniging.nl</a>
+                <a href="#">secretariaat@haendelvereniging.nl</a>
             </li>
         </ul>
     </article>
-    <article>
-        <ul>
-            <li>Jan van Berkel</li>
-            <li>Voorzitter</li>
-            <li>
-                <i><i class="fa-regular fa-envelope"></i></i>
-                <a href="#">voorzitter@haendelvereniging.nl</a>
-            </li>
-        </ul>
-    </article>
+    
 
 </section>
 

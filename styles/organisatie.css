@@ -5,14 +5,27 @@
     font-weight: 400;
 }
 
-.koopKaarten article ul li a{
+.bestuursoverzicht article ul li:nth-child(1) {
+    min-width: 15em;
+    text-align: left;
+}
+
+.bestuursoverzicht article ul li:nth-child(3) {
+    min-width: 20em;
+    text-align: left;
+}
+
+.bestuursoverzicht article ul li a{
     color: var(--Zwart);
     text-decoration: underline;
 }
 
-.koopKaarten article ul li:last-of-type{
+.bestuursoverzicht a{
+    color: var(--Rood);
+  }
+
+.bestuursoverzicht article ul li:last-of-type{
     align-self: flex-end;
-    background-color: rgb(25, 169, 169);
 }
 
 .overigeVrijwillegers section > p{
@@ -29,3 +42,14 @@
 background-color: var(--Rood);
 }
 
+
+@media only screen and (min-width: 168px) and (max-width: 1060px) {
+ 
+
+
+    .bestuursoverzicht article ul li:last-of-type{
+      align-self: flex-start;
+  }
+  
+  
+  }
