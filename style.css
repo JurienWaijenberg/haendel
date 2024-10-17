@@ -368,15 +368,17 @@ header ul{
 }
 
 
-.tweeXColumn a div {
+.tweeXColumn a div{
   position: relative;
   overflow: hidden; /* Verberg alles wat buiten de container valt */
   width: 100%;
   height: 15rem;
 }
 
+
 /* Stijl voor de div rond de afbeelding */
-.swiper-slide a div {
+.swiper-slide a div,
+.posterhistorie a div img {
   position: relative;
   overflow: hidden; /* Verberg alles wat buiten de container valt */
   width: 100%;
@@ -386,7 +388,8 @@ header ul{
 
 /* Stijl voor de afbeelding */
 .swiper-slide a div img,
-.tweeXColumn a div img {
+.tweeXColumn a div img,
+.posterhistorie a div img {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Zorgt ervoor dat de afbeelding volledig past en goed bijsnijdt */
@@ -740,7 +743,7 @@ background-color: aquamarine;
 
 
 .atf.bannerImg > img{
-  height: 10vh;
+  height: 25vh;
 }
 
 

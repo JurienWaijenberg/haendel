@@ -13,6 +13,63 @@
 </section>
 
 
+<section class="aankomende_concerten max-width">
+
+  <section class="titelButton">
+    <h2>Aankomende concerten</h2> 
+    <a href="#" class="btn_border"><p>Toon alle</p></a>
+  </section>
+      
+  <section class="swiper mySwiper">
+    <ul class="swiper-wrapper">
+      <li class="swiper-slide sliderConcerten">
+        <a href="#">
+          <div>          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#"></div>
+          <h4>22 oktober 2024</h4>
+          <h3>Najaarconcert Elias </h3>
+          <p>Elias leefde in de negende eeuw voor Christus en was net als Mozes, Jesaja en Jeremia een profeet. Zijn
+            dramatisch en aangrijpend verhaal wordt verteld in het eerste boek der Koningen van het Oude</p>
+          <span class="btn_rood">
+            <p>Meer informatie</p>
+          </span>
+        </a>
+      </li>
+      <li class="swiper-slide sliderConcerten">
+        <a href="#">
+          <div>          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#"></div>
+          <h4>22 oktober 2024</h4>
+          <h3>Najaarconcert Elias </h3>
+          <p>Elias leefde in de negende eeuw voor Christus en was net als Mozes, Jesaja en Jeremia een profeet. Zijn
+            dramatisch en aangrijpend verhaal wordt verteld in het eerste boek der Koningen van het Oude</p>
+          <span class="btn_rood">
+            <p>Meer informatie</p>
+          </span>
+        </a>
+      </li>
+      <li class="swiper-slide sliderConcerten">
+        <a href="#">
+          <div>          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#"></div>
+          <h4>22 oktober 2024</h4>
+          <h3>Najaarconcert Elias </h3>
+          <p>Elias leefde in de negende eeuw voor Christus en was net als Mozes, Jesaja en Jeremia een profeet. Zijn
+            dramatisch en aangrijpend verhaal wordt verteld in het eerste boek der Koningen van het Oude</p>
+          <span class="btn_rood">
+            <p>Meer informatie</p>
+          </span>
+        </a>
+      </li>
+      
+
+    </ul>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </section>
+
+  <a href="#" class="btn_border"><p>Toon alle</p></a>
+</section>
+
+
 
 
 <section class="aankomende_concerten sliderPosterHistorie max-width">
