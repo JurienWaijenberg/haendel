@@ -18,7 +18,7 @@
     <ul class="swiper-wrapper">
       <li class="swiper-slide sliderConcerten">
         <a href="#">
-          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
+          <div>          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#"></div>
           <h4>22 oktober 2024</h4>
           <h3>Najaarconcert Elias </h3>
           <p>Elias leefde in de negende eeuw voor Christus en was net als Mozes, Jesaja en Jeremia een profeet. Zijn
@@ -28,9 +28,9 @@
           </span>
         </a>
       </li>
-      <li class="swiper-slide">
+      <li class="swiper-slide sliderConcerten">
         <a href="#">
-          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
+          <div>          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#"></div>
           <h4>22 oktober 2024</h4>
           <h3>Najaarconcert Elias </h3>
           <p>Elias leefde in de negende eeuw voor Christus en was net als Mozes, Jesaja en Jeremia een profeet. Zijn
@@ -40,9 +40,9 @@
           </span>
         </a>
       </li>
-      <li class="swiper-slide">
+      <li class="swiper-slide sliderConcerten">
         <a href="#">
-          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
+          <div>          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#"></div>
           <h4>22 oktober 2024</h4>
           <h3>Najaarconcert Elias </h3>
           <p>Elias leefde in de negende eeuw voor Christus en was net als Mozes, Jesaja en Jeremia een profeet. Zijn
@@ -70,7 +70,7 @@
     <ul class="space">
       <li>
         <a href="#">
-          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
+          <div>          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#"></div>
           <h2>Zing mee!</h2>
           <p>Wil je grote koorwerken zingen, met goede orkesten en in grote concertzalen? En vind je het een uitdaging
             om ook minder bekende muziek te zingen? Kom dan kennismaken op een van onze repetities (laat even weten dat
@@ -83,7 +83,7 @@
       </li>
       <li>
         <a href="#">
-          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
+          <div>          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#"></div>
           <h2>Zing mee!</h2>
           <p>Wil je grote koorwerken zingen, met goede orkesten en in grote concertzalen? En vind je het een uitdaging
             om ook minder bekende muziek te zingen? Kom dan kennismaken op een van onze repetities (laat even weten dat
@@ -94,6 +94,7 @@
           </span>
         </a>
       </li>
+
     </ul>
   </section>
 </section>
@@ -131,7 +132,7 @@
 
         <div>
           <input type="checkbox" id="privacy" name="privacy" required>
-          <label for="privacy">Ik ga akkoord met het <a href="#">privacy statement</a></label>
+          <label for="privacy">Ik ga akkoord met het <a href="#" class="linkZwart">privacy statement</a></label>
         </div>
 
         <button class="btn_groen" type="submit">Aanmelden</button>
