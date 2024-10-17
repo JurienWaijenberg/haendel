@@ -42,6 +42,10 @@
     width: 100%;
 }
 
+.koopKaarten h2{
+  margin-bottom: 1.5rem;
+}
+
 .koopKaarten article:first-of-type{
    border-top: 0.2rem solid var(--Rood); 
 }
@@ -150,6 +154,8 @@
     align-items: center;
   }
 
+
+
   .uitvoerenden li img{
     width: 4rem;
     height: 4rem !important;
@@ -158,6 +164,11 @@
 
   .uitvoerenden a div{
     line-height: 1.5rem;
+  }
+
+  .uitvoerenden a div:hover{
+    text-decoration: underline;
+    color: var(--Rood);
   }
 
   .uitvoerenden span{
