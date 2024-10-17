@@ -30,7 +30,7 @@
   .FAQwerkgever section button i {
     transition: transform 0.3s ease; /* voeg een overgang toe voor soepele animatie */
     font-size: 1.5rem;
-    color: #000;
+    color: var(--Rood)
 }
 
 .FAQwerkgever section button i.rotate-180 {

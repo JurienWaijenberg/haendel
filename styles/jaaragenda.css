@@ -1,0 +1,102 @@
+.jaaragenda img{
+width: 10rem;
+height: 10rem;
+object-fit: cover;
+}
+
+.jaaragenda li:last-of-type{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start
+}
+
+.jaaragenda li:last-child p span:first-of-type{
+    font-weight: 600;
+}
+
+.jaaragenda li h4{
+    display: flex;
+    flex-direction: column;
+}
+
+.jaaragenda li:nth-child(2){
+    min-width: 5em;
+    text-align: left;
+
+}
+
+.jaaragenda li:nth-of-type(3) {
+display: flex;
+flex-direction: column;
+
+align-items: flex-start;
+justify-content: center;
+gap: 0;
+}
+
+.jaaragenda li:last-of-type{
+    align-self: flex-end;
+    min-width: 18em;
+    text-align: left;
+}
+
+.jaaragenda li:last-of-type p{
+
+    display: flex;
+    flex-direction: column;
+}
+
+.jaaragenda:last-child{
+    margin-bottom: 12rem;
+}
+
+
+
+
+
+  @media (max-width: 1060px) {
+.jaaragenda li img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.jaaragenda li h4{
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.jaaragenda ul li{
+
+    max-width: 100% !important;
+}
+
+
+.jaaragenda li:last-of-type p{
+
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+
+}
+
+.jaaragenda li:last-of-type{
+    align-self: flex-start;
+}
+
+.jaaragenda li:nth-of-type(3) {
+    flex-direction: row;
+    justify-content: left;
+    gap: 0.5rem;
+    }
+
+    .jaaragenda ul li img{
+        height: 25vh;
+    }
+
+  }
+
+
+  .stemgroepVertegenwoordigers h2{
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+      }

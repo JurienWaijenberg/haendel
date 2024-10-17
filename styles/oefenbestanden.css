@@ -1,0 +1,31 @@
+.oefenbestanden article div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: .2rem solid var(--Groen);
+    padding: 2rem 0;
+}
+
+.oefenbestanden article div ul{
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.oefenbestanden h2{
+    padding: 0;
+}
+
+@media (max-width: 550px) {
+    .oefenbestanden article div{
+        flex-direction: column;
+        align-items: flex-start;    
+        gap: 1.5rem;
+    }
+
+    .oefenbestanden article div ul{
+        gap: 1rem;
+    }
+}

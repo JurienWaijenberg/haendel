@@ -11,8 +11,6 @@
 
 
 
-
-
 <section class="steunOptie max-width">
     <h2>Media</h2>
     <ul class="steun-grid">
@@ -49,6 +47,12 @@
 
         <!-- Herhaal voor elk lijstitem -->
     </ul>
+</section>
+
+<section class="videoBanner">
+<video controls>
+  <source src="http://haendel.local/wp-content/uploads/2024/10/videoNHV.mp4" type="video/mp4">
+</video>
 </section>
 
 

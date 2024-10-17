@@ -1,0 +1,9 @@
+.videoBanner{
+    /* background-color: aqua; */
+}
+
+.videoBanner video{
+    width: 100%;
+    height: 30rem;
+
+}

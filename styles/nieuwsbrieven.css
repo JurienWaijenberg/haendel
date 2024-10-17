@@ -1,0 +1,50 @@
+.nieuwsbrieven img{
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+}
+
+.nieuwsbrieven article ul li:last-of-type{
+    align-self: center ;
+}
+
+
+
+.nieuwsbrieven article ul li:nth-child(1){
+    min-width: auto;
+}
+
+.nieuwsbrieven article ul li:nth-child(2){
+background-color: aqua;
+min-width: 100%;
+display: flex;
+justify-content: space-between;
+}
+
+.nieuwsbrieven article ul li:nth-child(2) > *{
+    max-width: 100vw;
+}
+
+
+/* @media only screen and (min-width: 168px) and (max-width: 1060px) {
+    .nieuwsbrieven article ul {
+        flex-direction: row;
+        gap: 0.8rem;
+    }
+}
+
+
+@media only screen and (max-width: 800px) {
+    .nieuwsbrieven article ul {
+        background-color: beige;
+    }
+
+    .nieuwsbrieven article ul li:nth-child(2){
+        min-width: 15rem;
+    }
+} */
+
+
+
+
+  

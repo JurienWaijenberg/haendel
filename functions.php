@@ -26,6 +26,11 @@ function bofesto_setup(){
     wp_enqueue_style( 'privacy', get_template_directory_uri() . '/styles/privacy.css');
     wp_enqueue_style( 'nieuwsberichten', get_template_directory_uri() . '/styles/nieuwsberichten.css');
     wp_enqueue_style( 'nieuwsbericht', get_template_directory_uri() . '/styles/nieuwsbericht.css');
+    wp_enqueue_style( 'jaaragenda', get_template_directory_uri() . '/styles/jaaragenda.css');
+    wp_enqueue_style( 'oefenbestanden', get_template_directory_uri() . '/styles/oefenbestanden.css');
+    wp_enqueue_style( 'smoelenboek', get_template_directory_uri() . '/styles/smoelenboek.css');
+    wp_enqueue_style( 'mediatheek-leden', get_template_directory_uri() . '/styles/mediatheek.css');
+    wp_enqueue_style( 'nieuwsbrieven', get_template_directory_uri() . '/styles/nieuwsbrieven.css');
     
     
     wp_enqueue_script( "swiper", get_template_directory_uri() . '/scripts/swiper.js', NULL, '3.5.1', true);
