@@ -52,6 +52,7 @@ flex-direction: row-reverse;
     border-right: none;
     padding: 1.5rem 0;
     align-items: center;
+    gap: 2rem;
 }
 
 .btn_border.btnDownload span:first-of-type{

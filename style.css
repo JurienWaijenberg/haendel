@@ -33,6 +33,13 @@ body{
     padding: 5rem 1.5rem;
   }
 
+  /* extra ruimte onder een titel of bodytekst */
+  .extraSpace{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
   :root {
     --Zwart: rgba(26, 26, 26, 100);
     --Groen: rgba(135, 150, 52, 1);

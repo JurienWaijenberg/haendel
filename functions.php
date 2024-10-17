@@ -21,11 +21,17 @@ function bofesto_setup(){
     wp_enqueue_style( 'word-lid', get_template_directory_uri() . '/styles/wordLid.css');
     wp_enqueue_style( 'anbi', get_template_directory_uri() . '/styles/anbi.css');
     wp_enqueue_style( 'concerthistorie', get_template_directory_uri() . '/styles/concerthistorie.css');
+    wp_enqueue_style( 'geschiedenis', get_template_directory_uri() . '/styles/geschiedenis.css');
+    wp_enqueue_style( 'contact', get_template_directory_uri() . '/styles/contact.css');
+    wp_enqueue_style( 'privacy', get_template_directory_uri() . '/styles/privacy.css');
+    wp_enqueue_style( 'nieuwsberichten', get_template_directory_uri() . '/styles/nieuwsberichten.css');
+    wp_enqueue_style( 'nieuwsbericht', get_template_directory_uri() . '/styles/nieuwsbericht.css');
     
     
     wp_enqueue_script( "swiper", get_template_directory_uri() . '/scripts/swiper.js', NULL, '3.5.1', true);
     wp_enqueue_script( "swiper-review-bundle", get_template_directory_uri() . '/scripts/swiper-review.js', NULL, '3.5.1', true);
     wp_enqueue_script( "swipeGelijk", get_template_directory_uri() . '/scripts/swipeGelijk.js', NULL, '3.5.1', true);
+    wp_enqueue_script( "script", get_template_directory_uri() . '/scripts/script.js', NULL, '3.5.1', true);
 
     // wp_enqueue_script("main", get_theme_file_uri('/js/main.js'), NULL, microtime(), true);
 

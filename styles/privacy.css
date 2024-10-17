@@ -1,0 +1,58 @@
+
+/******************************************************************/
+/* FAQ /* /* FAQ /* /* FAQ /* /* FAQ /* /* FAQ /* /* FAQ /* /* FAQ /* 
+/******************************************************************/
+.FAQwerkgever h2{
+    padding: 4rem 0; 
+}
+
+.FAQwerkgever section {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4rem;
+}
+  
+  .FAQwerkgever section button{
+    padding: 0;
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    text-align: left;
+    cursor: pointer;
+  }
+
+
+  .FAQwerkgever section button i {
+    transition: transform 0.3s ease; /* voeg een overgang toe voor soepele animatie */
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.FAQwerkgever section button i.rotate-180 {
+    transform: rotate(180deg); /* standaard 180 graden rotatie voor de pijl */
+}
+  
+  
+  /* balken dicht */
+  .FAQwerkgever section article {
+    border-bottom: 0.2rem solid var(--Groen);
+    margin: 2rem 0;
+  }
+  
+
+  .FAQwerkgever section article p{
+    margin-bottom: 1rem;
+    width: 95%;
+  }
+  
+  .FAQwerkgever section article {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease;
+  }
+  

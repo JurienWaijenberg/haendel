@@ -1,0 +1,10 @@
+
+.nieuwsbericht, .nieuwsbericht:visited {
+    color: inherit; /* Zorgt ervoor dat de kleur hetzelfde blijft als de omringende tekst */
+    text-decoration: none; /* Verwijdert onderstreping */
+}
+
+
+.nieuwsbericht:active {
+    color: none;
+}

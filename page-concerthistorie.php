@@ -9,12 +9,7 @@
 </section>
 
 <section class="gastdirigenten postersConcerthistorie max-width">
-    <h2>GASTDIRIGENTEN</h2>
-    <p>Bij onze concerten van 2017 tot heden hebben wij met diverse dirigenten samengewerkt. Vanaf 1 augustus 2021 is
-        Paul Valk onze vaste dirigent geworden, maar wij zullen ook in de toekomst blijven samenwerken met
-        gastdirigenten.
-        Hieronder een overzicht van dirigenten (op alfabetische volgorde achternaam) waarmee wij hebben samen gewerkt.
-    </p>
+    <h2>2011 – HEDEN</h2>
 
     <ul>
         <li>
@@ -37,12 +32,18 @@
             <h4>hoi</h4>
             <h3> mkcn.aksmc</h3>
         </li>
-
-
-
     </ul>
 </section>
 
+<section class="max-width">
+    <h2>1942 – 2006</h2> <br>
+<a href="#" class="btn_border btnDownload">
+        <span>overzicht van de concerthistorie van 1942 tot 2006.</span>
+        <span>Download</span>
+      </p>
+    </a>
+
+</section>
 
 
 

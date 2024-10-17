@@ -5,7 +5,7 @@
     <h1>CULTURELE ANBI</h1>
 </section>
 
-<section class="max-width overigeVrijwillegerTotaal max-width">
+<section class="max-width overigeVrijwillegerTotaal">
     <section class="eenXColumn overigeVrijwillegers">
         <section>
             <p>Het Koor van de Nederlandse Händelvereniging is een ambitieus koor, dat uitvoeringen van klassieke en moderne(re) werken wil geven van een zo hoog mogelijk niveau. Sponsors maken het mogelijk de kwaliteit te blijven leveren, die ons publiek al decennia van ons gewend is: een goed koor, maar ook uitmuntende solisten en orkestbegeleiding. Onze belangrijkste podia zijn de Grote Kerk in Naarden en het Concertgebouw in Amsterdam. 

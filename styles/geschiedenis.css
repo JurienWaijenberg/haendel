@@ -1,0 +1,20 @@
+.btnDownload img{
+height: 10rem;
+width: 10rem;
+object-fit: cover;
+}
+
+.downloadLijst{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.downloadLijst ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.downloadLijst ul li{
+    border-bottom: none;
+}
