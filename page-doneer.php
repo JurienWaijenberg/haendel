@@ -14,7 +14,7 @@
         <p>De Nederlandse Händelvereniging is een zelfstandige culturele organisatie zonder structurele overheidssubsidie. We kunnen uw donatie goed gebruiken. Elke bijdrage, groot of klein, is van harte welkom! Met uw donatie of nalatenschap levert u een essentiële bijdrage aan onze vereniging.
 
 Daarnaast verwelkomen wij subsidies van overheden, fondsen en stichtingen. Deze subsidies helpen ons specifieke projecten te realiseren en dragen bij aan de continuïteit en kwaliteit van onze culturele activiteiten. Uw steun, in welke vorm dan ook, maakt het mogelijk voor ons om een breed scala aan muzikale programma's te blijven aanbieden. Welke projecten kunt u mede mogelijk maken?</p>
-        <ul class="checklist checklistRood">
+        <ul class="checklist">
             <li>
                 <i class="fa-solid fa-check"></i>
                 <p>Het uitvoeren en promoten van werken van Handel en andere klassieke componisten.</p>

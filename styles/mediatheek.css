@@ -1,9 +1,14 @@
 .videoBanner{
-    /* background-color: aqua; */
-}
-
-.videoBanner video{
     width: 100%;
     height: 30rem;
 
 }
+
+.mediaSwiper-slide{
+background-color: aqua;
+height: 15rem;
+}
+
+/* .mediaSwiperrr{
+    margin-left: 150px;
+} */

@@ -9,13 +9,13 @@
         <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
     </section>
     <section>
-        <h2>Wil je Projectzanger Worden?</h2>
+        <h2 class="bruinKleur">Wil je Projectzanger Worden?</h2>
         <p>Wij zijn een gepassioneerd team van bestuursleden met diverse achtergronden en expertise. Samen zetten wij
             ons in om de Nederlandse Händelvereniging te ondersteunen en te leiden, met een gezamenlijke visie op het
             bevorderen van cultuur en muziek. Wij werken hard om de kwaliteit en continuïteit van onze vereniging te
             waarborgen en onze muzikale ambities te realiseren. Wij kijken ernaar uit om onze passie voor muziek met
             jullie te delen en samen onze vereniging naar nieuwe hoogten te brengen.</p>
-        <ul class="checklist checklistRood">
+        <ul class="checklist">
             <li>
                 <i class="fa-solid fa-check"></i>
                 <p>Het uitvoeren en promoten van werken van Handel en andere klassieke componisten.</p>

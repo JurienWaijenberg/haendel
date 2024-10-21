@@ -9,7 +9,7 @@
     <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
   </section>
   <section>
-    <h2>kom je ook bij ons zingen?</h2>
+    <h2 class="bruinKleur">kom je ook bij ons zingen?</h2>
     <p>Wil je grote koorwerken zingen, met goede orkesten en in grote concertzalen? En vind je het een uitdaging om ook
       minder bekende muziek te zingen? Kom dan kennismaken op een van onze repetities. De koorrepetities worden gehouden
       in de Wilhelminakerk in Bussum (Wilhelminaplantsoen 14), op donderdagavond van 19.45 tot 22.15 uur.</p>
@@ -21,7 +21,7 @@
     <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
   </section>
   <section>
-    <h2>laat ons weten dat je komt</h2>
+    <h2 class="bruinKleur">laat ons weten dat je komt</h2>
     <p>Je kunt je aanmelden voor de kennismaking door contact met ons op te nemen via telefoon of e-mail.
       Als de kennismaking bevalt kun je direct komen meezingen op enkele repetities. Daarna maken we een afspraak voor
       een eenvoudige stemtest bij de dirigent. Bij de kennismaking word je ontvangen door onze gastvrouw en krijg je

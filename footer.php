@@ -14,22 +14,22 @@
 
 		<ul class="footer-item">
 			<li><a href="#">
-					<p>Concerten</p>
+					Concerten
 				</a></li>
 			<li><a href="#">
-					<p>Over ons</p>
+					Over ons
 				</a></li>
 			<li><a href="#">
-					<p>Zing mee</p>
+					Zing mee
 				</a></li>
 			<li><a href="#">
-					<p>Helpful Händel</p>
+					Helpful Händel
 				</a></li>
 			<li><a href="#">
-					<p>Steun ons </p>
+					Steun ons
 				</a></li>
 			<li><a href="#">
-					<p>Mediatheek</p>
+					Mediatheek
 				</a></li>
 		</ul>
 
@@ -51,13 +51,14 @@
 
 			<ul>
 				<li>
-					<p><i class="fa-brands fa-youtube"></i></p>
+					<a href="#"><p><i class="fa-brands fa-youtube"></i></p></a>
 				</li>
 				<li>
-					<p><i class="fa-brands fa-facebook"></i></p>
+					<a href=""><p><i class="fa-brands fa-facebook"></i></p></a>
 				</li>
 				<li>
-					<p><i class="fa-brands fa-linkedin"></i></p>
+					<a href=""><p><i class="fa-brands fa-linkedin"></i></p></a>
+
 				</li>
 			</ul>
 		</section>

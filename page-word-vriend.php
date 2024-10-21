@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <section class="atf bannerImg">
     <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
-    <h1>Word projectzanger</h1>
+    <h1>Word vriend</h1>
 </section>
 
 <section class="eenXColumn max-width IntroVriend">
@@ -14,7 +14,7 @@
             bevorderen van cultuur en muziek. Wij werken hard om de kwaliteit en continuïteit van onze vereniging te
             waarborgen en onze muzikale ambities te realiseren. Wij kijken ernaar uit om onze passie voor muziek met
             jullie te delen en samen onze vereniging naar nieuwe hoogten te brengen.</p>
-        <ul class="checklist checklistRood">
+        <ul class="checklist">
             <li>
                 <i class="fa-solid fa-check"></i>
                 <p>Het uitvoeren en promoten van werken van Handel en andere klassieke componisten.</p>
@@ -39,7 +39,7 @@
     <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
   </section>
   <section>
-    <h2>Wil je vriend Worden?</h2>
+    <h2 class="bruinKleur">Wil je vriend Worden?</h2>
     <p>Wil je grote koorwerken zingen, met goede orkesten en in grote concertzalen? En vind je het een uitdaging om ook minder bekende muziek te zingen? Kom dan kennismaken op een van onze repetities. De koorrepetities worden gehouden in de Wilhelminakerk in Bussum (Wilhelminaplantsoen 14), op donderdagavond van 19.45 tot 22.15 uur.</p>
   </section>
 </section>

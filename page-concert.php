@@ -277,7 +277,7 @@
 
 
         </ul>
-        <div class="swiperReview-button-next">>></div>
+        <div class="swiperReview-button-next"><i class="fa-solid fa-chevron-right"></i></div>
         <div class="swiperReview-button-prev"><i class="fa-solid fa-chevron-left"></i></div>
         <div class="swiperReview-pagination"></div>
     </section>

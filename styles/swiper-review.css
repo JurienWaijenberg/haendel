@@ -2,10 +2,10 @@
 /******************************************************************/
 /* reviews /* /* reviews /* /* reviews /* /* reviews /* /* reviews /* 
 /******************************************************************/
-.swiperReview h2{
+/* .swiperReview h2{
   margin-left: 2.5rem;
   text-align: left;
-}
+} */
 
 .light-grey-bg.reviews{
   padding: 4rem 2.5rem;
@@ -135,6 +135,16 @@
       {
         margin: 0;
       }
+
+      .swiperReview-pagination {
+        position: relative;
+        margin-top: 2rem;
+      }
+
+
+.swiperReview-slide div{
+  padding: 2.5rem 5rem;
+}
     }
   
     @media only screen and (min-width: 168px) and (max-width: 768px) {
@@ -151,6 +161,10 @@
   
         .light-grey-bg.reviews{
           padding: 4rem 0;
+        }
+
+        .swiperReview-slide div{
+          padding: 1.5rem;
         }
   
     }
@@ -190,7 +204,7 @@
   position: relative;
   overflow: hidden;
   list-style: none;
-  padding: 0;
+  /* padding: 0; */
   z-index: 1;
   display: block;
 }
@@ -452,7 +466,7 @@
 }
 .swiperReview-button-prev,
 .swiperReview-rtl .swiperReview-button-next {
-  /* left: var(--swiperReview-navigation-sides-offset, 10px); */
+  left: 1.5em;
   right: auto;
 }
 .swiperReview-button-next,
@@ -478,8 +492,29 @@
 } */
 .swiperReview-button-next,
 .swiperReview-rtl .swiperReview-button-prev {
-  right: var(--swiperReview-navigation-sides-offset, 0px);
+  right: 1.5em;
   left: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  .swiperReview-button-next,
+  .swiperReview-rtl .swiperReview-button-prev {
+    right: 2.5em;
+  }
+
+  .swiperReview-button-prev,
+  .swiperReview-rtl .swiperReview-button-next {
+    left: 2.5em;
+  }
+
+  .swiperReview-pagination {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .swiperReview p{
+    margin-bottom: 2.5rem;
+  }
 }
 /* .swiperReview-button-next:after,
 .swiperReview-rtl .swiperReview-button-prev:after {
@@ -487,6 +522,7 @@
 } */
 .swiperReview-pagination {
   position: absolute;
+  /* margin-top: 2rem; */
   text-align: center;
   transition: 0.3s opacity;
   transform: translate3d(0, 0, 0);

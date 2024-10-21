@@ -11,53 +11,53 @@
 </section>
 
 <section class="steunOptie max-width">
-    <h2>Verschillende opties om onze vereniging te steunen:</h2>
+    <h2 class="bruinKleur">Verschillende opties om onze vereniging te steunen:</h2>
     <ul class="steun-grid">
         <li>
             <img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt="">
-            <h3>LOUIS BUSKENS</h3>
+            <h3 class="bruinKleur">LOUIS BUSKENS</h3>
             <p>Louis Buskens kreeg zijn opleiding aan het Tilburgs Conservatorium waar hij naast koordirectie en
                 schoolmuziek ook blokfluit studeerde.</p>
-            <a href="#" class="btn_rood">Lees verder</a>
+            <a href="#" class="btn_bruin">Lees verder</a>
         </li>
         <li>
             <img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt="">
-            <h3>LOUIS BUSKENS</h3>
+            <h3 class="bruinKleur">LOUIS BUSKENS</h3>
             <p>Louis Buskens kreeg zijn opleiding aan het Tilburgs Conservatorium waar hij naast koordirectie en
                 schoolmuziek ook blokfluit studeerde.</p>
-            <a href="#" class="btn_rood">Lees verder</a>
+                <a href="#" class="btn_bruin">Lees verder</a>
         </li>
         <li>
             <img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt="">
-            <h3>LOUIS BUSKENS</h3>
+            <h3 class="bruinKleur">LOUIS BUSKENS</h3>
             <p>Louis Buskens kreeg zijn opleiding aan het Tilburgs Conservatorium waar hij naast koordirectie en
                 schoolmuziek ook blokfluit studeerde.
             </p>
-            <a href="#" class="btn_rood">Lees verder</a>
+            <a href="#" class="btn_bruin">Lees verder</a>
         </li>
         <li>
             <img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt="">
-            <h3>LOUIS BUSKENS</h3>
+            <h3 class="bruinKleur">LOUIS BUSKENS</h3>
             <p>Louis Buskens kreeg zijn opleiding aan het Tilburgs Conservatorium waar hij naast koordirectie en
                 schoolmuziek ook blokfluit studeerde.
             </p>
-            <a href="#" class="btn_rood">Lees verder</a>
+            <a href="#" class="btn_bruin">Lees verder</a>
         </li>
         <li>
             <img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt="">
-            <h3>LOUIS BUSKENS</h3>
+            <h3 class="bruinKleur">LOUIS BUSKENS</h3>
             <p>Louis Buskens kreeg zijn opleiding aan het Tilburgs Conservatorium waar hij naast koordirectie en
                 schoolmuziek ook blokfluit studeerde.
             </p>
-            <a href="#" class="btn_rood">Lees verder</a>
+            <a href="#" class="btn_bruin">Lees verder</a>
         </li>
         <li>
             <img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt="">
-            <h3>LOUIS BUSKENS</h3>
+            <h3 class="bruinKleur">LOUIS BUSKENS</h3>
             <p>Louis Buskens kreeg zijn opleiding aan het Tilburgs Conservatorium waar hij naast koordirectie en
                 schoolmuziek ook blokfluit studeerde.
             </p>
-            <a href="#" class="btn_rood">Lees verder</a>
+            <a href="#" class="btn_bruin">Lees verder</a>
         </li>
         <!-- Herhaal voor elk lijstitem -->
     </ul>

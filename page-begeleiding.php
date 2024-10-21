@@ -12,7 +12,7 @@
     </section>
 
     <section>
-        <h2>Wybe Kooijmans</h2>
+        <h2 class="bruinKleur">Wybe Kooijmans</h2>
         <h3>Repetitor</h3>
         <p>
             GeeksforGeeks was born out of necessity-
@@ -33,7 +33,7 @@
                 do is to look around yourself.
             </span>
         </p>
-        <button onclick="toggleText(this)" class="textButton btn_rood">
+        <button onclick="toggleText(this)" class="textButton btn_bruin">
             Show More
         </button>
     </section>
@@ -69,7 +69,7 @@
     </section>
 
     <section>
-        <h2>Wybe Kooijmans</h2>
+        <h2 class="bruinKleur">Wybe Kooijmans</h2>
         <h3>Repetitor</h3>
         <p>
             GeeksforGeeks was born out of necessity-
@@ -90,7 +90,7 @@
                 do is to look around yourself.
             </span>
         </p>
-        <button onclick="toggleText(this)" class="textButton btn_rood">
+        <button onclick="toggleText(this)" class="textButton btn_bruin">
             Show More
         </button>
     </section>

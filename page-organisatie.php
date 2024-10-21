@@ -9,7 +9,7 @@
         <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
     </section>
     <section>
-        <h2>ontmoet ons bestuur!</h2>
+        <h2 class="bruinKleur">ontmoet ons bestuur!</h2>
         <p>Wij zijn een gepassioneerd team van bestuursleden met diverse achtergronden en expertise. Samen zetten wij
             ons in om de Nederlandse Händelvereniging te ondersteunen en te leiden, met een gezamenlijke visie op het
             bevorderen van cultuur en muziek. Wij werken hard om de kwaliteit en continuïteit van onze vereniging te

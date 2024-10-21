@@ -20,12 +20,7 @@
 <body>
     <header>
         <!--header-bottom-->
-        <!-- <section class="max-width">
-            
-            <a href="#">
-
-            </a>
-            <a href="/"><img src="" alt="Logo Haendel"></a>
+            <a href="/"><img src="http://haendel.local/wp-content/uploads/2024/09/handel-logo-2024.png" alt="Logo Haendel"></a>
              <section class="menu-desktop">
                 <?php wp_nav_menu(array('theme_location' => 'header-menu')); ?>
              </section>
@@ -41,15 +36,19 @@
                                 <span class="line line3"></span>
                             </div>
                             <div class="menu-items">
-                                <?php wp_nav_menu(array('theme_location' => 'extra-menu')); ?>
+                                <?php wp_nav_menu(array('theme_location' => 'header-menu')); ?>
                             </div>
                         </div>
                     </div>
                 </nav>
             </section>
-        </section> -->
 
         
         <script>document.addEventListener("touchstart", function() {}, true);</script>
+
+
+
+
+
     </header>
     <main>

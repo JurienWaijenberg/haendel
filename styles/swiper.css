@@ -726,7 +726,7 @@ button.swiper-pagination-bullet {
 .swiper-slide {
   /* text-align: center; */
   /* font-size: 18px; */
-  background: #fff;
+  /* background: #fff; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -772,18 +772,29 @@ button.swiper-pagination-bullet {
 
 }
 
+@media only screen and (min-width: 800px){
+  .swiper-slide.swiperDirigenten div{
+      height: 35rem;
+      /* height: 100%; */
+      position: relative;
+      overflow: hidden;
+  } 
+}
+
 
 
 /* Posterhistorie */
 @media only screen and (min-width: 800px){
-    .swiper-slide.posterhistorie div{
+    .swiper-slide.posterhistorie div,
+    .swiper-slide.swiperDirigenten div{
         height: 35rem;
         /* height: 100%; */
         position: relative;
         overflow: hidden;
     } 
 
-    .swiper-slide.posterhistorie div img{
+    .swiper-slide.posterhistorie div img,
+    .swiper-slide.swiperDirigenten div img{
       height: 100%;
       /* height: 100%; */
       object-fit: cover;
@@ -792,18 +803,29 @@ button.swiper-pagination-bullet {
 }
 
 
+.btnNextswiperDirigenten,
+.btnPrevswiperDirigenten,
+.paginationswiperDirigenten{
+  display: none;
+}
+
+
+
 @media only screen and (max-width: 1230px) {
-  .swiper-slide.posterhistorie {
+  .swiper-slide.posterhistorie,
+  .swiper-slide.swiperDirigenten {
     /* background-color: rgb(88, 146, 55); */
     flex: 1; 
 }
 
-.swiper-slide.posterhistorie div{
+.swiper-slide.posterhistorie div,
+.swiper-slide.swiperDirigenten div{
   /* height: 34rem; */
   height: 100% !important;
 } 
 
-.swiper-slide.posterhistorie div img{
+.swiper-slide.posterhistorie div img,
+.swiper-slide.swiperDirigenten div img{
 /* height: 34rem; */
 height: 100% !important;
 object-fit: cover;
@@ -829,12 +851,39 @@ object-fit: cover;
 
 }
 
+@media only screen and (max-width: 700px) {
+.swiper-slide.swiperDirigenten {
+  flex: none;
+}
+
+.paginationswiperDirigenten{
+  display: block;
+}
+
+
+.btnNextswiperDirigenten,
+.btnPrevswiperDirigenten{
+  display: flex;
+}
+
+.swiper-slide.swiperDirigenten img{
+  height: 40vh;
+}
+}
+
+
+
+
+
+
+
 
 /* Concerten --> posthistorie slider */
 @media only screen and (max-width: 800px) {
-    .swiper-slide.posterhistorie {
+    .swiper-slide.posterhistorie{
       flex: none;
 }
+
 
 
 .paginationPosterhistorie{
@@ -858,6 +907,9 @@ object-fit: cover;
 
 }
 
+.swiper .swiperdirigenten{
+      padding: 0;
+}
 
 
 

@@ -1,7 +1,7 @@
 /**
- * swipeGelijk 11.1.14
+ * mediaSwiper 11.1.14
  * Most modern mobile touch slider and framework with hardware accelerated transitions
- * https://swipeGelijkjs.com
+ * https://mediaSwiperjs.com
  *
  * Copyright 2014-2024 Vladimir Kharlampidi
  *
@@ -10,7 +10,7 @@
  * Released on: September 12, 2024
  */
 
-var swipeGelijk = (function () {
+var mediaSwiper = (function () {
   "use strict";
   function e(e) {
     return (
@@ -188,11 +188,11 @@ var swipeGelijk = (function () {
           void 0 !== r &&
             r.enumerable &&
             (c(e[a]) && c(i[a])
-              ? i[a].__swipeGelijk__
+              ? i[a].__mediaSwiper__
                 ? (e[a] = i[a])
                 : p(e[a], i[a])
               : !c(e[a]) && c(i[a])
-              ? ((e[a] = {}), i[a].__swipeGelijk__ ? (e[a] = i[a]) : p(e[a], i[a]))
+              ? ((e[a] = {}), i[a].__mediaSwiper__ ? (e[a] = i[a]) : p(e[a], i[a]))
               : (e[a] = i[a]));
         }
       }
@@ -204,7 +204,7 @@ var swipeGelijk = (function () {
     e.style.setProperty(t, s);
   }
   function m(e) {
-    let { swipeGelijk: t, targetPosition: s, side: a } = e;
+    let { mediaSwiper: t, targetPosition: s, side: a } = e;
     const i = r(),
       n = -t.translate;
     let l,
@@ -235,8 +235,8 @@ var swipeGelijk = (function () {
   }
   function h(e) {
     return (
-      e.querySelector(".swipeGelijk-slide-transform") ||
-      (e.shadowRoot && e.shadowRoot.querySelector(".swipeGelijk-slide-transform")) ||
+      e.querySelector(".mediaSwiper-slide-transform") ||
+      (e.shadowRoot && e.shadowRoot.querySelector(".mediaSwiper-slide-transform")) ||
       e
     );
   }
@@ -532,7 +532,7 @@ var swipeGelijk = (function () {
   const D = (e, t) => {
       if (!e || e.destroyed || !e.params) return;
       const s = t.closest(
-        e.isElement ? "swipeGelijk-slide" : `.${e.params.slideClass}`
+        e.isElement ? "mediaSwiper-slide" : `.${e.params.slideClass}`
       );
       if (s) {
         let t = s.querySelector(`.${e.params.lazyPreloaderClass}`);
@@ -634,7 +634,7 @@ var swipeGelijk = (function () {
         } = e,
         o = e.virtual && s.virtual.enabled,
         d = o ? e.virtual.slides.length : e.slides.length,
-        c = f(i, `.${e.params.slideClass}, swipeGelijk-slide`),
+        c = f(i, `.${e.params.slideClass}, mediaSwiper-slide`),
         p = o ? e.virtual.slides.length : c.length;
       let m = [];
       const h = [],
@@ -661,8 +661,8 @@ var swipeGelijk = (function () {
         }),
         s.centeredSlides &&
           s.cssMode &&
-          (u(a, "--swipeGelijk-centered-offset-before", ""),
-          u(a, "--swipeGelijk-centered-offset-after", ""));
+          (u(a, "--mediaSwiper-centered-offset-before", ""),
+          u(a, "--mediaSwiper-centered-offset-after", ""));
       const P = s.grid && s.grid.rows > 1 && e.grid;
       let L;
       P ? e.grid.initSlides(c) : e.grid && e.grid.unsetSlides();
@@ -711,7 +711,7 @@ var swipeGelijk = (function () {
             (L = (r - (s.slidesPerView - 1) * x) / s.slidesPerView),
               s.roundLengths && (L = Math.floor(L)),
               c[a] && (c[a].style[e.getDirectionLabel("width")] = `${L}px`);
-          c[a] && (c[a].swipeGelijkSlideSize = L),
+          c[a] && (c[a].mediaSwiperSlideSize = L),
             g.push(L),
             s.centeredSlides
               ? ((T = T + L / 2 + M / 2 + x),
@@ -818,10 +818,10 @@ var swipeGelijk = (function () {
         }),
         s.centeredSlides && s.cssMode && !s.centeredSlidesBounds)
       ) {
-        u(a, "--swipeGelijk-centered-offset-before", -m[0] + "px"),
+        u(a, "--mediaSwiper-centered-offset-before", -m[0] + "px"),
           u(
             a,
-            "--swipeGelijk-centered-offset-after",
+            "--mediaSwiper-centered-offset-after",
             e.size / 2 - g[g.length - 1] / 2 + "px"
           );
         const t = -e.snapGrid[0],
@@ -884,7 +884,7 @@ var swipeGelijk = (function () {
             : e.wrapperEl.offsetTop
           : 0;
       for (let a = 0; a < t.length; a += 1)
-        t[a].swipeGelijkSlideOffset =
+        t[a].mediaSwiperSlideOffset =
           (e.isHorizontal() ? t[a].offsetLeft : t[a].offsetTop) -
           s -
           e.cssOverflowAdjustment();
@@ -895,7 +895,7 @@ var swipeGelijk = (function () {
         s = t.params,
         { slides: a, rtlTranslate: i, snapGrid: r } = t;
       if (0 === a.length) return;
-      void 0 === a[0].swipeGelijkSlideOffset && t.updateSlidesOffset();
+      void 0 === a[0].mediaSwiperSlideOffset && t.updateSlidesOffset();
       let n = -e;
       i && (n = e), (t.visibleSlidesIndexes = []), (t.visibleSlides = []);
       let l = s.spaceBetween;
@@ -904,14 +904,14 @@ var swipeGelijk = (function () {
         : "string" == typeof l && (l = parseFloat(l));
       for (let e = 0; e < a.length; e += 1) {
         const o = a[e];
-        let d = o.swipeGelijkSlideOffset;
-        s.cssMode && s.centeredSlides && (d -= a[0].swipeGelijkSlideOffset);
+        let d = o.mediaSwiperSlideOffset;
+        s.cssMode && s.centeredSlides && (d -= a[0].mediaSwiperSlideOffset);
         const c =
             (n + (s.centeredSlides ? t.minTranslate() : 0) - d) /
-            (o.swipeGelijkSlideSize + l),
+            (o.mediaSwiperSlideSize + l),
           p =
             (n - r[0] + (s.centeredSlides ? t.minTranslate() : 0) - d) /
-            (o.swipeGelijkSlideSize + l),
+            (o.mediaSwiperSlideSize + l),
           u = -(n - d),
           m = u + t.slidesSizesGrid[e],
           h = u >= 0 && u <= t.size - t.slidesSizesGrid[e],
@@ -971,15 +971,15 @@ var swipeGelijk = (function () {
         { slides: t, params: s, slidesEl: a, activeIndex: i } = e,
         r = e.virtual && s.virtual.enabled,
         n = e.grid && s.grid && s.grid.rows > 1,
-        l = (e) => f(a, `.${s.slideClass}${e}, swipeGelijk-slide${e}`)[0];
+        l = (e) => f(a, `.${s.slideClass}${e}, mediaSwiper-slide${e}`)[0];
       let o, d, c;
       if (r)
         if (s.loop) {
           let t = i - e.virtual.slidesBefore;
           t < 0 && (t = e.virtual.slides.length + t),
             t >= e.virtual.slides.length && (t -= e.virtual.slides.length),
-            (o = l(`[data-swipeGelijk-slide-index="${t}"]`));
-        } else o = l(`[data-swipeGelijk-slide-index="${i}"]`);
+            (o = l(`[data-mediaSwiper-slide-index="${t}"]`));
+        } else o = l(`[data-mediaSwiper-slide-index="${i}"]`);
       else
         n
           ? ((o = t.filter((e) => e.column === i)[0]),
@@ -995,7 +995,7 @@ var swipeGelijk = (function () {
               t ? a.matches(t) && s.push(a) : s.push(a), (e = a);
             }
             return s;
-          })(o, `.${s.slideClass}, swipeGelijk-slide`)[0]),
+          })(o, `.${s.slideClass}, mediaSwiper-slide`)[0]),
           s.loop && !c && (c = t[0]),
           (d = (function (e, t) {
             const s = [];
@@ -1004,7 +1004,7 @@ var swipeGelijk = (function () {
               t ? a.matches(t) && s.push(a) : s.push(a), (e = a);
             }
             return s;
-          })(o, `.${s.slideClass}, swipeGelijk-slide`)[0]),
+          })(o, `.${s.slideClass}, mediaSwiper-slide`)[0]),
           s.loop && 0 === !d && (d = t[t.length - 1]))),
         t.forEach((e) => {
           O(e, e === o, s.slideActiveClass),
@@ -1065,11 +1065,11 @@ var swipeGelijk = (function () {
       if (t.virtual && i.virtual.enabled && i.loop) u = c(d);
       else if (p) {
         const e = t.slides.filter((e) => e.column === d)[0];
-        let s = parseInt(e.getAttribute("data-swipeGelijk-slide-index"), 10);
+        let s = parseInt(e.getAttribute("data-mediaSwiper-slide-index"), 10);
         Number.isNaN(s) && (s = Math.max(t.slides.indexOf(e), 0)),
           (u = Math.floor(s / i.grid.rows));
       } else if (t.slides[d]) {
-        const e = t.slides[d].getAttribute("data-swipeGelijk-slide-index");
+        const e = t.slides[d].getAttribute("data-mediaSwiper-slide-index");
         u = e ? parseInt(e, 10) : d;
       } else u = d;
       Object.assign(t, {
@@ -1089,7 +1089,7 @@ var swipeGelijk = (function () {
     updateClickedSlide: function (e, t) {
       const s = this,
         a = s.params;
-      let i = e.closest(`.${a.slideClass}, swipeGelijk-slide`);
+      let i = e.closest(`.${a.slideClass}, mediaSwiper-slide`);
       !i &&
         s.isElement &&
         t &&
@@ -1098,7 +1098,7 @@ var swipeGelijk = (function () {
         [...t.slice(t.indexOf(e) + 1, t.length)].forEach((e) => {
           !i &&
             e.matches &&
-            e.matches(`.${a.slideClass}, swipeGelijk-slide`) &&
+            e.matches(`.${a.slideClass}, mediaSwiper-slide`) &&
             (i = e);
         });
       let r,
@@ -1114,7 +1114,7 @@ var swipeGelijk = (function () {
       (s.clickedSlide = i),
         s.virtual && s.params.virtual.enabled
           ? (s.clickedIndex = parseInt(
-              i.getAttribute("data-swipeGelijk-slide-index"),
+              i.getAttribute("data-mediaSwiper-slide-index"),
               10
             ))
           : (s.clickedIndex = r),
@@ -1184,7 +1184,7 @@ var swipeGelijk = (function () {
         else {
           if (!r.support.smoothScroll)
             return (
-              m({ swipeGelijk: r, targetPosition: -c, side: e ? "left" : "top" }), !0
+              m({ mediaSwiper: r, targetPosition: -c, side: e ? "left" : "top" }), !0
             );
           l.scrollTo({ [e ? "left" : "top"]: -c, behavior: "smooth" });
         }
@@ -1226,7 +1226,7 @@ var swipeGelijk = (function () {
     },
   };
   function X(e) {
-    let { swipeGelijk: t, runCallbacks: s, direction: a, step: i } = e;
+    let { mediaSwiper: t, runCallbacks: s, direction: a, step: i } = e;
     const { activeIndex: r, previousIndex: n } = t;
     let l = a;
     if (
@@ -1332,7 +1332,7 @@ var swipeGelijk = (function () {
         else {
           if (!r.support.smoothScroll)
             return (
-              m({ swipeGelijk: r, targetPosition: s, side: e ? "left" : "top" }), !0
+              m({ mediaSwiper: r, targetPosition: s, side: e ? "left" : "top" }), !0
             );
           h.scrollTo({ [e ? "left" : "top"]: s, behavior: "smooth" });
         }
@@ -1389,7 +1389,7 @@ var swipeGelijk = (function () {
           if (r) {
             const t = n * i.params.grid.rows;
             e = i.slides.filter(
-              (e) => 1 * e.getAttribute("data-swipeGelijk-slide-index") === t
+              (e) => 1 * e.getAttribute("data-mediaSwiper-slide-index") === t
             )[0].column;
           } else e = i.getSlideIndexByData(n);
           const t = r
@@ -1424,7 +1424,7 @@ var swipeGelijk = (function () {
           if (r) {
             const e = n * i.params.grid.rows;
             n = i.slides.filter(
-              (t) => 1 * t.getAttribute("data-swipeGelijk-slide-index") === e
+              (t) => 1 * t.getAttribute("data-mediaSwiper-slide-index") === e
             )[0].column;
           } else n = i.getSlideIndexByData(n);
         }
@@ -1564,11 +1564,11 @@ var swipeGelijk = (function () {
             : t.slidesPerView;
       let i,
         r = e.clickedIndex;
-      const n = e.isElement ? "swipeGelijk-slide" : `.${t.slideClass}`;
+      const n = e.isElement ? "mediaSwiper-slide" : `.${t.slideClass}`;
       if (t.loop) {
         if (e.animating) return;
         (i = parseInt(
-          e.clickedSlide.getAttribute("data-swipeGelijk-slide-index"),
+          e.clickedSlide.getAttribute("data-mediaSwiper-slide-index"),
           10
         )),
           t.centeredSlides
@@ -1576,7 +1576,7 @@ var swipeGelijk = (function () {
               r > e.slides.length - e.loopedSlides + a / 2
               ? (e.loopFix(),
                 (r = e.getSlideIndex(
-                  f(s, `${n}[data-swipeGelijk-slide-index="${i}"]`)[0]
+                  f(s, `${n}[data-mediaSwiper-slide-index="${i}"]`)[0]
                 )),
                 l(() => {
                   e.slideTo(r);
@@ -1585,7 +1585,7 @@ var swipeGelijk = (function () {
             : r > e.slides.length - a
             ? (e.loopFix(),
               (r = e.getSlideIndex(
-                f(s, `${n}[data-swipeGelijk-slide-index="${i}"]`)[0]
+                f(s, `${n}[data-mediaSwiper-slide-index="${i}"]`)[0]
               )),
               l(() => {
                 e.slideTo(r);
@@ -1600,8 +1600,8 @@ var swipeGelijk = (function () {
         { params: s, slidesEl: a } = t;
       if (!s.loop || (t.virtual && t.params.virtual.enabled)) return;
       const i = () => {
-          f(a, `.${s.slideClass}, swipeGelijk-slide`).forEach((e, t) => {
-            e.setAttribute("data-swipeGelijk-slide-index", t);
+          f(a, `.${s.slideClass}, mediaSwiper-slide`).forEach((e, t) => {
+            e.setAttribute("data-mediaSwiper-slide-index", t);
           });
         },
         r = t.grid && s.grid && s.grid.rows > 1,
@@ -1611,7 +1611,7 @@ var swipeGelijk = (function () {
         d = (e) => {
           for (let a = 0; a < e; a += 1) {
             const e = t.isElement
-              ? v("swipeGelijk-slide", [s.slideBlankClass])
+              ? v("mediaSwiper-slide", [s.slideBlankClass])
               : v("div", [s.slideClass, s.slideBlankClass]);
             t.slidesEl.append(e);
           }
@@ -1621,7 +1621,7 @@ var swipeGelijk = (function () {
           d(n - (t.slides.length % n)), t.recalcSlides(), t.updateSlides();
         } else
           g(
-            "swipeGelijk Loop Warning: The number of slides is not even to slidesPerGroup, loop mode may not function properly. You need to add more slides (or make duplicates, or empty slides)"
+            "mediaSwiper Loop Warning: The number of slides is not even to slidesPerGroup, loop mode may not function properly. You need to add more slides (or make duplicates, or empty slides)"
           );
         i();
       } else if (o) {
@@ -1631,7 +1631,7 @@ var swipeGelijk = (function () {
             t.updateSlides();
         } else
           g(
-            "swipeGelijk Loop Warning: The number of slides is not even to grid.rows, loop mode may not function properly. You need to add more slides (or make duplicates, or empty slides)"
+            "mediaSwiper Loop Warning: The number of slides is not even to grid.rows, loop mode may not function properly. You need to add more slides (or make duplicates, or empty slides)"
           );
         i();
       } else i();
@@ -1691,12 +1691,12 @@ var swipeGelijk = (function () {
       const b = o.grid && m.grid && m.grid.rows > 1;
       d.length < f + w
         ? g(
-            "swipeGelijk Loop Warning: The number of slides is not enough for loop mode, it will be disabled and not function properly. You need to add more slides (or make duplicates) or lower the values of slidesPerView and slidesPerGroup parameters"
+            "mediaSwiper Loop Warning: The number of slides is not enough for loop mode, it will be disabled and not function properly. You need to add more slides (or make duplicates) or lower the values of slidesPerView and slidesPerGroup parameters"
           )
         : b &&
           "row" === m.grid.fill &&
           g(
-            "swipeGelijk Loop Warning: Loop mode is not compatible with grid.fill = `row`"
+            "mediaSwiper Loop Warning: Loop mode is not compatible with grid.fill = `row`"
           );
       const y = [],
         E = [];
@@ -1740,15 +1740,15 @@ var swipeGelijk = (function () {
         }),
         T &&
           y.forEach((e) => {
-            (d[e].swipeGelijkLoopMoveDOM = !0),
+            (d[e].mediaSwiperLoopMoveDOM = !0),
               u.prepend(d[e]),
-              (d[e].swipeGelijkLoopMoveDOM = !1);
+              (d[e].mediaSwiperLoopMoveDOM = !1);
           }),
         S &&
           E.forEach((e) => {
-            (d[e].swipeGelijkLoopMoveDOM = !0),
+            (d[e].mediaSwiperLoopMoveDOM = !0),
               u.append(d[e]),
-              (d[e].swipeGelijkLoopMoveDOM = !1);
+              (d[e].mediaSwiperLoopMoveDOM = !1);
           }),
         o.recalcSlides(),
         "auto" === m.slidesPerView
@@ -1834,13 +1834,13 @@ var swipeGelijk = (function () {
       const a = [];
       e.slides.forEach((e) => {
         const t =
-          void 0 === e.swipeGelijkSlideIndex
-            ? 1 * e.getAttribute("data-swipeGelijk-slide-index")
-            : e.swipeGelijkSlideIndex;
+          void 0 === e.mediaSwiperSlideIndex
+            ? 1 * e.getAttribute("data-mediaSwiper-slide-index")
+            : e.mediaSwiperSlideIndex;
         a[t] = e;
       }),
         e.slides.forEach((e) => {
-          e.removeAttribute("data-swipeGelijk-slide-index");
+          e.removeAttribute("data-mediaSwiper-slide-index");
         }),
         a.forEach((e) => {
           s.append(e);
@@ -1987,7 +1987,7 @@ var swipeGelijk = (function () {
       );
     const u = c.pageX,
       m = c.pageY;
-    if (p.preventedByNestedswipeGelijk) return (n.startX = u), void (n.startY = m);
+    if (p.preventedByNestedmediaSwiper) return (n.startX = u), void (n.startY = m);
     if (!s.allowTouchMove)
       return (
         p.target.matches(i.focusableElements) || (s.allowClick = !1),
@@ -2079,7 +2079,7 @@ var swipeGelijk = (function () {
         const e = new window.CustomEvent("transitionend", {
           bubbles: !0,
           cancelable: !0,
-          detail: { byswipeGelijkTouchMove: !0 },
+          detail: { bymediaSwiperTouchMove: !0 },
         });
         s.wrapperEl.dispatchEvent(e);
       }
@@ -2174,7 +2174,7 @@ var swipeGelijk = (function () {
                 s.maxTranslate() +
                 1 -
                 (s.maxTranslate() - i.startTranslate - g) ** x))),
-      E && (p.preventedByNestedswipeGelijk = !0),
+      E && (p.preventedByNestedmediaSwiper = !0),
       !s.allowSlideNext &&
         "next" === s.swipeDirection &&
         i.currentTranslate < i.startTranslate &&
@@ -2469,7 +2469,7 @@ var swipeGelijk = (function () {
     init: !0,
     direction: "horizontal",
     oneWayMovement: !1,
-    swipeGelijkElementNodeName: "swipeGelijk-CONTAINER",
+    mediaSwiperElementNodeName: "mediaSwiper-CONTAINER",
     touchEventsTarget: "wrapper",
     initialSlide: 0,
     speed: 300,
@@ -2478,7 +2478,7 @@ var swipeGelijk = (function () {
     resizeObserver: !0,
     nested: !1,
     createElements: !1,
-    eventsPrefix: "swipeGelijk",
+    eventsPrefix: "mediaSwiper",
     enabled: !0,
     focusableElements: "input, select, option, textarea, button, video, label",
     width: null,
@@ -2538,20 +2538,20 @@ var swipeGelijk = (function () {
     allowSlideNext: !0,
     swipeHandler: null,
     noSwiping: !0,
-    noSwipingClass: "swipeGelijk-no-swiping",
+    noSwipingClass: "mediaSwiper-no-swiping",
     noSwipingSelector: null,
     passiveListeners: !0,
     maxBackfaceHiddenSlides: 10,
-    containerModifierClass: "swipeGelijk-",
-    slideClass: "swipeGelijk-slide",
-    slideBlankClass: "swipeGelijk-slide-blank",
-    slideActiveClass: "swipeGelijk-slide-active",
-    slideVisibleClass: "swipeGelijk-slide-visible",
-    slideFullyVisibleClass: "swipeGelijk-slide-fully-visible",
-    slideNextClass: "swipeGelijk-slide-next",
-    slidePrevClass: "swipeGelijk-slide-prev",
-    wrapperClass: "swipeGelijk-wrapper",
-    lazyPreloaderClass: "swipeGelijk-lazy-preloader",
+    containerModifierClass: "mediaSwiper-",
+    slideClass: "mediaSwiper-slide",
+    slideBlankClass: "mediaSwiper-slide-blank",
+    slideActiveClass: "mediaSwiper-slide-active",
+    slideVisibleClass: "mediaSwiper-slide-visible",
+    slideFullyVisibleClass: "mediaSwiper-slide-fully-visible",
+    slideNextClass: "mediaSwiper-slide-next",
+    slidePrevClass: "mediaSwiper-slide-prev",
+    wrapperClass: "mediaSwiper-wrapper",
+    lazyPreloaderClass: "mediaSwiper-lazy-preloader",
     lazyPreloadPrevNext: 0,
     runCallbacksOnInit: !0,
     _emitClasses: !1,
@@ -2602,7 +2602,7 @@ var swipeGelijk = (function () {
             { params: a } = s;
           a.cssMode ||
             (a.autoHeight && s.updateAutoHeight(),
-            X({ swipeGelijk: s, runCallbacks: e, direction: t, step: "Start" }));
+            X({ mediaSwiper: s, runCallbacks: e, direction: t, step: "Start" }));
         },
         transitionEnd: function (e, t) {
           void 0 === e && (e = !0);
@@ -2611,7 +2611,7 @@ var swipeGelijk = (function () {
           (s.animating = !1),
             a.cssMode ||
               (s.setTransition(0),
-              X({ swipeGelijk: s, runCallbacks: e, direction: t, step: "End" }));
+              X({ mediaSwiper: s, runCallbacks: e, direction: t, step: "End" }));
         },
       },
       slide: Y,
@@ -2837,7 +2837,7 @@ var swipeGelijk = (function () {
         );
       }
       const l = this;
-      (l.__swipeGelijk__ = !0),
+      (l.__mediaSwiper__ = !0),
         (l.support = I()),
         (l.device = z({ userAgent: t.userAgent })),
         (l.browser = A()),
@@ -2849,7 +2849,7 @@ var swipeGelijk = (function () {
       l.modules.forEach((e) => {
         e({
           params: t,
-          swipeGelijk: l,
+          mediaSwiper: l,
           extendParams: te(t, o),
           on: l.on.bind(l),
           once: l.once.bind(l),
@@ -2916,7 +2916,7 @@ var swipeGelijk = (function () {
           imagesToLoad: [],
           imagesLoaded: 0,
         }),
-        l.emit("_swipeGelijk"),
+        l.emit("_mediaSwiper"),
         l.params.init && l.init(),
         l
       );
@@ -2937,19 +2937,19 @@ var swipeGelijk = (function () {
     }
     getSlideIndex(e) {
       const { slidesEl: t, params: s } = this,
-        a = y(f(t, `.${s.slideClass}, swipeGelijk-slide`)[0]);
+        a = y(f(t, `.${s.slideClass}, mediaSwiper-slide`)[0]);
       return y(e) - a;
     }
     getSlideIndexByData(e) {
       return this.getSlideIndex(
         this.slides.filter(
-          (t) => 1 * t.getAttribute("data-swipeGelijk-slide-index") === e
+          (t) => 1 * t.getAttribute("data-mediaSwiper-slide-index") === e
         )[0]
       );
     }
     recalcSlides() {
       const { slidesEl: e, params: t } = this;
-      this.slides = f(e, `.${t.slideClass}, swipeGelijk-slide`);
+      this.slides = f(e, `.${t.slideClass}, mediaSwiper-slide`);
     }
     enable() {
       const e = this;
@@ -2981,7 +2981,7 @@ var swipeGelijk = (function () {
         .split(" ")
         .filter(
           (t) =>
-            0 === t.indexOf("swipeGelijk") ||
+            0 === t.indexOf("mediaSwiper") ||
             0 === t.indexOf(e.params.containerModifierClass)
         );
       e.emit("_containerClasses", t.join(" "));
@@ -2994,7 +2994,7 @@ var swipeGelijk = (function () {
             .split(" ")
             .filter(
               (e) =>
-                0 === e.indexOf("swipeGelijk-slide") ||
+                0 === e.indexOf("mediaSwiper-slide") ||
                 0 === e.indexOf(t.params.slideClass)
             )
             .join(" ");
@@ -3023,17 +3023,17 @@ var swipeGelijk = (function () {
       if ("number" == typeof s.slidesPerView) return s.slidesPerView;
       if (s.centeredSlides) {
         let e,
-          t = a[l] ? Math.ceil(a[l].swipeGelijkSlideSize) : 0;
+          t = a[l] ? Math.ceil(a[l].mediaSwiperSlideSize) : 0;
         for (let s = l + 1; s < a.length; s += 1)
           a[s] &&
             !e &&
-            ((t += Math.ceil(a[s].swipeGelijkSlideSize)),
+            ((t += Math.ceil(a[s].mediaSwiperSlideSize)),
             (o += 1),
             t > n && (e = !0));
         for (let s = l - 1; s >= 0; s -= 1)
           a[s] &&
             !e &&
-            ((t += a[s].swipeGelijkSlideSize), (o += 1), t > n && (e = !0));
+            ((t += a[s].mediaSwiperSlideSize), (o += 1), t > n && (e = !0));
       } else if ("current" === e)
         for (let e = l + 1; e < a.length; e += 1) {
           (t ? i[e] + r[e] - i[l] < n : i[e] - i[l] < n) && (o += 1);
@@ -3120,11 +3120,11 @@ var swipeGelijk = (function () {
       let s = e || t.params.el;
       if (("string" == typeof s && (s = document.querySelector(s)), !s))
         return !1;
-      (s.swipeGelijk = t),
+      (s.mediaSwiper = t),
         s.parentNode &&
           s.parentNode.host &&
           s.parentNode.host.nodeName ===
-            t.params.swipeGelijkElementNodeName.toUpperCase() &&
+            t.params.mediaSwiperElementNodeName.toUpperCase() &&
           (t.isElement = !0);
       const a = () =>
         `.${(t.params.wrapperClass || "").trim().split(" ").join(".")}`;
@@ -3232,14 +3232,14 @@ var swipeGelijk = (function () {
                   a.slidePrevClass
                 ),
                   e.removeAttribute("style"),
-                  e.removeAttribute("data-swipeGelijk-slide-index");
+                  e.removeAttribute("data-mediaSwiper-slide-index");
               })),
           s.emit("destroy"),
           Object.keys(s.eventsListeners).forEach((e) => {
             s.off(e);
           }),
           !1 !== e &&
-            (s.el && "string" != typeof s.el && (s.el.swipeGelijk = null),
+            (s.el && "string" != typeof s.el && (s.el.mediaSwiper = null),
             (function (e) {
               const t = e;
               Object.keys(t).forEach((e) => {
@@ -3389,7 +3389,7 @@ var swipeGelijk = (function () {
   function ue(e) {
     const {
       effect: t,
-      swipeGelijk: s,
+      mediaSwiper: s,
       on: a,
       setTranslate: i,
       setTransition: r,
@@ -3417,7 +3417,7 @@ var swipeGelijk = (function () {
           if (!d || !d().slideShadows) return;
           s.slides.forEach((e) => {
             e.querySelectorAll(
-              ".swipeGelijk-slide-shadow-top, .swipeGelijk-slide-shadow-right, .swipeGelijk-slide-shadow-bottom, .swipeGelijk-slide-shadow-left"
+              ".mediaSwiper-slide-shadow-top, .mediaSwiper-slide-shadow-right, .mediaSwiper-slide-shadow-bottom, .mediaSwiper-slide-shadow-left"
             ).forEach((e) => e.remove());
           }),
             o();
@@ -3441,7 +3441,7 @@ var swipeGelijk = (function () {
     );
   }
   function he(e) {
-    let { swipeGelijk: t, duration: s, transformElements: a, allSlides: i } = e;
+    let { mediaSwiper: t, duration: s, transformElements: a, allSlides: i } = e;
     const { activeIndex: r } = t;
     if (t.params.virtualTranslate && 0 !== s) {
       let e,
@@ -3449,7 +3449,7 @@ var swipeGelijk = (function () {
       (e = i
         ? a
         : a.filter((e) => {
-            const s = e.classList.contains("swipeGelijk-slide-transform")
+            const s = e.classList.contains("mediaSwiper-slide-transform")
               ? ((e) => {
                   if (!e.parentElement)
                     return t.slides.filter(
@@ -3475,8 +3475,8 @@ var swipeGelijk = (function () {
     }
   }
   function fe(e, t, s) {
-    const a = `swipeGelijk-slide-shadow${s ? `-${s}` : ""}${
-        e ? ` swipeGelijk-slide-shadow-${e}` : ""
+    const a = `mediaSwiper-slide-shadow${s ? `-${s}` : ""}${
+        e ? ` mediaSwiper-slide-shadow-${e}` : ""
       }`,
       i = h(t);
     let r = i.querySelector(`.${a.split(" ").join(".")}`);
@@ -3489,7 +3489,7 @@ var swipeGelijk = (function () {
   }),
     ie.use([
       function (e) {
-        let { swipeGelijk: t, on: s, emit: a } = e;
+        let { mediaSwiper: t, on: s, emit: a } = e;
         const i = r();
         let n = null,
           l = null;
@@ -3533,7 +3533,7 @@ var swipeGelijk = (function () {
           });
       },
       function (e) {
-        let { swipeGelijk: t, extendParams: s, on: a, emit: i } = e;
+        let { mediaSwiper: t, extendParams: s, on: a, emit: i } = e;
         const n = [],
           l = r(),
           o = function (e, s) {
@@ -3579,7 +3579,7 @@ var swipeGelijk = (function () {
   const ge = [
     function (e) {
       let t,
-        { swipeGelijk: s, extendParams: i, on: r, emit: n } = e;
+        { mediaSwiper: s, extendParams: i, on: r, emit: n } = e;
       i({
         virtual: {
           enabled: !1,
@@ -3611,9 +3611,9 @@ var swipeGelijk = (function () {
             ? ((i = a.renderSlide.call(s, e, t)),
               "string" == typeof i && ((o.innerHTML = i), (i = o.children[0])))
             : (i = s.isElement
-                ? v("swipeGelijk-slide")
+                ? v("mediaSwiper-slide")
                 : v("div", s.params.slideClass)),
-          i.setAttribute("data-swipeGelijk-slide-index", t),
+          i.setAttribute("data-mediaSwiper-slide-index", t),
           a.renderSlide || (i.innerHTML = e),
           a.cache && (s.virtual.cache[t] = i),
           i
@@ -3696,7 +3696,7 @@ var swipeGelijk = (function () {
           };
         if (e)
           s.slides
-            .filter((e) => e.matches(`.${s.params.slideClass}, swipeGelijk-slide`))
+            .filter((e) => e.matches(`.${s.params.slideClass}, mediaSwiper-slide`))
             .forEach((e) => {
               e.remove();
             });
@@ -3707,7 +3707,7 @@ var swipeGelijk = (function () {
               s.slides
                 .filter((e) =>
                   e.matches(
-                    `.${s.params.slideClass}[data-swipeGelijk-slide-index="${t}"], swipeGelijk-slide[data-swipeGelijk-slide-index="${t}"]`
+                    `.${s.params.slideClass}[data-mediaSwiper-slide-index="${t}"], mediaSwiper-slide[data-mediaSwiper-slide-index="${t}"]`
                   )
                 )
                 .forEach((e) => {
@@ -3738,7 +3738,7 @@ var swipeGelijk = (function () {
             C.forEach((e) => {
               s.slidesEl.prepend(d(h[e], e));
             });
-        f(s.slidesEl, ".swipeGelijk-slide, swipeGelijk-slide").forEach((e) => {
+        f(s.slidesEl, ".mediaSwiper-slide, mediaSwiper-slide").forEach((e) => {
           e.style[b] = T - Math.abs(s.cssOverflowAdjustment()) + "px";
         }),
           M();
@@ -3748,14 +3748,14 @@ var swipeGelijk = (function () {
         let e;
         if (void 0 === s.passedParams.virtual.slides) {
           const t = [...s.slidesEl.children].filter((e) =>
-            e.matches(`.${s.params.slideClass}, swipeGelijk-slide`)
+            e.matches(`.${s.params.slideClass}, mediaSwiper-slide`)
           );
           t &&
             t.length &&
             ((s.virtual.slides = [...t]),
             (e = !0),
             t.forEach((e, t) => {
-              e.setAttribute("data-swipeGelijk-slide-index", t),
+              e.setAttribute("data-mediaSwiper-slide-index", t),
                 (s.virtual.cache[t] = e),
                 e.remove();
             }));
@@ -3778,7 +3778,7 @@ var swipeGelijk = (function () {
         r("init update resize", () => {
           s.params.virtual.enabled &&
             s.params.cssMode &&
-            u(s.wrapperEl, "--swipeGelijk-virtual-size", `${s.virtualSize}px`);
+            u(s.wrapperEl, "--mediaSwiper-virtual-size", `${s.virtualSize}px`);
         }),
         Object.assign(s.virtual, {
           appendSlide: function (e) {
@@ -3802,10 +3802,10 @@ var swipeGelijk = (function () {
                 t = {};
               Object.keys(e).forEach((s) => {
                 const a = e[s],
-                  r = a.getAttribute("data-swipeGelijk-slide-index");
+                  r = a.getAttribute("data-mediaSwiper-slide-index");
                 r &&
                   a.setAttribute(
-                    "data-swipeGelijk-slide-index",
+                    "data-mediaSwiper-slide-index",
                     parseInt(r, 10) + i
                   ),
                   (t[parseInt(s, 10) + i] = a);
@@ -3825,7 +3825,7 @@ var swipeGelijk = (function () {
                     t > e &&
                       ((s.virtual.cache[t - 1] = s.virtual.cache[t]),
                       s.virtual.cache[t - 1].setAttribute(
-                        "data-swipeGelijk-slide-index",
+                        "data-mediaSwiper-slide-index",
                         t - 1
                       ),
                       delete s.virtual.cache[t]);
@@ -3840,7 +3840,7 @@ var swipeGelijk = (function () {
                   t > e &&
                     ((s.virtual.cache[t - 1] = s.virtual.cache[t]),
                     s.virtual.cache[t - 1].setAttribute(
-                      "data-swipeGelijk-slide-index",
+                      "data-mediaSwiper-slide-index",
                       t - 1
                     ),
                     delete s.virtual.cache[t]);
@@ -3860,7 +3860,7 @@ var swipeGelijk = (function () {
         });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, on: i, emit: n } = e;
+      let { mediaSwiper: t, extendParams: s, on: i, emit: n } = e;
       const l = a(),
         o = r();
       function d(e) {
@@ -3904,7 +3904,7 @@ var swipeGelijk = (function () {
           ) {
             let e = !1;
             if (
-              E(t.el, `.${t.params.slideClass}, swipeGelijk-slide`).length > 0 &&
+              E(t.el, `.${t.params.slideClass}, mediaSwiper-slide`).length > 0 &&
               0 === E(t.el, `.${t.params.slideActiveClass}`).length
             )
               return;
@@ -3961,7 +3961,7 @@ var swipeGelijk = (function () {
         Object.assign(t.keyboard, { enable: c, disable: p });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, on: a, emit: i } = e;
+      let { mediaSwiper: t, extendParams: s, on: a, emit: i } = e;
       const n = r();
       let d;
       s({
@@ -3974,7 +3974,7 @@ var swipeGelijk = (function () {
           eventsTarget: "container",
           thresholdDelta: null,
           thresholdTime: null,
-          noMousewheelClass: "swipeGelijk-no-mousewheel",
+          noMousewheelClass: "mediaSwiper-no-mousewheel",
         },
       }),
         (t.mousewheel = { enabled: !1 });
@@ -4203,7 +4203,7 @@ var swipeGelijk = (function () {
         Object.assign(t.mousewheel, { enable: w, disable: b });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, on: a, emit: i } = e;
+      let { mediaSwiper: t, extendParams: s, on: a, emit: i } = e;
       function r(e) {
         let s;
         return e &&
@@ -4256,7 +4256,7 @@ var swipeGelijk = (function () {
             t,
             t.originalParams.navigation,
             t.params.navigation,
-            { nextEl: "swipeGelijk-button-next", prevEl: "swipeGelijk-button-prev" }
+            { nextEl: "mediaSwiper-button-next", prevEl: "mediaSwiper-button-prev" }
           )),
           !e.nextEl && !e.prevEl)
         )
@@ -4286,10 +4286,10 @@ var swipeGelijk = (function () {
           nextEl: null,
           prevEl: null,
           hideOnClick: !1,
-          disabledClass: "swipeGelijk-button-disabled",
-          hiddenClass: "swipeGelijk-button-hidden",
-          lockClass: "swipeGelijk-button-lock",
-          navigationDisabledClass: "swipeGelijk-navigation-disabled",
+          disabledClass: "mediaSwiper-button-disabled",
+          hiddenClass: "mediaSwiper-button-hidden",
+          lockClass: "mediaSwiper-button-lock",
+          navigationDisabledClass: "mediaSwiper-navigation-disabled",
         },
       }),
         (t.navigation = { nextEl: null, prevEl: null }),
@@ -4365,8 +4365,8 @@ var swipeGelijk = (function () {
       });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, on: a, emit: i } = e;
-      const r = "swipeGelijk-pagination";
+      let { mediaSwiper: t, extendParams: s, on: a, emit: i } = e;
+      const r = "mediaSwiper-pagination";
       let n;
       s({
         pagination: {
@@ -4633,7 +4633,7 @@ var swipeGelijk = (function () {
           t,
           t.originalParams.pagination,
           t.params.pagination,
-          { el: "swipeGelijk-pagination" }
+          { el: "mediaSwiper-pagination" }
         );
         const e = t.params.pagination;
         if (!e.el) return;
@@ -4653,7 +4653,7 @@ var swipeGelijk = (function () {
               s.length > 1 &&
               ((s = [...t.el.querySelectorAll(e.el)]),
               s.length > 1 &&
-                (s = s.filter((e) => E(e, ".swipeGelijk")[0] === t.el)[0])),
+                (s = s.filter((e) => E(e, ".mediaSwiper")[0] === t.el)[0])),
             Array.isArray(s) && 1 === s.length && (s = s[0]),
             Object.assign(t.pagination, { el: s }),
             (s = T(s)),
@@ -4792,7 +4792,7 @@ var swipeGelijk = (function () {
       });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, on: i, emit: r } = e;
+      let { mediaSwiper: t, extendParams: s, on: i, emit: r } = e;
       const o = a();
       let d,
         c,
@@ -4946,7 +4946,7 @@ var swipeGelijk = (function () {
           t,
           t.originalParams.scrollbar,
           t.params.scrollbar,
-          { el: "swipeGelijk-scrollbar" }
+          { el: "mediaSwiper-scrollbar" }
         );
         const a = t.params.scrollbar;
         if (!a.el) return;
@@ -4994,11 +4994,11 @@ var swipeGelijk = (function () {
           hide: !1,
           draggable: !1,
           snapOnRelease: !0,
-          lockClass: "swipeGelijk-scrollbar-lock",
-          dragClass: "swipeGelijk-scrollbar-drag",
-          scrollbarDisabledClass: "swipeGelijk-scrollbar-disabled",
-          horizontalClass: "swipeGelijk-scrollbar-horizontal",
-          verticalClass: "swipeGelijk-scrollbar-vertical",
+          lockClass: "mediaSwiper-scrollbar-lock",
+          dragClass: "mediaSwiper-scrollbar-drag",
+          scrollbarDisabledClass: "mediaSwiper-scrollbar-disabled",
+          horizontalClass: "mediaSwiper-scrollbar-horizontal",
+          verticalClass: "mediaSwiper-scrollbar-vertical",
         },
       }),
         (t.scrollbar = { el: null, dragEl: null }),
@@ -5069,19 +5069,19 @@ var swipeGelijk = (function () {
       });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, on: a } = e;
+      let { mediaSwiper: t, extendParams: s, on: a } = e;
       s({ parallax: { enabled: !1 } });
       const i =
-          "[data-swipeGelijk-parallax], [data-swipeGelijk-parallax-x], [data-swipeGelijk-parallax-y], [data-swipeGelijk-parallax-opacity], [data-swipeGelijk-parallax-scale]",
+          "[data-mediaSwiper-parallax], [data-mediaSwiper-parallax-x], [data-mediaSwiper-parallax-y], [data-mediaSwiper-parallax-opacity], [data-mediaSwiper-parallax-scale]",
         r = (e, s) => {
           const { rtl: a } = t,
             i = a ? -1 : 1,
-            r = e.getAttribute("data-swipeGelijk-parallax") || "0";
-          let n = e.getAttribute("data-swipeGelijk-parallax-x"),
-            l = e.getAttribute("data-swipeGelijk-parallax-y");
-          const o = e.getAttribute("data-swipeGelijk-parallax-scale"),
-            d = e.getAttribute("data-swipeGelijk-parallax-opacity"),
-            c = e.getAttribute("data-swipeGelijk-parallax-rotate");
+            r = e.getAttribute("data-mediaSwiper-parallax") || "0";
+          let n = e.getAttribute("data-mediaSwiper-parallax-x"),
+            l = e.getAttribute("data-mediaSwiper-parallax-y");
+          const o = e.getAttribute("data-mediaSwiper-parallax-scale"),
+            d = e.getAttribute("data-mediaSwiper-parallax-opacity"),
+            c = e.getAttribute("data-mediaSwiper-parallax-rotate");
           if (
             (n || l
               ? ((n = n || "0"), (l = l || "0"))
@@ -5128,7 +5128,7 @@ var swipeGelijk = (function () {
                 (l += Math.ceil(s / 2) - a * (n.length - 1)),
                 (l = Math.min(Math.max(l, -1), 1)),
                 e
-                  .querySelectorAll(`${i}, [data-swipeGelijk-parallax-rotate]`)
+                  .querySelectorAll(`${i}, [data-mediaSwiper-parallax-rotate]`)
                   .forEach((e) => {
                     r(e, l);
                   });
@@ -5155,7 +5155,7 @@ var swipeGelijk = (function () {
                 r.forEach((t) => {
                   let s =
                     parseInt(
-                      t.getAttribute("data-swipeGelijk-parallax-duration"),
+                      t.getAttribute("data-mediaSwiper-parallax-duration"),
                       10
                     ) || e;
                   0 === e && (s = 0), (t.style.transitionDuration = `${s}ms`);
@@ -5164,7 +5164,7 @@ var swipeGelijk = (function () {
         });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, on: a, emit: i } = e;
+      let { mediaSwiper: t, extendParams: s, on: a, emit: i } = e;
       const n = r();
       s({
         zoom: {
@@ -5173,8 +5173,8 @@ var swipeGelijk = (function () {
           maxRatio: 3,
           minRatio: 1,
           toggle: !0,
-          containerClass: "swipeGelijk-zoom-container",
-          zoomedSlideClass: "swipeGelijk-slide-zoomed",
+          containerClass: "mediaSwiper-zoom-container",
+          zoomedSlideClass: "mediaSwiper-slide-zoomed",
         },
       }),
         (t.zoom = { enabled: !1 });
@@ -5228,7 +5228,7 @@ var swipeGelijk = (function () {
       }
       function x() {
         const e = t.params.zoom,
-          s = m.imageWrapEl.getAttribute("data-swipeGelijk-zoom") || e.maxRatio;
+          s = m.imageWrapEl.getAttribute("data-mediaSwiper-zoom") || e.maxRatio;
         if (e.limitToOriginalSize && m.imageEl && m.imageEl.naturalWidth) {
           const e = m.imageEl.naturalWidth / m.imageEl.offsetWidth;
           return Math.min(e, s);
@@ -5236,7 +5236,7 @@ var swipeGelijk = (function () {
         return s;
       }
       function S(e) {
-        const s = t.isElement ? "swipeGelijk-slide" : `.${t.params.slideClass}`;
+        const s = t.isElement ? "mediaSwiper-slide" : `.${t.params.slideClass}`;
         return (
           !!e.target.matches(s) ||
           t.slides.filter((t) => t.contains(e.target)).length > 0
@@ -5248,14 +5248,14 @@ var swipeGelijk = (function () {
         if (((l = !1), (o = !1), u.push(e), !(u.length < 2))) {
           if (((l = !0), (m.scaleStart = y()), !m.slideEl)) {
             (m.slideEl = e.target.closest(
-              `.${t.params.slideClass}, swipeGelijk-slide`
+              `.${t.params.slideClass}, mediaSwiper-slide`
             )),
               m.slideEl || (m.slideEl = t.slides[t.activeIndex]);
             let a = m.slideEl.querySelector(`.${s.containerClass}`);
             if (
               (a &&
                 (a = a.querySelectorAll(
-                  "picture, img, svg, canvas, .swipeGelijk-zoom-target"
+                  "picture, img, svg, canvas, .mediaSwiper-zoom-target"
                 )[0]),
               (m.imageEl = a),
               (m.imageWrapEl = a
@@ -5456,7 +5456,7 @@ var swipeGelijk = (function () {
           e &&
             e.target &&
             (m.slideEl = e.target.closest(
-              `.${t.params.slideClass}, swipeGelijk-slide`
+              `.${t.params.slideClass}, mediaSwiper-slide`
             )),
             m.slideEl ||
               (t.params.virtual && t.params.virtual.enabled && t.virtual
@@ -5468,7 +5468,7 @@ var swipeGelijk = (function () {
           let s = m.slideEl.querySelector(`.${a.containerClass}`);
           s &&
             (s = s.querySelectorAll(
-              "picture, img, svg, canvas, .swipeGelijk-zoom-target"
+              "picture, img, svg, canvas, .mediaSwiper-zoom-target"
             )[0]),
             (m.imageEl = s),
             (m.imageWrapEl = s
@@ -5532,7 +5532,7 @@ var swipeGelijk = (function () {
           let e = m.slideEl.querySelector(`.${s.containerClass}`);
           e &&
             (e = e.querySelectorAll(
-              "picture, img, svg, canvas, .swipeGelijk-zoom-target"
+              "picture, img, svg, canvas, .mediaSwiper-zoom-target"
             )[0]),
             (m.imageEl = e),
             (m.imageWrapEl = e
@@ -5678,7 +5678,7 @@ var swipeGelijk = (function () {
         });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, on: a } = e;
+      let { mediaSwiper: t, extendParams: s, on: a } = e;
       function i(e, t) {
         const s = (function () {
           let e, t, s;
@@ -5724,9 +5724,9 @@ var swipeGelijk = (function () {
             ).forEach((e) => {
               if (
                 (t.controller.control || (t.controller.control = []),
-                e && e.swipeGelijk)
+                e && e.mediaSwiper)
               )
-                t.controller.control.push(e.swipeGelijk);
+                t.controller.control.push(e.mediaSwiper);
               else if (e) {
                 const s = `${t.params.eventsPrefix}init`,
                   a = (i) => {
@@ -5815,11 +5815,11 @@ var swipeGelijk = (function () {
         });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, on: i } = e;
+      let { mediaSwiper: t, extendParams: s, on: i } = e;
       s({
         a11y: {
           enabled: !0,
-          notificationClass: "swipeGelijk-notification",
+          notificationClass: "mediaSwiper-notification",
           prevSlideMessage: "Previous slide",
           nextSlideMessage: "Next slide",
           firstSlideMessage: "This is the first slide",
@@ -5940,7 +5940,7 @@ var swipeGelijk = (function () {
         P = (e) => {
           if (t.a11y.clicked || !t.params.a11y.scrollOnFocus) return;
           if (new Date().getTime() - o < 100) return;
-          const s = e.target.closest(`.${t.params.slideClass}, swipeGelijk-slide`);
+          const s = e.target.closest(`.${t.params.slideClass}, mediaSwiper-slide`);
           if (!s || !t.slides.includes(s)) return;
           n = s;
           const a = t.slides.indexOf(s) === t.activeIndex,
@@ -5956,7 +5956,7 @@ var swipeGelijk = (function () {
               r ||
                 (t.params.loop
                   ? t.slideToLoop(
-                      parseInt(s.getAttribute("data-swipeGelijk-slide-index")),
+                      parseInt(s.getAttribute("data-mediaSwiper-slide-index")),
                       0
                     )
                   : t.slideTo(t.slides.indexOf(s), 0),
@@ -5972,7 +5972,7 @@ var swipeGelijk = (function () {
           e.slideLabelMessage &&
             t.slides.forEach((a, i) => {
               const r = t.params.loop
-                ? parseInt(a.getAttribute("data-swipeGelijk-slide-index"), 10)
+                ? parseInt(a.getAttribute("data-mediaSwiper-slide-index"), 10)
                 : i;
               h(
                 a,
@@ -5994,7 +5994,7 @@ var swipeGelijk = (function () {
             r =
               e.id ||
               i.getAttribute("id") ||
-              `swipeGelijk-wrapper-${
+              `mediaSwiper-wrapper-${
                 ((n = 16),
                 void 0 === n && (n = 16),
                 "x"
@@ -6104,7 +6104,7 @@ var swipeGelijk = (function () {
         });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, on: a } = e;
+      let { mediaSwiper: t, extendParams: s, on: a } = e;
       s({
         history: {
           enabled: !1,
@@ -6142,7 +6142,7 @@ var swipeGelijk = (function () {
           n = t.params.url ? new URL(t.params.url) : a.location;
           const o =
             t.virtual && t.params.virtual.enabled
-              ? t.slidesEl.querySelector(`[data-swipeGelijk-slide-index="${s}"]`)
+              ? t.slidesEl.querySelector(`[data-mediaSwiper-slide-index="${s}"]`)
               : t.slides[s];
           let d = l(o.getAttribute("data-history"));
           if (t.params.history.root.length > 0) {
@@ -6208,7 +6208,7 @@ var swipeGelijk = (function () {
         });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, emit: i, on: n } = e,
+      let { mediaSwiper: t, extendParams: s, emit: i, on: n } = e,
         l = !1;
       const o = a(),
         d = r();
@@ -6223,12 +6223,12 @@ var swipeGelijk = (function () {
                 (e) => e.getAttribute("data-hash") === s
               )[0];
               if (!e) return 0;
-              return parseInt(e.getAttribute("data-swipeGelijk-slide-index"), 10);
+              return parseInt(e.getAttribute("data-mediaSwiper-slide-index"), 10);
             }
             return t.getSlideIndex(
               f(
                 t.slidesEl,
-                `.${t.params.slideClass}[data-hash="${s}"], swipeGelijk-slide[data-hash="${s}"]`
+                `.${t.params.slideClass}[data-hash="${s}"], mediaSwiper-slide[data-hash="${s}"]`
               )[0]
             );
           },
@@ -6240,7 +6240,7 @@ var swipeGelijk = (function () {
             s =
               t.virtual && t.params.virtual.enabled
                 ? t.slidesEl.querySelector(
-                    `[data-swipeGelijk-slide-index="${t.activeIndex}"]`
+                    `[data-mediaSwiper-slide-index="${t.activeIndex}"]`
                   )
                 : t.slides[t.activeIndex];
           if (e !== (s ? s.getAttribute("data-hash") : "")) {
@@ -6254,7 +6254,7 @@ var swipeGelijk = (function () {
           const e =
               t.virtual && t.params.virtual.enabled
                 ? t.slidesEl.querySelector(
-                    `[data-swipeGelijk-slide-index="${t.activeIndex}"]`
+                    `[data-mediaSwiper-slide-index="${t.activeIndex}"]`
                   )
                 : t.slides[t.activeIndex],
             s = e
@@ -6300,7 +6300,7 @@ var swipeGelijk = (function () {
     function (e) {
       let t,
         s,
-        { swipeGelijk: i, extendParams: r, on: n, emit: l, params: o } = e;
+        { mediaSwiper: i, extendParams: r, on: n, emit: l, params: o } = e;
       (i.autoplay = { running: !1, paused: !1, timeLeft: 0 }),
         r({
           autoplay: {
@@ -6330,7 +6330,7 @@ var swipeGelijk = (function () {
           i.wrapperEl &&
           e.target === i.wrapperEl &&
           (i.wrapperEl.removeEventListener("transitionend", y),
-          g || (e.detail && e.detail.byswipeGelijkTouchMove) || C());
+          g || (e.detail && e.detail.bymediaSwiperTouchMove) || C());
       }
       const E = () => {
           if (i.destroyed || !i.autoplay.running) return;
@@ -6353,13 +6353,13 @@ var swipeGelijk = (function () {
               ((e =
                 i.virtual && i.params.virtual.enabled
                   ? i.slides.filter((e) =>
-                      e.classList.contains("swipeGelijk-slide-active")
+                      e.classList.contains("mediaSwiper-slide-active")
                     )[0]
                   : i.slides[i.activeIndex]),
               !e)
             )
               return;
-            return parseInt(e.getAttribute("data-swipeGelijk-autoplay"), 10);
+            return parseInt(e.getAttribute("data-mediaSwiper-autoplay"), 10);
           })();
           !Number.isNaN(r) &&
             r > 0 &&
@@ -6502,20 +6502,20 @@ var swipeGelijk = (function () {
         Object.assign(i.autoplay, { start: S, stop: T, pause: M, resume: C });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, on: i } = e;
+      let { mediaSwiper: t, extendParams: s, on: i } = e;
       s({
         thumbs: {
-          swipeGelijk: null,
+          mediaSwiper: null,
           multipleActiveThumbs: !0,
           autoScrollOffset: 0,
-          slideThumbActiveClass: "swipeGelijk-slide-thumb-active",
-          thumbsContainerClass: "swipeGelijk-thumbs",
+          slideThumbActiveClass: "mediaSwiper-slide-thumb-active",
+          thumbsContainerClass: "mediaSwiper-thumbs",
         },
       });
       let r = !1,
         n = !1;
       function l() {
-        const e = t.thumbs.swipeGelijk;
+        const e = t.thumbs.mediaSwiper;
         if (!e || e.destroyed) return;
         const s = e.clickedIndex,
           a = e.clickedSlide;
@@ -6524,7 +6524,7 @@ var swipeGelijk = (function () {
         if (null == s) return;
         let i;
         (i = e.params.loop
-          ? parseInt(e.clickedSlide.getAttribute("data-swipeGelijk-slide-index"), 10)
+          ? parseInt(e.clickedSlide.getAttribute("data-mediaSwiper-slide-index"), 10)
           : s),
           t.params.loop ? t.slideToLoop(i) : t.slideTo(i);
       }
@@ -6533,36 +6533,36 @@ var swipeGelijk = (function () {
         if (r) return !1;
         r = !0;
         const s = t.constructor;
-        if (e.swipeGelijk instanceof s)
-          (t.thumbs.swipeGelijk = e.swipeGelijk),
-            Object.assign(t.thumbs.swipeGelijk.originalParams, {
+        if (e.mediaSwiper instanceof s)
+          (t.thumbs.mediaSwiper = e.mediaSwiper),
+            Object.assign(t.thumbs.mediaSwiper.originalParams, {
               watchSlidesProgress: !0,
               slideToClickedSlide: !1,
             }),
-            Object.assign(t.thumbs.swipeGelijk.params, {
+            Object.assign(t.thumbs.mediaSwiper.params, {
               watchSlidesProgress: !0,
               slideToClickedSlide: !1,
             }),
-            t.thumbs.swipeGelijk.update();
-        else if (c(e.swipeGelijk)) {
-          const a = Object.assign({}, e.swipeGelijk);
+            t.thumbs.mediaSwiper.update();
+        else if (c(e.mediaSwiper)) {
+          const a = Object.assign({}, e.mediaSwiper);
           Object.assign(a, {
             watchSlidesProgress: !0,
             slideToClickedSlide: !1,
           }),
-            (t.thumbs.swipeGelijk = new s(a)),
+            (t.thumbs.mediaSwiper = new s(a)),
             (n = !0);
         }
         return (
-          t.thumbs.swipeGelijk.el.classList.add(
+          t.thumbs.mediaSwiper.el.classList.add(
             t.params.thumbs.thumbsContainerClass
           ),
-          t.thumbs.swipeGelijk.on("tap", l),
+          t.thumbs.mediaSwiper.on("tap", l),
           !0
         );
       }
       function d(e) {
-        const s = t.thumbs.swipeGelijk;
+        const s = t.thumbs.mediaSwiper;
         if (!s || s.destroyed) return;
         const a =
           "auto" === s.params.slidesPerView
@@ -6582,7 +6582,7 @@ var swipeGelijk = (function () {
           for (let e = 0; e < i; e += 1)
             f(
               s.slidesEl,
-              `[data-swipeGelijk-slide-index="${t.realIndex + e}"]`
+              `[data-mediaSwiper-slide-index="${t.realIndex + e}"]`
             ).forEach((e) => {
               e.classList.add(r);
             });
@@ -6598,7 +6598,7 @@ var swipeGelijk = (function () {
           if (s.params.loop) {
             const e = s.slides.filter(
               (e) =>
-                e.getAttribute("data-swipeGelijk-slide-index") === `${t.realIndex}`
+                e.getAttribute("data-mediaSwiper-slide-index") === `${t.realIndex}`
             )[0];
             (r = s.slides.indexOf(e)),
               (o = t.activeIndex > t.previousIndex ? "next" : "prev");
@@ -6615,29 +6615,29 @@ var swipeGelijk = (function () {
               s.slideTo(r, e ? 0 : void 0));
         }
       }
-      (t.thumbs = { swipeGelijk: null }),
+      (t.thumbs = { mediaSwiper: null }),
         i("beforeInit", () => {
           const { thumbs: e } = t.params;
-          if (e && e.swipeGelijk)
+          if (e && e.mediaSwiper)
             if (
-              "string" == typeof e.swipeGelijk ||
-              e.swipeGelijk instanceof HTMLElement
+              "string" == typeof e.mediaSwiper ||
+              e.mediaSwiper instanceof HTMLElement
             ) {
               const s = a(),
                 i = () => {
                   const a =
-                    "string" == typeof e.swipeGelijk
-                      ? s.querySelector(e.swipeGelijk)
-                      : e.swipeGelijk;
-                  if (a && a.swipeGelijk) (e.swipeGelijk = a.swipeGelijk), o(), d(!0);
+                    "string" == typeof e.mediaSwiper
+                      ? s.querySelector(e.mediaSwiper)
+                      : e.mediaSwiper;
+                  if (a && a.mediaSwiper) (e.mediaSwiper = a.mediaSwiper), o(), d(!0);
                   else if (a) {
                     const s = `${t.params.eventsPrefix}init`,
                       i = (r) => {
-                        (e.swipeGelijk = r.detail[0]),
+                        (e.mediaSwiper = r.detail[0]),
                           a.removeEventListener(s, i),
                           o(),
                           d(!0),
-                          e.swipeGelijk.update(),
+                          e.mediaSwiper.update(),
                           t.update();
                       };
                     a.addEventListener(s, i);
@@ -6655,17 +6655,17 @@ var swipeGelijk = (function () {
           d();
         }),
         i("setTransition", (e, s) => {
-          const a = t.thumbs.swipeGelijk;
+          const a = t.thumbs.mediaSwiper;
           a && !a.destroyed && a.setTransition(s);
         }),
         i("beforeDestroy", () => {
-          const e = t.thumbs.swipeGelijk;
+          const e = t.thumbs.mediaSwiper;
           e && !e.destroyed && n && e.destroy();
         }),
         Object.assign(t.thumbs, { init: o, update: d });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, emit: a, once: i } = e;
+      let { mediaSwiper: t, extendParams: s, emit: a, once: i } = e;
       s({
         freeMode: {
           enabled: !1,
@@ -6849,7 +6849,7 @@ var swipeGelijk = (function () {
         s,
         a,
         i,
-        { swipeGelijk: r, extendParams: n, on: l } = e;
+        { mediaSwiper: r, extendParams: n, on: l } = e;
       n({ grid: { rows: 1, fill: "column" } });
       const o = () => {
         let e = r.params.spaceBetween;
@@ -6897,7 +6897,7 @@ var swipeGelijk = (function () {
           unsetSlides: () => {
             r.slides &&
               r.slides.forEach((e) => {
-                e.swipeGelijkSlideGridSet &&
+                e.mediaSwiperSlideGridSet &&
                   ((e.style.height = ""),
                   (e.style[r.getDirectionLabel("margin-top")] = ""));
               });
@@ -6931,7 +6931,7 @@ var swipeGelijk = (function () {
               (i.style.height = `calc((100% - ${(c - 1) * d}px) / ${c})`),
               (i.style[r.getDirectionLabel("margin-top")] =
                 0 !== f ? d && `${d}px` : ""),
-              (i.swipeGelijkSlideGridSet = !0);
+              (i.mediaSwiperSlideGridSet = !0);
           },
           updateWrapperSize: (e, s) => {
             const { centeredSlides: a, roundLengths: i } = r.params,
@@ -6958,7 +6958,7 @@ var swipeGelijk = (function () {
         });
     },
     function (e) {
-      let { swipeGelijk: t } = e;
+      let { mediaSwiper: t } = e;
       Object.assign(t, {
         appendSlide: le.bind(t),
         prependSlide: oe.bind(t),
@@ -6968,18 +6968,18 @@ var swipeGelijk = (function () {
       });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, on: a } = e;
+      let { mediaSwiper: t, extendParams: s, on: a } = e;
       s({ fadeEffect: { crossFade: !1 } }),
         ue({
           effect: "fade",
-          swipeGelijk: t,
+          mediaSwiper: t,
           on: a,
           setTranslate: () => {
             const { slides: e } = t;
             t.params.fadeEffect;
             for (let s = 0; s < e.length; s += 1) {
               const e = t.slides[s];
-              let a = -e.swipeGelijkSlideOffset;
+              let a = -e.mediaSwiperSlideOffset;
               t.params.virtualTranslate || (a -= t.translate);
               let i = 0;
               t.isHorizontal() || ((i = a), (a = 0));
@@ -6997,7 +6997,7 @@ var swipeGelijk = (function () {
               t.style.transitionDuration = `${e}ms`;
             }),
               he({
-                swipeGelijk: t,
+                mediaSwiper: t,
                 duration: e,
                 transformElements: s,
                 allSlides: !0,
@@ -7013,7 +7013,7 @@ var swipeGelijk = (function () {
         });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, on: a } = e;
+      let { mediaSwiper: t, extendParams: s, on: a } = e;
       s({
         cubeEffect: {
           slideShadows: !0,
@@ -7024,16 +7024,16 @@ var swipeGelijk = (function () {
       });
       const i = (e, t, s) => {
         let a = s
-            ? e.querySelector(".swipeGelijk-slide-shadow-left")
-            : e.querySelector(".swipeGelijk-slide-shadow-top"),
+            ? e.querySelector(".mediaSwiper-slide-shadow-left")
+            : e.querySelector(".mediaSwiper-slide-shadow-top"),
           i = s
-            ? e.querySelector(".swipeGelijk-slide-shadow-right")
-            : e.querySelector(".swipeGelijk-slide-shadow-bottom");
+            ? e.querySelector(".mediaSwiper-slide-shadow-right")
+            : e.querySelector(".mediaSwiper-slide-shadow-bottom");
         a ||
           ((a = v(
             "div",
             (
-              "swipeGelijk-slide-shadow-cube swipeGelijk-slide-shadow-" +
+              "mediaSwiper-slide-shadow-cube mediaSwiper-slide-shadow-" +
               (s ? "left" : "top")
             ).split(" ")
           )),
@@ -7042,7 +7042,7 @@ var swipeGelijk = (function () {
             ((i = v(
               "div",
               (
-                "swipeGelijk-slide-shadow-cube swipeGelijk-slide-shadow-" +
+                "mediaSwiper-slide-shadow-cube mediaSwiper-slide-shadow-" +
                 (s ? "right" : "bottom")
               ).split(" ")
             )),
@@ -7052,7 +7052,7 @@ var swipeGelijk = (function () {
       };
       ue({
         effect: "cube",
-        swipeGelijk: t,
+        mediaSwiper: t,
         on: a,
         setTranslate: () => {
           const {
@@ -7073,16 +7073,16 @@ var swipeGelijk = (function () {
             f = 0;
           p.shadow &&
             (u
-              ? ((h = t.wrapperEl.querySelector(".swipeGelijk-cube-shadow")),
+              ? ((h = t.wrapperEl.querySelector(".mediaSwiper-cube-shadow")),
                 h ||
-                  ((h = v("div", "swipeGelijk-cube-shadow")), t.wrapperEl.append(h)),
+                  ((h = v("div", "mediaSwiper-cube-shadow")), t.wrapperEl.append(h)),
                 (h.style.height = `${r}px`))
-              : ((h = e.querySelector(".swipeGelijk-cube-shadow")),
-                h || ((h = v("div", "swipeGelijk-cube-shadow")), e.append(h))));
+              : ((h = e.querySelector(".mediaSwiper-cube-shadow")),
+                h || ((h = v("div", "mediaSwiper-cube-shadow")), e.append(h))));
           for (let e = 0; e < a.length; e += 1) {
             const t = a[e];
             let s = e;
-            m && (s = parseInt(t.getAttribute("data-swipeGelijk-slide-index"), 10));
+            m && (s = parseInt(t.getAttribute("data-mediaSwiper-slide-index"), 10));
             let r = 90 * s,
               n = Math.floor(r / 360);
             l && ((r = -r), (n = Math.floor(-r / 360)));
@@ -7137,7 +7137,7 @@ var swipeGelijk = (function () {
           (s.style.transform = `translate3d(0px,0,${g}px) rotateX(${c(
             t.isHorizontal() ? 0 : f
           )}deg) rotateY(${c(t.isHorizontal() ? -f : 0)}deg)`),
-            s.style.setProperty("--swipeGelijk-cube-translate-z", `${g}px`);
+            s.style.setProperty("--mediaSwiper-cube-translate-z", `${g}px`);
         },
         setTransition: (e) => {
           const { el: s, slides: a } = t;
@@ -7146,7 +7146,7 @@ var swipeGelijk = (function () {
               (t.style.transitionDuration = `${e}ms`),
                 t
                   .querySelectorAll(
-                    ".swipeGelijk-slide-shadow-top, .swipeGelijk-slide-shadow-right, .swipeGelijk-slide-shadow-bottom, .swipeGelijk-slide-shadow-left"
+                    ".mediaSwiper-slide-shadow-top, .mediaSwiper-slide-shadow-right, .mediaSwiper-slide-shadow-bottom, .mediaSwiper-slide-shadow-left"
                   )
                   .forEach((t) => {
                     t.style.transitionDuration = `${e}ms`;
@@ -7154,7 +7154,7 @@ var swipeGelijk = (function () {
             }),
             t.params.cubeEffect.shadow && !t.isHorizontal())
           ) {
-            const t = s.querySelector(".swipeGelijk-cube-shadow");
+            const t = s.querySelector(".mediaSwiper-cube-shadow");
             t && (t.style.transitionDuration = `${e}ms`);
           }
         },
@@ -7179,15 +7179,15 @@ var swipeGelijk = (function () {
       });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, on: a } = e;
+      let { mediaSwiper: t, extendParams: s, on: a } = e;
       s({ flipEffect: { slideShadows: !0, limitRotation: !0 } });
       const i = (e, s) => {
         let a = t.isHorizontal()
-            ? e.querySelector(".swipeGelijk-slide-shadow-left")
-            : e.querySelector(".swipeGelijk-slide-shadow-top"),
+            ? e.querySelector(".mediaSwiper-slide-shadow-left")
+            : e.querySelector(".mediaSwiper-slide-shadow-top"),
           i = t.isHorizontal()
-            ? e.querySelector(".swipeGelijk-slide-shadow-right")
-            : e.querySelector(".swipeGelijk-slide-shadow-bottom");
+            ? e.querySelector(".mediaSwiper-slide-shadow-right")
+            : e.querySelector(".mediaSwiper-slide-shadow-bottom");
         a || (a = fe("flip", e, t.isHorizontal() ? "left" : "top")),
           i || (i = fe("flip", e, t.isHorizontal() ? "right" : "bottom")),
           a && (a.style.opacity = Math.max(-s, 0)),
@@ -7195,7 +7195,7 @@ var swipeGelijk = (function () {
       };
       ue({
         effect: "flip",
-        swipeGelijk: t,
+        mediaSwiper: t,
         on: a,
         setTranslate: () => {
           const { slides: e, rtlTranslate: s } = t,
@@ -7206,7 +7206,7 @@ var swipeGelijk = (function () {
             let o = l.progress;
             t.params.flipEffect.limitRotation &&
               (o = Math.max(Math.min(l.progress, 1), -1));
-            const d = l.swipeGelijkSlideOffset;
+            const d = l.mediaSwiperSlideOffset;
             let c = -180 * o,
               p = 0,
               u = t.params.cssMode ? -d - t.translate : -d,
@@ -7228,13 +7228,13 @@ var swipeGelijk = (function () {
             (t.style.transitionDuration = `${e}ms`),
               t
                 .querySelectorAll(
-                  ".swipeGelijk-slide-shadow-top, .swipeGelijk-slide-shadow-right, .swipeGelijk-slide-shadow-bottom, .swipeGelijk-slide-shadow-left"
+                  ".mediaSwiper-slide-shadow-top, .mediaSwiper-slide-shadow-right, .mediaSwiper-slide-shadow-bottom, .mediaSwiper-slide-shadow-left"
                 )
                 .forEach((t) => {
                   t.style.transitionDuration = `${e}ms`;
                 });
           }),
-            he({ swipeGelijk: t, duration: e, transformElements: s });
+            he({ mediaSwiper: t, duration: e, transformElements: s });
         },
         recreateShadows: () => {
           t.params.flipEffect,
@@ -7257,7 +7257,7 @@ var swipeGelijk = (function () {
       });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, on: a } = e;
+      let { mediaSwiper: t, extendParams: s, on: a } = e;
       s({
         coverflowEffect: {
           rotate: 50,
@@ -7270,7 +7270,7 @@ var swipeGelijk = (function () {
       }),
         ue({
           effect: "coverflow",
-          swipeGelijk: t,
+          mediaSwiper: t,
           on: a,
           setTranslate: () => {
             const { width: e, height: s, slides: a, slidesSizesGrid: i } = t,
@@ -7284,7 +7284,7 @@ var swipeGelijk = (function () {
             for (let e = 0, t = a.length; e < t; e += 1) {
               const t = a[e],
                 s = i[e],
-                l = (o - t.swipeGelijkSlideOffset - s / 2) / s,
+                l = (o - t.mediaSwiperSlideOffset - s / 2) / s,
                 u =
                   "function" == typeof r.modifier
                     ? r.modifier(l)
@@ -7314,11 +7314,11 @@ var swipeGelijk = (function () {
                 r.slideShadows)
               ) {
                 let e = n
-                    ? t.querySelector(".swipeGelijk-slide-shadow-left")
-                    : t.querySelector(".swipeGelijk-slide-shadow-top"),
+                    ? t.querySelector(".mediaSwiper-slide-shadow-left")
+                    : t.querySelector(".mediaSwiper-slide-shadow-top"),
                   s = n
-                    ? t.querySelector(".swipeGelijk-slide-shadow-right")
-                    : t.querySelector(".swipeGelijk-slide-shadow-bottom");
+                    ? t.querySelector(".mediaSwiper-slide-shadow-right")
+                    : t.querySelector(".mediaSwiper-slide-shadow-bottom");
                 e || (e = fe("coverflow", t, n ? "left" : "top")),
                   s || (s = fe("coverflow", t, n ? "right" : "bottom")),
                   e && (e.style.opacity = u > 0 ? u : 0),
@@ -7333,7 +7333,7 @@ var swipeGelijk = (function () {
                 (t.style.transitionDuration = `${e}ms`),
                   t
                     .querySelectorAll(
-                      ".swipeGelijk-slide-shadow-top, .swipeGelijk-slide-shadow-right, .swipeGelijk-slide-shadow-bottom, .swipeGelijk-slide-shadow-left"
+                      ".mediaSwiper-slide-shadow-top, .mediaSwiper-slide-shadow-right, .mediaSwiper-slide-shadow-bottom, .mediaSwiper-slide-shadow-left"
                     )
                     .forEach((t) => {
                       t.style.transitionDuration = `${e}ms`;
@@ -7345,7 +7345,7 @@ var swipeGelijk = (function () {
         });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, on: a } = e;
+      let { mediaSwiper: t, extendParams: s, on: a } = e;
       s({
         creativeEffect: {
           limitProgress: 1,
@@ -7369,7 +7369,7 @@ var swipeGelijk = (function () {
       const i = (e) => ("string" == typeof e ? e : `${e}px`);
       ue({
         effect: "creative",
-        swipeGelijk: t,
+        mediaSwiper: t,
         on: a,
         setTranslate: () => {
           const { slides: e, wrapperEl: s, slidesSizesGrid: a } = t,
@@ -7394,7 +7394,7 @@ var swipeGelijk = (function () {
                 Math.max(a.originalProgress, -r.limitProgress),
                 r.limitProgress
               ));
-            const u = a.swipeGelijkSlideOffset,
+            const u = a.mediaSwiperSlideOffset,
               m = [t.params.cssMode ? -u - t.translate : -u, 0, 0],
               h = [0, 0, 0];
             let f = !1;
@@ -7432,7 +7432,7 @@ var swipeGelijk = (function () {
                   : 1 - (1 - g.opacity) * p * n,
               E = `translate3d(${v}) ${w} ${b}`;
             if ((f && g.shadow) || !f) {
-              let e = a.querySelector(".swipeGelijk-slide-shadow");
+              let e = a.querySelector(".mediaSwiper-slide-shadow");
               if ((!e && g.shadow && (e = fe("creative", a)), e)) {
                 const t = r.shadowPerProgress ? c * (1 / r.limitProgress) : c;
                 e.style.opacity = Math.min(Math.max(Math.abs(t), 0), 1);
@@ -7448,11 +7448,11 @@ var swipeGelijk = (function () {
           const s = t.slides.map((e) => h(e));
           s.forEach((t) => {
             (t.style.transitionDuration = `${e}ms`),
-              t.querySelectorAll(".swipeGelijk-slide-shadow").forEach((t) => {
+              t.querySelectorAll(".mediaSwiper-slide-shadow").forEach((t) => {
                 t.style.transitionDuration = `${e}ms`;
               });
           }),
-            he({ swipeGelijk: t, duration: e, transformElements: s, allSlides: !0 });
+            he({ mediaSwiper: t, duration: e, transformElements: s, allSlides: !0 });
         },
         perspective: () => t.params.creativeEffect.perspective,
         overwriteParams: () => ({
@@ -7462,7 +7462,7 @@ var swipeGelijk = (function () {
       });
     },
     function (e) {
-      let { swipeGelijk: t, extendParams: s, on: a } = e;
+      let { mediaSwiper: t, extendParams: s, on: a } = e;
       s({
         cardsEffect: {
           slideShadows: !0,
@@ -7473,7 +7473,7 @@ var swipeGelijk = (function () {
       }),
         ue({
           effect: "cards",
-          swipeGelijk: t,
+          mediaSwiper: t,
           on: a,
           setTranslate: () => {
             const { slides: e, activeIndex: s, rtlTranslate: a } = t,
@@ -7484,13 +7484,13 @@ var swipeGelijk = (function () {
               const d = e[o],
                 c = d.progress,
                 p = Math.min(Math.max(c, -4), 4);
-              let u = d.swipeGelijkSlideOffset;
+              let u = d.mediaSwiperSlideOffset;
               t.params.centeredSlides &&
                 !t.params.cssMode &&
                 (t.wrapperEl.style.transform = `translateX(${t.minTranslate()}px)`),
                 t.params.centeredSlides &&
                   t.params.cssMode &&
-                  (u -= e[0].swipeGelijkSlideOffset);
+                  (u -= e[0].mediaSwiperSlideOffset);
               let m = t.params.cssMode ? -u - t.translate : -u,
                 h = 0;
               const f = -100 * Math.abs(p);
@@ -7537,7 +7537,7 @@ var swipeGelijk = (function () {
                   i.rotate ? (a ? -v : v) : 0
                 }deg)\n        scale(${x})\n      `;
               if (i.slideShadows) {
-                let e = d.querySelector(".swipeGelijk-slide-shadow");
+                let e = d.querySelector(".mediaSwiper-slide-shadow");
                 e || (e = fe("cards", d)),
                   e &&
                     (e.style.opacity = Math.min(
@@ -7553,11 +7553,11 @@ var swipeGelijk = (function () {
             const s = t.slides.map((e) => h(e));
             s.forEach((t) => {
               (t.style.transitionDuration = `${e}ms`),
-                t.querySelectorAll(".swipeGelijk-slide-shadow").forEach((t) => {
+                t.querySelectorAll(".mediaSwiper-slide-shadow").forEach((t) => {
                   t.style.transitionDuration = `${e}ms`;
                 });
             }),
-              he({ swipeGelijk: t, duration: e, transformElements: s });
+              he({ mediaSwiper: t, duration: e, transformElements: s });
           },
           perspective: () => !0,
           overwriteParams: () => ({
@@ -7569,32 +7569,17 @@ var swipeGelijk = (function () {
   ];
   return ie.use(ge), ie;
 })();
-//# sourceMappingURL=swipeGelijk-bundle.min.js.map
+//# sourceMappingURL=mediaSwiper-bundle.min.js.map
 
-var swipeGelijk = new swipeGelijk(".myswipeGelijk", {
-    slidesPerView: 1, // Aantal slides per view op mobiel
-    // spaceBetween: 60,
-    loop: true,
-    pagination: {
-      el: ".swipeGelijk-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swipeGelijk-button-next",
-      prevEl: ".swipeGelijk-button-prev",
-    },
-    breakpoints: { // Voeg breakpoints toe voor verschillende schermformaten
-      640: { // Voor schermen kleiner dan 640px
-        slidesPerView: 1, // 1 slide per view op mobiele schermen
-        spaceBetween: 60, // Pas ruimte aan indien nodig
-      },
-      768: { // Voor schermen groter dan 640px, maar kleiner dan 768px
-        slidesPerView: 2, // 2 slides per view
-        spaceBetween: 60,
-      },
-      1024: { // Voor schermen groter dan 768px
-        slidesPerView: 3, // 3 slides per view
-        spaceBetween: 60,
-      },
-    },
-  });
+var mediaSwiper = new mediaSwiper(".mymediaSwiper", {
+  cssMode: true,
+  navigation: {
+    nextEl: ".mediaSwiper-button-next",
+    prevEl: ".mediaSwiper-button-prev",
+  },
+  pagination: {
+    el: ".mediaSwiper-pagination",
+  },
+  mousewheel: true,
+  keyboard: true,
+});

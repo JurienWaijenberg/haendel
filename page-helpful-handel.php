@@ -16,7 +16,7 @@
             deel te nemen aan onze concerten en evenementen, en zo samen te genieten van de schoonheid van live muziek.
 
             Wil je ook bijdragen aan onze missie?</p>
-        <a href="#" class="btn_rood">
+        <a href="#" class="btn_bruin">
             <p>Meer informatie</p>
         </a>
     </section>
@@ -24,40 +24,40 @@
 
 
 <section class="bg_transparant_lichtgroen">
-    <section class="max-width space tweeXColumnXtitel">
-        <h2>hello</h2>
-        <section class="tweeXColumn">
-            <ul>
-            <li>
-                <a href="#">
-                <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
-                <h2>Zing mee!</h2>
-                <p>Wil je grote koorwerken zingen, met goede orkesten en in grote concertzalen? En vind je het een uitdaging
-                    om ook minder bekende muziek te zingen? Kom dan kennismaken op een van onze repetities (laat even weten dat
-                    je komt!). Als de kennismaking bevalt kun je direct komen meezingen op enkele repetities. Daarna maken we
-                    een afspraak voor een eenvoudige stemtest bij de dirigent.</p>
-                <span class="btn_rood">
-                    <p>Meer informatie</p>
-                </span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
-                <h2>Zing mee!</h2>
-                <p>Wil je grote koorwerken zingen, met goede orkesten en in grote concertzalen? En vind je het een uitdaging
-                    om ook minder bekende muziek te zingen? Kom dan kennismaken op een van onze repetities (laat even weten dat
-                    je komt!). Als de kennismaking bevalt kun je direct komen meezingen op enkele repetities. Daarna maken we
-                    een afspraak voor een eenvoudige stemtest bij de dirigent.</p>
-                <span class="btn_rood">
-                    <p>Meer informatie</p>
-                </span>
-                </a>
-            </li>
-            </ul>
-        </section>
-    </section>
+  <section class="tweeXColumn max-width extraSpace space">
+  <h2 class="bruinKleur">BIJZONDERE CONCERTEN</h2>
+    <ul class="space">
+      <li>
+        <a href="#">
+          <div>          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#"></div>
+          <h2 class="bruinKleur">Zing mee!</h2>
+          <p>Wil je grote koorwerken zingen, met goede orkesten en in grote concertzalen? En vind je het een uitdaging
+            om ook minder bekende muziek te zingen? Kom dan kennismaken op een van onze repetities (laat even weten dat
+            je komt!). Als de kennismaking bevalt kun je direct komen meezingen op enkele repetities. Daarna maken we
+            een afspraak voor een eenvoudige stemtest bij de dirigent.</p>
+          <!-- <span class="btn_rood">
+            <p>Meer informatie</p>
+          </span> -->
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <div>
+          <iframe width="100%" height="600px" src="https://www.youtube.com/embed/2HZpS_eq6Iw?si=X8Ghft9H_nX0RreZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <h2 class="bruinKleur">Zing mee!</h2>
+          <p>Wil je grote koorwerken zingen, met goede orkesten en in grote concertzalen? En vind je het een uitdaging
+            om ook minder bekende muziek te zingen? Kom dan kennismaken op een van onze repetities (laat even weten dat
+            je komt!). Als de kennismaking bevalt kun je direct komen meezingen op enkele repetities. Daarna maken we
+            een afspraak voor een eenvoudige stemtest bij de dirigent.</p>
+          <!-- <span class="btn_rood">
+            <p>Meer informatie</p>
+          </span> -->
+        </a>
+      </li>
 
+    </ul>
+  </section>
 </section>
 
 

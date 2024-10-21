@@ -21,7 +21,8 @@
 }
 
 .bestuursoverzicht a{
-    color: var(--Rood);
+    color: var(--black);
+    text-decoration: underline;
   }
 
 .bestuursoverzicht article ul li:last-of-type{

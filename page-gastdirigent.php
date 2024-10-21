@@ -11,7 +11,7 @@
     </section>
 
     <section>
-        <h2>Jules van Hessen</h2>
+        <h2 class="bruinKleur">Jules van Hessen</h2>
         <p>
             GeeksforGeeks was born out of necessity-
             a need to provide a convenient and
@@ -34,7 +34,7 @@
                 do is to look around yourself.
             </span>
         </p>
-        <button onclick="toggleText()" id="textButton" class="btn_rood">
+        <button onclick="toggleText()" id="textButton" class="btn_bruin">
             Show More
         </button>
     </section>

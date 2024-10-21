@@ -10,7 +10,7 @@
     </section>
 
     <section>
-        <h2>Paul Valk</h2>
+        <h2 class="bruinKleur">Paul Valk</h2>
         <h3>Chef-dirigent van de Nederlandse Händelvereniging</h3>
         <p>
             GeeksforGeeks was born out of necessity-
@@ -34,7 +34,7 @@
                 do is to look around yourself.
             </span>
         </p>
-        <button onclick="toggleText()" id="textButton" class="btn_rood">
+        <button onclick="toggleText()" id="textButton" class="btn_bruin">
             Show More
         </button>
     </section>

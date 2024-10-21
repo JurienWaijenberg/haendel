@@ -15,7 +15,7 @@
             <p>Als sponsor van de NHV kunt u zowel een specifiek concert ondersteunen als de algemene jaarlijkse
                 programmering. Vanzelfsprekend biedt de NHV een passende tegenprestatie voor deze steun. Daarbij valt te
                 denken aan:</p>
-            <ul class="checklist checklistRood">
+            <ul class="checklist ">
                 <li>
                     <i class="fa-solid fa-check"></i>
                     <p>Het uitvoeren en promoten van werken van Handel en andere klassieke componisten.</p>
@@ -39,13 +39,13 @@
       <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
     </section>
     <section>
-    <h2>Periodieke Gift en Belastingvoordeel</h2>
+    <h2 class="bruinKleur">Periodieke Gift en Belastingvoordeel</h2>
           <p>
           De modelovereenkomst voor een periodieke gift is te downloaden via de website van de Belastingdienst (Formulier Periodieke gift in geld). De overeenkomst moet in tweevoud worden ingevuld (voor uw eigen administratie en voor de administratie van de ontvanger, in dit geval de Nederlandse Händelvereniging).
 Het aanmerken als periodieke gift kan bij de Nederlandse Händelvereniging altijd, ongeacht de hoogte van uw vriendenbijdrage (EUR 50,- of hoger).
 Hoe hoog de belastingaftrek is, hangt af van uw persoonlijke situatie.
           </p>
-          <a href="#" class="btn_rood">Voorwaarden belastingdienst</a>
+          <a href="#" class="btn_bruin">Voorwaarden belastingdienst</a>
       </section>
   </section>
 

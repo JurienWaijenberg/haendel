@@ -73,32 +73,35 @@
     </section>
 </section>
 
+<section class="max-width">
+    <section class="swiper mySwiper">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide swiperDirigenten" data-section="posterhistorie">
+                    <img src="http://haendel.local/wp-content/uploads/2024/10/poster.jpg" alt="#">
+                </li>
+                <li class="swiper-slide swiperDirigenten" data-section="posterhistorie">
+                    <img src="http://haendel.local/wp-content/uploads/2024/10/poster.jpg" alt="#">
+                </li>
+                <li class="swiper-slide swiperDirigenten" data-section="posterhistorie">
+                    <img src="http://haendel.local/wp-content/uploads/2024/10/poster.jpg" alt="#">
+                </li>
+                <li class="swiper-slide swiperDirigenten" data-section="posterhistorie">
+                    <img src="http://haendel.local/wp-content/uploads/2024/10/poster.jpg" alt="#">
+                </li>
+                
+
+            </ul>
+            <div class="swiper-button-next btnNextswiperDirigenten"></div>
+            <div class="swiper-button-prev btnPrevswiperDirigenten"></div>
+            <div class="swiper-pagination paginationswiperDirigenten"></div>
+        </section>
+    </section>
+</section>
+
+
 <section class="overzichtDirigenten max-width">
+    
 
-<!-- Deze slider moet niet al bij 1200px terugspringen naar 1 img op het scherm maar bij pas bijv 800px 
-   swiper.css r.748 @mediaqueries voor de slider op homepagina, die willen we bij deze section overschrijven hoe? -->
-<section class="swiper mySwiper">
-    <ul class="swiper-wrapper swiperDirigenten">
-      <li class="swiper-slide sliderDirigenten">
-          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
-      </li>
-      <li class="swiper-slide sliderConcerten">
-          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
-      </li>
-      <li class="swiper-slide sliderConcerten">
-          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
-      </li>
-      <li class="swiper-slide sliderConcerten">
-          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
-      </li>
-
-      
-
-    </ul>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
-</section> -->
     <h2>Dirigenten</h2>
     <div>
     <p>De NHV heeft tot nu toe slechts 4 vaste dirigenten gehad: oprichter Jack P. Loorij 1947-1989 (en al begonnen bij Bel Canto in 1941), Thijs Kramer (1989-2012) de Brit Andrew Wise (2012-2016), en de huidige dirigent Paul Valk. 

@@ -1,13 +1,18 @@
 .postersConcerthistorie ul li{
     justify-content: flex-start;
-    background-color: aqua;
 }
 
 .postersConcerthistorie ul li div{
-    height: 100%;
+    /* height: 100%; */
+    height: fit-content;
 }
 
 .postersConcerthistorie ul li img{
-    height: 100%;
+    /* height: 100%; */
     object-fit: cover;
+}
+
+.gastdirigenten.postersConcerthistorie ul li img{
+    background-color: aqua;
+    height: auto;
 }

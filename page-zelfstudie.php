@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section class="atf bannerImg">
+<section class="atf bannerImg roodKleur">
     <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
     <h1>Zelfstudie</h1>
 </section>
@@ -45,18 +45,18 @@
         <ul class="steun-grid">
             <li>
                 <img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt="">
-                <h3>LOUIS BUSKENS</h3>
-                <a href="#" class="btn_rood">Lees verder</a>
+                <h3 class="bruinKleur">LOUIS BUSKENS</h3>
+                <a href="#" class="btn_bruin">Lees verder</a>
             </li>
             <li>
                 <img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt="">
-                <h3>LOUIS BUSKENS</h3>
-                <a href="#" class="btn_rood">Lees verder</a>
+                <h3 class="bruinKleur">LOUIS BUSKENS</h3>
+                <a href="#" class="btn_bruin">Lees verder</a>
             </li>
             <li>
                 <img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt="">
-                <h3>LOUIS BUSKENS</h3>
-                <a href="#" class="btn_rood">Lees verder</a>
+                <h3 class="bruinKleur">LOUIS BUSKENS</h3>
+                <a href="#" class="btn_bruin">Lees verder</a>
             </li>
             
         </ul>
@@ -70,9 +70,9 @@
     <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
   </section>
   <section>
-    <h2>Audities</h2>
+    <h2 class="bruinKleur">Audities</h2>
     <p>Na een aantal jaren lidmaatschap wordt van koorleden verwacht dat ze opnieuw auditie doen om hun plaats in het koor te behouden. Dit helpt ons om de muzikale kwaliteit van het koor te waarborgen. De exacte data voor deze audities zijn beschikbaar in een apart document, dat u kunt downloaden via de onderstaande link.</p>
-    <a href="#" class="btn_rood">
+    <a href="#" class="btn_bruin">
       <p>Audities data bestand</p>
     </a>
 

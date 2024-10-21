@@ -6,6 +6,7 @@ function bofesto_setup(){
     wp_enqueue_style('style', get_stylesheet_uri(), NULL, microtime(), 'all');
 
     wp_enqueue_style( 'swiper', get_template_directory_uri() . '/styles/swiper.css');
+    wp_enqueue_style( 'mediaSwiper', get_template_directory_uri() . '/styles/mediaSwiper.css');
     wp_enqueue_style( 'swipeGelijk', get_template_directory_uri() . '/styles/swipeGelijk.css');
     wp_enqueue_style( 'concerten', get_template_directory_uri() . '/styles/concerten.css');
     wp_enqueue_style( 'concert', get_template_directory_uri() . '/styles/concert.css');
@@ -34,6 +35,7 @@ function bofesto_setup(){
     
     
     wp_enqueue_script( "swiper", get_template_directory_uri() . '/scripts/swiper.js', NULL, '3.5.1', true);
+    wp_enqueue_script( "mediaSwiper", get_template_directory_uri() . '/scripts/mediaSwiper.js', NULL, '3.5.1', true);
     wp_enqueue_script( "swiper-review-bundle", get_template_directory_uri() . '/scripts/swiper-review.js', NULL, '3.5.1', true);
     wp_enqueue_script( "swipeGelijk", get_template_directory_uri() . '/scripts/swipeGelijk.js', NULL, '3.5.1', true);
     wp_enqueue_script( "script", get_template_directory_uri() . '/scripts/script.js', NULL, '3.5.1', true);

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section class="atf bannerImg">
+<section class="atf bannerImg roodKleur">
     <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
     <h1>oefenbestanden</h1>
 </section>
@@ -15,16 +15,16 @@
                 <div>
                     <h3>Algemeen</h3>
                     <ul>
-                        <li><a href="#" class="btn_rood"><p>Download Midi</p></a></li>
-                        <li><a href="#" class="btn_rood"><p>Download MP3</p></a></li>
+                        <li><a href="#" class="btn_rood">Download Midi</a></li>
+                        <li><a href="#" class="btn_rood">Download MP3</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h3>Sopraan</h3>
                     <ul>
-                        <li><a href="#" class="btn_rood"><p>Download Midi</p></a></li>
-                        <li><a href="#" class="btn_rood"><p>Download MP3</p></a></li>
+                        <li><a href="#" class="btn_rood">Download Midi</a></li>
+                        <li><a href="#" class="btn_rood">Download MP3</a></li>
                     </ul>
                 </div>
             </article>
@@ -37,16 +37,16 @@
                 <div>
                     <h3>Algemeen</h3>
                     <ul>
-                        <li><a href="#" class="btn_rood"><p>Download Midi</p></a></li>
-                        <li><a href="#" class="btn_rood"><p>Download MP3</p></a></li>
+                        <li><a href="#" class="btn_rood">Download Midi</a></li>
+                        <li><a href="#" class="btn_rood">Download MP3</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h3>Sopraan</h3>
                     <ul>
-                        <li><a href="#" class="btn_rood"><p>Download Midi</p></a></li>
-                        <li><a href="#" class="btn_rood"><p>Download MP3</p></a></li>
+                        <li><a href="#" class="btn_rood">Download Midi</a></li>
+                        <li><a href="#" class="btn_rood">Download MP3</a></li>
                     </ul>
                 </div>
             </article>
@@ -59,16 +59,16 @@
                 <div>
                     <h3>Algemeen</h3>
                     <ul>
-                        <li><a href="#" class="btn_rood"><p>Download Midi</p></a></li>
-                        <li><a href="#" class="btn_rood"><p>Download MP3</p></a></li>
+                        <li><a href="#" class="btn_rood">Download Midi</a></li>
+                        <li><a href="#" class="btn_rood">Download MP3</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h3>Sopraan</h3>
                     <ul>
-                        <li><a href="#" class="btn_rood"><p>Download Midi</p></a></li>
-                        <li><a href="#" class="btn_rood"><p>Download MP3</p></a></li>
+                        <li><a href="#" class="btn_rood">Download Midi</a></li>
+                        <li><a href="#" class="btn_rood">Download MP3</a></li>
                     </ul>
                 </div>
             </article>

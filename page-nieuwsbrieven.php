@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section class="atf bannerImg">
+<section class="atf bannerImg roodKleur">
     <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
     <h1>Nieuwsbrieven</h1>
 </section>
@@ -11,36 +11,43 @@
         onze waardevolle informatie te missen.</p>
 </section>
 
-<section class="koopKaarten bestuursoverzicht max-width nieuwsbrieven">
+<section class="koopKaarten bestuursoverzicht max-width nieuwsbrieven rowsRood">
 
     <section>
-        <article>
+        <article class="nieuwsbrief">
             <ul>
-                <li><img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt=""></li>
                 <li>
+                    <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="">
                     <h3>juni 2024 - nieuwsbrief</h3>
-                    <a href="#"><i><i class="fa-regular fa-envelope"></i></i> download</a>
+                </li>
+                <li>
+                    <a href="#" class="linkZwart">download</a>
                 </li>
             </ul>
         </article>
-        <article>
-            <ul>
-                <li><img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt=""></li>
+        <article class="nieuwsbrief">
+        <ul>
                 <li>
+                    <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="">
                     <h3>juni 2024 - nieuwsbrief</h3>
-                    <a href="#"><i><i class="fa-regular fa-envelope"></i></i> download</a>
+                </li>
+                <li>
+                    <a href="#" class="linkZwart">download</a>
                 </li>
             </ul>
         </article>
-        <article>
-            <ul>
-                <li><img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt=""></li>
+        <article class="nieuwsbrief">
+        <ul>
                 <li>
+                    <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="">
                     <h3>juni 2024 - nieuwsbrief</h3>
-                    <a href="#"><i><i class="fa-regular fa-envelope"></i></i> download</a>
+                </li>
+                <li>
+                    <a href="#" class="linkZwart">download</a>
                 </li>
             </ul>
         </article>
+        
     </section>
 </section>
 

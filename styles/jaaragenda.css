@@ -36,7 +36,7 @@ gap: 0;
 
 .jaaragenda li:last-of-type{
     align-self: flex-end;
-    min-width: 18em;
+    /* min-width: 18em; */
     text-align: left;
 }
 

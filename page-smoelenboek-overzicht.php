@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section class="atf bannerImg">
+<section class="atf bannerImg roodKleur">
     <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
     <h1>Smoelenboek</h1>
 </section>
@@ -12,23 +12,23 @@
     <ul class="steun-grid">
         <li>
             <img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt="">
-            <h3>LOUIS BUSKENS</h3>
-            <a href="#" class="btn_rood">Lees verder</a>
+            <h3 class="bruinKleur">LOUIS BUSKENS</h3>
+            <a href="#" class="btn_bruin">Lees verder</a>
         </li>
         <li>
             <img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt="">
-            <h3>LOUIS BUSKENS</h3>
-            <a href="#" class="btn_rood">Lees verder</a>
+            <h3 class="bruinKleur">LOUIS BUSKENS</h3>
+            <a href="#" class="btn_bruin">Lees verder</a>
         </li>
         <li>
             <img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt="">
-            <h3>LOUIS BUSKENS</h3>
-            <a href="#" class="btn_rood">Lees verder</a>
+            <h3 class="bruinKleur">LOUIS BUSKENS</h3>
+            <a href="#" class="btn_bruin">Lees verder</a>
         </li>
         <li>
             <img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt="">
-            <h3>LOUIS BUSKENS</h3>
-            <a href="#" class="btn_rood">Lees verder</a>
+            <h3 class="bruinKleur">LOUIS BUSKENS</h3>
+            <a href="#" class="btn_bruin">Lees verder</a>
         </li>
 
   

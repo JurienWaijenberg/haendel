@@ -15,7 +15,7 @@
             <p>Als sponsor van de NHV kunt u zowel een specifiek concert ondersteunen als de algemene jaarlijkse
                 programmering. Vanzelfsprekend biedt de NHV een passende tegenprestatie voor deze steun. Daarbij valt te
                 denken aan:</p>
-            <ul class="checklist checklistRood">
+            <ul class="checklist">
                 <li>
                     <i class="fa-solid fa-check"></i>
                     <p>Het uitvoeren en promoten van werken van Handel en andere klassieke componisten.</p>
@@ -35,7 +35,7 @@
 
 
 
-<section class="sponsorSlider bg_transparant_lichtgroen space">
+<section class="sponsorSlider bg_transparant_lichtgroen">
     <section class="swipeGelijk myswipeGelijk max-width">
         <ul class="swipeGelijk-wrapper">
         <li class="swipeGelijk-slide"><img src="http://haendel.local/wp-content/uploads/2024/10/sponsortest.png" alt=""></li>

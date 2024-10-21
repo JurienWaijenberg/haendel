@@ -71,12 +71,12 @@
       <li>
         <a href="#">
           <div>          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#"></div>
-          <h2>Zing mee!</h2>
+          <h2 class="bruinKleur">Zing mee!</h2>
           <p>Wil je grote koorwerken zingen, met goede orkesten en in grote concertzalen? En vind je het een uitdaging
             om ook minder bekende muziek te zingen? Kom dan kennismaken op een van onze repetities (laat even weten dat
             je komt!). Als de kennismaking bevalt kun je direct komen meezingen op enkele repetities. Daarna maken we
             een afspraak voor een eenvoudige stemtest bij de dirigent.</p>
-          <span class="btn_rood">
+          <span class="btn_bruin">
             <p>Meer informatie</p>
           </span>
         </a>
@@ -84,12 +84,12 @@
       <li>
         <a href="#">
           <div>          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#"></div>
-          <h2>Zing mee!</h2>
+          <h2 class="bruinKleur">Zing mee!</h2>
           <p>Wil je grote koorwerken zingen, met goede orkesten en in grote concertzalen? En vind je het een uitdaging
             om ook minder bekende muziek te zingen? Kom dan kennismaken op een van onze repetities (laat even weten dat
             je komt!). Als de kennismaking bevalt kun je direct komen meezingen op enkele repetities. Daarna maken we
             een afspraak voor een eenvoudige stemtest bij de dirigent.</p>
-          <span class="btn_rood">
+          <span class="btn_bruin">
             <p>Meer informatie</p>
           </span>
         </a>
@@ -106,18 +106,84 @@
     <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
   </section>
   <section>
-    <h2>Over ons</h2>
+    <h2 class="bruinKleur">Over ons</h2>
     <p>De Nederlandse Händelvereniging (NHV) ontstond oorspronkelijk in 1934 te Bussum onder de naam Christelijke
       Oratoriumvereniging ‘Bel Canto’. In het bevrijdingsjaar 1945 werd op diverse plaatsten in Nederland Händels
       “Messiah” in het Engels uitgevoerd, in 1946 opgevolgd door Händel’s grote bevrijdingsepos ‘Judas Maccabeus. In
       datzelfde jaar volgde de officiële oprichting onder de naam Nederlandse Händelvereniging. Dit laatste betekent dat
       in 2021 het 75 jarig bestaan van de Nederlandse Händelvereniging wordt gevierd.</p>
-    <a href="#" class="btn_rood">
+    <a href="#" class="btn_bruin">
       <p>Meer informatie</p>
     </a>
 
   </section>
 </section>
+
+
+<section class="bg_transparant_lichtgroen">
+  
+  <section class="aankomende_concerten max-width nieuws">
+
+    <section class="titelButton">
+      <h2>Laatste nieuws</h2> 
+      <a href="#" class="btn_border"><p>Toon alle</p></a>
+    </section>
+        
+    <section class="swiper mySwiper">
+      <ul class="swiper-wrapper">
+        <li class="swiper-slide sliderConcerten">
+          <a href="#">
+            <div>          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#"></div>
+            <h4>22 oktober 2024</h4>
+            <h3>Najaarconcert Elias </h3>
+            <p>Elias leefde in de negende eeuw voor Christus en was net als Mozes, Jesaja en Jeremia een profeet. Zijn
+              dramatisch en aangrijpend verhaal wordt verteld in het eerste boek der Koningen van het Oude</p>
+            <span class="btn_rood">
+              <p>Meer informatie</p>
+            </span>
+          </a>
+        </li>
+        <li class="swiper-slide sliderConcerten">
+          <a href="#">
+            <div>          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#"></div>
+            <h4>22 oktober 2024</h4>
+            <h3>Najaarconcert Elias </h3>
+            <p>Elias leefde in de negende eeuw voor Christus en was net als Mozes, Jesaja en Jeremia een profeet. Zijn
+              dramatisch en aangrijpend verhaal wordt verteld in het eerste boek der Koningen van het Oude</p>
+            <span class="btn_rood">
+              <p>Meer informatie</p>
+            </span>
+          </a>
+        </li>
+        <li class="swiper-slide sliderConcerten">
+          <a href="#">
+            <div>          <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#"></div>
+            <h4>22 oktober 2024</h4>
+            <h3>Najaarconcert Elias </h3>
+            <p>Elias leefde in de negende eeuw voor Christus en was net als Mozes, Jesaja en Jeremia een profeet. Zijn
+              dramatisch en aangrijpend verhaal wordt verteld in het eerste boek der Koningen van het Oude</p>
+            <span class="btn_rood">
+              <p>Meer informatie</p>
+            </span>
+          </a>
+        </li>
+        
+
+      </ul>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </section>
+
+    <a href="#" class="btn_border"><p>Toon alle</p></a>
+  </section>
+</section>
+
+
+
+
+
+
 
 <!-- boven footer -->
 <section class="bg_lichtgroen">
@@ -151,6 +217,10 @@
     </section>
   </section>
 </section>
+
+
+
+
 
 
 <?php get_footer(); ?>

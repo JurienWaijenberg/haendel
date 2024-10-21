@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section class="atf bannerImg">
+<section class="atf bannerImg roodKleur">
     <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
     <h1>Smoelenboek - sopranen</h1>
 </section>
@@ -9,6 +9,7 @@
 </section>
 
 <section class="gastdirigenten smoelenboek max-width">
+    <h2 class="bruinKleur">Sopranen</h2>
     <ul>
         <li>
                 <img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt="">

@@ -23,15 +23,16 @@
             <h3> mkcn.aksmc</h3>
         </li>
         <li>
-            <img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt="">
-            <h4>hoi</h4>
-            <h3> mkcn.aksmc</h3>
+            <div><img src="http://haendel.local/wp-content/uploads/2024/10/poster2.jpg" alt=""></div>
+            <h4>Voorjaar 2024</h4>
+            <h3>John Rutter Requiem magnificat</h3>
         </li>
         <li>
-            <img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt="">
+        <div><img src="http://haendel.local/wp-content/uploads/2024/10/poster.jpg" alt=""></div>
             <h4>hoi</h4>
             <h3> mkcn.aksmc</h3>
         </li>
+
     </ul>
 </section>
 
@@ -44,6 +45,8 @@
     </a>
 
 </section>
+
+
 
 
 

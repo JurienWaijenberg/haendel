@@ -53,6 +53,15 @@ flex-direction: row-reverse;
     padding: 1.5rem 0;
     align-items: center;
     gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn_border.btnDownload:hover{
+  background-color: transparent;
+  color: var(--Rood);
+  font-weight: 600;
+  border-top: 0.2rem solid var(--Rood);
+  border-bottom: 0.2rem solid var(--Rood);
 }
 
 .btn_border.btnDownload span:first-of-type{

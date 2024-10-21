@@ -23,6 +23,24 @@
 </section>
 
 
+<section class="max-width extraSpace">
+    <h2>Muzikale momenten</h2>
+<div class="mediaSwiper mymediaSwiper">
+    <div class="mediaSwiper-wrapper">
+      <div class="mediaSwiper-slide"><img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#"></div>
+      <div class="mediaSwiper-slide"><img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt=""></div>
+      <div class="mediaSwiper-slide"><img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#"></div>
+      <div class="mediaSwiper-slide"><img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt=""></div>
+      <div class="mediaSwiper-slide"><img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#"></div>
+      <div class="mediaSwiper-slide"><img src="http://haendel.local/wp-content/uploads/2024/09/kerk.jpg" alt=""></div>
+    </div>
+    <div class="mediaSwiper-button-next"></div>
+    <div class="mediaSwiper-button-prev"></div>
+    <div class="mediaSwiper-pagination"></div>
+  </div>
+</section>
+
+
 <!-- img slider -->
 
 <?php get_footer(); ?>

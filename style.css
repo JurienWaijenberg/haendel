@@ -53,6 +53,17 @@ body{
     text-decoration: none;
   }
   
+  .groenKleur{
+    color: var(--Groen);
+  }
+
+  .bruinKleur{
+    color: var(--Bruin);
+  }
+
+ 
+
+
   /******************************************************************/
 /* Fonts /* /* Fonts /* /* Fonts /* /* Fonts /* /* Fonts /* /* Fonts /* 
 /******************************************************************/
@@ -61,7 +72,8 @@ body{
   label, input, button, 
   nav a, header li, .koopKaarten ul li,
   .ConcertInfo dl, 
-  .uitvoerenden a div, a{
+  .uitvoerenden a div, a,
+  header li a{
     font-family: 'Montserrat', sans-serif;
   }
 
@@ -108,6 +120,10 @@ body{
     margin: 0;
   }
 
+  .uitvoerenden a div{
+
+  }
+
 /******************************************************************/
 /* Buttons /* /* Buttons /* /* Buttons /* /* Buttons /* /* Buttons /* 
 /******************************************************************/
@@ -128,10 +144,30 @@ body{
 .btn_rood:hover,
 .swiper-slide a:hover .btn_rood,
 .tweeXColumn a:hover .btn_rood{
-  border: 0.2rem solid var(--Rood);
+  border: 0.2rem solid var(--Rood)!important;
   color: var(--Rood);
   background-color: transparent;
 }
+
+/* BRUIN */
+.btn_bruin{
+  background-color: var(--Bruin);
+  padding: 0.4rem 2rem;
+  width: fit-content;
+  color: white;
+  text-decoration: none;
+  border-radius: 0 50px 50px 0;
+  display: inline-block;
+  border: 0.2rem solid var(--Bruin);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn_bruin:hover{
+  border: 0.2rem solid var(--Bruin)!important;
+  color: var(--Bruin);
+  background-color: transparent; 
+}
+
 
 /* ROOD BORDER */
 .btn_border{
@@ -181,6 +217,7 @@ body{
   display: flex;
   flex-direction: row;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 
@@ -203,14 +240,19 @@ body{
 /* Header /* /* Header /* /* Header /* /* Header /* /* Header /* 
 /******************************************************************/
 header{
-    height: 12vh;
+    height: 14vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    flex-direction: row;
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 1.5rem;
+}
+
+header a{
+  line-height: 0;
 }
 
 
@@ -239,6 +281,276 @@ header ul{
     padding: 0;
 }
 
+header section:nth-of-type(1) ul{
+  display: flex;
+  gap: 2rem;
+  list-style-type: none; 
+  align-items: center;
+}
+
+/* ---------------------- Menu ---------------------- */
+  
+.menu-menu-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 2em;
+}
+
+header li a {
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--Zwart);
+  transition: all .4s ease;
+}
+
+header .menu-item:hover > a {
+  color: var(--Groen);
+}
+
+#menu-menu ul {
+  display: none;
+  position: absolute;
+  z-index: 99999;
+  background: var(--Wit);
+  padding: 15px;
+  width: max-content;
+  transition: 0.2s ease;
+}
+
+#menu-menu li:hover > ul {
+  display: block;
+  top: 90px;
+  box-shadow: var(--shadow);
+  /* margin-top: 2rem; */
+  background-color: white;
+}
+
+#menu-menu li.menu-item-has-children > a::after {
+  content: "\f107";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  margin: 0px 0px 0px 10px;
+  text-decoration: none;
+}
+
+.current-menu-item a {
+  color: var(--Groen) !important;
+}
+
+/* -------------------- End menu -------------------- */
+
+.mobile-nav {
+  display: none !important;
+}
+
+
+@media (max-width: 1254px) {
+  /*------------ mobiel nav -----------------*/
+
+  .fa-user {
+    font-size: 1.4rem;
+}
+
+.menu-desktop {
+    display: none;
+}
+
+header section:nth-of-type(2) nav ul {
+    gap: 0rem !important;
+}
+
+.fa-user {
+    width: 40px;
+}
+
+.mobile-nav {
+    display: block !important;
+    background-color: var(--Wit) !important;
+    width: 40px !important;
+}
+
+.header-bottom {
+padding: 0em 1em;
+}
+
+.header-bottom > .menu-header-menu-container {
+display: none;
+}
+
+header .mobile-nav ul {
+flex-direction: column;
+}
+
+header .inlog p {
+display: none;
+}
+
+header .inlog svg {
+width: 30px;
+}
+
+.container {
+max-width: 1050px;
+width: 90%;
+margin: auto;
+}
+
+.navbar {
+width: 100%;
+display: flex;
+justify-content: space-around;
+}
+
+.nav-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 62px;
+}
+
+.navbar .menu-items {
+display: flex;
+}
+
+.navbar .nav-container li {
+list-style: none;
+}
+
+.navbar .nav-container a {
+text-decoration: none;
+color: #0e2431;
+font-weight: 500;
+font-size: 1.2rem;
+padding: 0.7rem;
+}
+
+.navbar .nav-container a:hover {
+font-weight: bolder;
+}
+
+.nav-container {
+display: block;
+position: relative;
+height: 60px;
+}
+
+.nav-container .checkbox {
+position: absolute;
+display: block;
+height: 32px;
+width: 32px;
+top: 15px;
+right: 6px;
+z-index: 999 !important;
+opacity: 0;
+cursor: pointer;
+}
+
+.nav-container .hamburger-lines {
+display: block;
+height: 26px;
+width: 32px;
+position: absolute;
+top: 17px;
+right: 0px;
+z-index: 2;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.nav-container .hamburger-lines .line {
+display: block;
+height: 4px;
+width: 100%;
+border-radius: 10px;
+background: #0e2431;
+}
+
+.nav-container .hamburger-lines .line1 {
+transform-origin: 0% 0%;
+transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+transform-origin: 0% 100%;
+transition: transform 0.4s ease-in-out;
+}
+
+.navbar .menu-items {
+padding-top: 120px;
+box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+height: 100vh;
+width: 100vw;
+transform: translate(-200%);
+display: flex;
+flex-direction: column;
+transition: transform 0.5s ease-in-out;
+text-align: center;
+background-color: #fff;
+    right: -2.5rem;
+position: absolute;
+}
+
+.navbar .menu-items li {
+margin-bottom: 1.2rem;
+font-size: 1.5rem;
+font-weight: 500;
+}
+
+
+.nav-container input[type="checkbox"]:checked ~ .menu-items {
+transform: translateX(calc(0% - 0.5rem));
+    /* right: -120vw; */
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+transform: rotate(45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+transform: scaleY(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+transform: rotate(-45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .logo {
+display: none;
+}
+
+
+ul.sub-menu {
+display: none;
+}
+
+.menu-item-has-children:hover .sub-menu,
+.menu-item-has-children:active .sub-menu {
+display: block;
+}
+
+.menu-item-has-children > a::after {
+content: "\f107";
+font-family: FontAwesome;
+font-weight: normal;
+font-style: normal;
+margin: 0px 0px 0px 10px;
+text-decoration: none;
+}
+}
 
 
 /******************************************************************/
@@ -441,6 +753,16 @@ header ul{
 
 
 /******************************************************************/
+/* Nieuws /*  /* Nieuws /*  /* Nieuws /*  /* Nieuws /*  /* Nieuws /*  
+/******************************************************************/
+
+
+.nieuws{
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/******************************************************************/
 /* Call to action Banner /*  /* Call to action Banner /*  /* Call to action Banner /*  
 /******************************************************************/
 
@@ -507,7 +829,7 @@ input[type="checkbox"]{
   transform: scale(1.5); /* Verander de waarde om de grootte aan te passen */
   margin-right: 0.5rem;
   background-color: red;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
 }
 
 /******************************************************************/
@@ -532,6 +854,7 @@ input[type="checkbox"]{
   padding: 0;
   list-style-type: none;
   width: fit-content;
+  color: var(--Zwart);
 }
 
 .footerTop .footer-item:nth-of-type(2) a p{
@@ -540,13 +863,18 @@ input[type="checkbox"]{
   background-color: black;
 }
 
-/* .footer-item:nth-of-type(2) ul li a:hover{
-background-color: aquamarine;
+.footer-item a{
+  color: var(--Zwart);
 }
 
-.footer-item:nth-of-type(2) ul li a:visited{
+.footer-item a:hover{
+  color: rgba(0, 0, 0, 0.78);
+  text-decoration: underline;
+}
+
+.footer-item:nth-of-type(2) li a:visited{
   color: black;
-} */
+}
 
 /* socials + logo */
 .footerTop section:last-of-type{
@@ -584,6 +912,11 @@ background-color: aquamarine;
 
   .footerTop{
     gap: 4rem;
+  }
+
+  .CTA form,
+  .nieuwsbrief h2, .nieuwsbrief h3{
+    width: 100%;
   }
 }
 
@@ -773,6 +1106,11 @@ background-color: aquamarine;
 }
 
 
+/******************************************************************/
+/* VIDEO  /* 
+/******************************************************************/
+
+
 .banner video{
   width: 100%;
   height: 100%;
@@ -781,5 +1119,67 @@ background-color: aquamarine;
 
 
 
+/******************************************************************/
+/* Telefoon lettergrote  /* 
+/******************************************************************/
+
+@media only screen and (max-width: 565px) {
+
+h1{
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+  color: white;
+}
+
+h2{
+  font-size: 1.8rem;
+}
+
+/* Kan evt nog kleiner gemaakt worden */
+
+/* h3,.koopKaarten ul li {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+}
+
+h4{
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+}
+
+h5{
+  font-size: 1rem;
+  font-weight: 500;
+}
 
 
+p, label, input, button,  .ConcertInfo dl,   .uitvoerenden a div, a{
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+  margin: 0;
+} */
+
+
+
+
+}
+
+.roodKleur h1{
+  background-color: var(--Rood);
+}
+
+
+.rowsRood article:first-of-type{
+  border-top: 0.2rem solid var(--Rood)!important;
+}
+
+.rowsRood article{
+  border-bottom: 0.2rem solid var(--Rood) !important;
+}

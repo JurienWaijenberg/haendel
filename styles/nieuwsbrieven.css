@@ -15,8 +15,6 @@
 }
 
 .nieuwsbrieven article ul li:nth-child(2){
-background-color: aqua;
-min-width: 100%;
 display: flex;
 justify-content: space-between;
 }
@@ -26,23 +24,38 @@ justify-content: space-between;
 }
 
 
-/* @media only screen and (min-width: 168px) and (max-width: 1060px) {
-    .nieuwsbrieven article ul {
-        flex-direction: row;
+.nieuwsbrief ul li {
+    gap: 2rem !important;
+}
+
+
+@media only screen and (min-width: 168px) and (max-width: 1060px) {
+    .nieuwsbrief ul {
+        flex-direction: row !important;
+        flex-wrap: wrap;
         gap: 0.8rem;
     }
 }
 
 
-@media only screen and (max-width: 800px) {
-    .nieuwsbrieven article ul {
-        background-color: beige;
+@media only screen and (max-width: 750px) {
+    .nieuwsbrief ul {
+        flex-direction: column;
+
     }
 
-    .nieuwsbrieven article ul li:nth-child(2){
-        min-width: 15rem;
+    .nieuwsbrieven img{
+        width: 5rem;
+        height: 5rem;
     }
-} */
+    
+}
+
+
+
+
+
+
 
 
 

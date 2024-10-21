@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section class="atf bannerImg">
+<section class="atf bannerImg roodKleur">
     <img src="http://haendel.local/wp-content/uploads/2024/09/handel-stokje-kopie.jpg" alt="#">
     <h1>Jaaragenda</h1>
 </section>
@@ -13,7 +13,7 @@
         seizoen te beleven!</p>
 </section>
 
-<section class="koopKaarten max-width ">
+<section class="koopKaarten max-width rowsRood">
 
     <article class="jaaragenda">
         <ul>
@@ -87,14 +87,14 @@
 <section class="koopKaarten bestuursoverzicht max-width extraSpace">
     <h2>Stemgroep vertegenwoordigers</h2>
     <section class="stemgroepVertegenwoordigers">
-        <h2>Sopranen</h2>
+        <h2 class="bruinKleur">Sopranen</h2>
         <article>
             <ul>
                 <li><h3>Jan van Berkel</h3></li>
                 <li>Voorzitter</li>
                 <li>
                     <i><i class="fa-regular fa-envelope"></i></i>
-                    <a href="#">voorzitter@haendelvereniging.nl</a>
+                    <a href="#">neem contact op</a>
                 </li>
             </ul>
         </article>
@@ -104,7 +104,7 @@
                 <li>Secretaris</li>
                 <li>
                     <i><i class="fa-regular fa-envelope"></i></i>
-                    <a href="#">secretariaat@haendelvereniging.nl</a>
+                    <a href="#">neem contact op</a>
                 </li>
             </ul>
         </article>
@@ -112,14 +112,14 @@
     </section>
 
     <section class="stemgroepVertegenwoordigers">
-        <h2>Alten</h2>
+        <h2 class="bruinKleur">Alten</h2>
         <article>
             <ul>
                 <li><h3>Jan van Berkel</h3></li>
                 <li>Voorzitter</li>
                 <li>
                     <i><i class="fa-regular fa-envelope"></i></i>
-                    <a href="#">voorzitter@haendelvereniging.nl</a>
+                    <a href="#">neem contact op</a>
                 </li>
             </ul>
         </article>
@@ -129,7 +129,7 @@
                 <li>Secretaris</li>
                 <li>
                     <i><i class="fa-regular fa-envelope"></i></i>
-                    <a href="#">secretariaat@haendelvereniging.nl</a>
+                    <a href="#">neem contact op</a>
                 </li>
             </ul>
         </article>
